@@ -1,10 +1,3 @@
-//
-//  PersonalityApp.swift
-//  Personality
-//
-//  Created by André Arns on 12/11/21.
-//
-
 import SwiftUI
 
 @main
@@ -13,7 +6,7 @@ struct PersonalityApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            QuizList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
