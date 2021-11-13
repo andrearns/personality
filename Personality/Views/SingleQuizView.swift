@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct SingleQuiz: View {
+struct SingleQuizView: View {
     
     var quiz: Quiz!
     
@@ -13,7 +13,7 @@ struct SingleQuiz: View {
                         // Quiz image
                             
                     }.frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
-                            .background(Color(.systemGreen))
+                        .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
                         
                     HStack {
                         Text(quiz.name)
@@ -38,7 +38,7 @@ struct SingleQuiz: View {
                     Spacer()
                 }
                 .padding()
-                .background(Color(.systemGreen))
+                .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
             }
@@ -48,9 +48,9 @@ struct SingleQuiz: View {
     }
 }
 
-struct SingleQuiz_Preview: PreviewProvider {
+struct SingleQuizView_Preview: PreviewProvider {
     static var previews: some View {
-        SingleQuiz(quiz: Quiz(name: "Nome do teste", shortDescription: "Descrição curta Descrição curta ", longDescription: "Descrição longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa."))
-            .preferredColorScheme(.dark)
+        SingleQuizView(quiz: Quiz(name: "Nome do teste", shortDescription: "Descrição curta Descrição curta ", longDescription: "Descrição longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa longo longa.", backgroundColorName: "Red"))
+            .environment(\.colorScheme, .dark)
     }
 }

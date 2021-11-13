@@ -8,25 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */; };
-		5BDC2582273F2C2D00D51D9C /* Quizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* Quizzes.swift */; };
+		5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* QuizListView.swift */; };
 		5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2583273F2C3100D51D9C /* Assets.xcassets */; };
 		5BDC2587273F2C3100D51D9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2586273F2C3100D51D9C /* Preview Assets.xcassets */; };
 		5BDC2589273F2C3100D51D9C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2588273F2C3100D51D9C /* Persistence.swift */; };
 		5BDC258C273F2C3100D51D9C /* Personality.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC258A273F2C3100D51D9C /* Personality.xcdatamodeld */; };
 		5BDC2596273F719A00D51D9C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2595273F719A00D51D9C /* Test.swift */; };
-		5BDC2598273F73E200D51D9C /* SingleQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2597273F73E200D51D9C /* SingleQuiz.swift */; };
+		5BDC2598273F73E200D51D9C /* SingleQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2597273F73E200D51D9C /* SingleQuizView.swift */; };
+		5BDC259A274006CF00D51D9C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2599274006CF00D51D9C /* MainView.swift */; };
+		5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC259B274007E300D51D9C /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5BDC257C273F2C2D00D51D9C /* Personality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityApp.swift; sourceTree = "<group>"; };
-		5BDC2581273F2C2D00D51D9C /* Quizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes.swift; sourceTree = "<group>"; };
+		5BDC2581273F2C2D00D51D9C /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
 		5BDC2583273F2C3100D51D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BDC2586273F2C3100D51D9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BDC2588273F2C3100D51D9C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5BDC258B273F2C3100D51D9C /* Personality.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Personality.xcdatamodel; sourceTree = "<group>"; };
 		5BDC2595273F719A00D51D9C /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		5BDC2597273F73E200D51D9C /* SingleQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleQuiz.swift; sourceTree = "<group>"; };
+		5BDC2597273F73E200D51D9C /* SingleQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleQuizView.swift; sourceTree = "<group>"; };
+		5BDC2599274006CF00D51D9C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5BDC259B274007E300D51D9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +94,10 @@
 		5BDC2593273F717800D51D9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5BDC2581273F2C2D00D51D9C /* Quizzes.swift */,
-				5BDC2597273F73E200D51D9C /* SingleQuiz.swift */,
+				5BDC2581273F2C2D00D51D9C /* QuizListView.swift */,
+				5BDC2597273F73E200D51D9C /* SingleQuizView.swift */,
+				5BDC2599274006CF00D51D9C /* MainView.swift */,
+				5BDC259B274007E300D51D9C /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,9 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BDC2598273F73E200D51D9C /* SingleQuiz.swift in Sources */,
+				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
+				5BDC2598273F73E200D51D9C /* SingleQuizView.swift in Sources */,
+				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
 				5BDC2589273F2C3100D51D9C /* Persistence.swift in Sources */,
-				5BDC2582273F2C2D00D51D9C /* Quizzes.swift in Sources */,
+				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Test.swift in Sources */,
 				5BDC258C273F2C3100D51D9C /* Personality.xcdatamodeld in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,

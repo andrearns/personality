@@ -1,7 +1,19 @@
 import SwiftUI
 import CoreData
 
-struct QuizList: View {
+var firstQuizList: [Quiz] = [
+    Quiz(name: "Teste 1", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa", backgroundColorName: "Orange"),
+    Quiz(name: "Teste 2", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa", backgroundColorName: "Yellow"),
+]
+
+var secondQuizList: [Quiz] = [
+    Quiz(name: "Teste 3", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa", backgroundColorName: "Pink"),
+    Quiz(name: "Teste 4", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa", backgroundColorName: "Blue"),
+    Quiz(name: "Teste 5", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa", backgroundColorName: "Green")
+]
+
+
+struct QuizListView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 //
 //    @FetchRequest(
@@ -9,14 +21,6 @@ struct QuizList: View {
 //        animation: .default)
 //    private var items: FetchedResults<Item>
     
-    var quizList: [Quiz] = [
-        Quiz(name: "Teste 1", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa"),
-        Quiz(name: "Teste 2", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa"),
-        Quiz(name: "Teste 3", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa"),
-        Quiz(name: "Teste 4", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa"),
-        Quiz(name: "Teste 5", shortDescription: "Descrição curta", longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa")
-    ]
-
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -44,31 +48,31 @@ struct QuizList: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            NavigationLink(destination: SingleQuiz(quiz: quizList[0])) {
+                            NavigationLink(destination: SingleQuizView(quiz: firstQuizList[0])) {
                                 VStack(alignment: .leading) {
-                                    Text(quizList[0].name)
+                                    Text(firstQuizList[0].name)
                                         .font(.system(size: 28, weight: .bold, design: .default))
                                         .padding(.bottom)
                                         .foregroundColor(.white)
-                                    Text(quizList[0].shortDescription!)
+                                    Text(firstQuizList[0].shortDescription!)
                                         .foregroundColor(.white)
                                 }.padding()
                                 .frame(width: 200, height: 250, alignment: .leading)
-                                    .background(.blue)
-                                    .cornerRadius(16)
+                                .background(Color(uiColor: UIColor(named: firstQuizList[0].backgroundColorName)!))
+                                .cornerRadius(16)
                             }
-                            NavigationLink(destination: SingleQuiz(quiz: quizList[1])) {
+                            NavigationLink(destination: SingleQuizView(quiz: firstQuizList[1])) {
                                 VStack(alignment: .leading) {
-                                    Text(quizList[1].name)
+                                    Text(firstQuizList[1].name)
                                         .font(.system(size: 28, weight: .bold, design: .default))
                                         .padding(.bottom)
                                         .foregroundColor(.white)
-                                    Text(quizList[1].shortDescription!)
+                                    Text(firstQuizList[1].shortDescription!)
                                         .foregroundColor(.white)
                                 }.padding()
                                 .frame(width: 200, height: 250, alignment: .leading)
-                                    .background(.blue)
-                                    .cornerRadius(16)
+                                .background(Color(uiColor: UIColor(named: firstQuizList[1].backgroundColorName)!))
+                                .cornerRadius(16)
                             }
                         }.padding(.horizontal)
                         .padding(.bottom)
@@ -81,8 +85,8 @@ struct QuizList: View {
                     }.padding(.horizontal)
                     
                     VStack {
-                        ForEach(quizList) { quiz in
-                            NavigationLink(destination: SingleQuiz(quiz: quiz)) {
+                        ForEach(secondQuizList) { quiz in
+                            NavigationLink(destination: SingleQuizView(quiz: quiz)) {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text(quiz.name)
@@ -106,11 +110,9 @@ struct QuizList: View {
                                     .foregroundColor(.white)
                                 }
                             }.frame(height: 95, alignment: .center)
-                            
-                            .background(Color(.darkGray))
+                                .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
                             .cornerRadius(16)
                             .padding(.horizontal)
-                            
                         }
                     }
                 }
@@ -124,7 +126,7 @@ struct QuizList: View {
 
 struct QuizList_Previews: PreviewProvider {
     static var previews: some View {
-        QuizList()
-            .preferredColorScheme(.dark)
+        QuizListView()
+            .environment(\.colorScheme, .dark)
     }
 }

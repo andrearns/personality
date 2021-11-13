@@ -6,8 +6,9 @@ struct PersonalityApp: App {
 
     var body: some Scene {
         WindowGroup {
-            QuizList()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }
