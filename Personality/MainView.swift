@@ -7,6 +7,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Testes", systemImage: "list.dash")
                 }
+            FriendsView()
+                .tabItem {
+                    Label("Amigos", systemImage: "heart")
+                }
             ProfileView()
                 .tabItem {
                     Label("Perfil", systemImage: "person")
@@ -18,5 +22,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .preferredColorScheme(.dark)
     }
 }

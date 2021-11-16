@@ -38,6 +38,7 @@ struct ProfileView: View {
                     Spacer()
                 }.padding(.horizontal)
                 Spacer()
+                
             }
         }
     }
