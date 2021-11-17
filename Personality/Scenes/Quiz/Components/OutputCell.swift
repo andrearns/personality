@@ -6,7 +6,7 @@ struct OutputCell: View {
     var body: some View {
         VStack {
             ZStack {
-                Color(uiColor: UIColor(named: "LightGray")!)
+                Color.cinzaClaro
                     .frame(width: 75, height: 75)
                     .cornerRadius(16)
                 Color(uiColor: UIColor(named: output.colorName)!)

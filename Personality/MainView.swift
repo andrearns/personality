@@ -11,7 +11,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Perfil", systemImage: "person")
                 }
-        }.accentColor(Color(uiColor: UIColor(named: "Pink")!))
+        }.accentColor(Color.rosa)
     }
 }
 

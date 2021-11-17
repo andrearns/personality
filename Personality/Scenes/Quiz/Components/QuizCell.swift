@@ -14,7 +14,7 @@ struct QuizCell: View {
             Spacer()
         }
         .padding(30)
-        .background(Color(uiColor: UIColor(named: isSelected ? "Green" : "LightGray")!))
+        .background(Color(isSelected ? "Green" : "LightGray"))
         .cornerRadius(16)
         .onTapGesture {
             print(answer.text)

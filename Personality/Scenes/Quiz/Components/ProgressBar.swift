@@ -8,7 +8,7 @@ struct ProgressBar: View {
         HStack {
             ForEach(0..<numberOfQuestions) { i in
                 Rectangle()
-                    .foregroundColor(i <= currentValue ? Color.white : Color(uiColor: UIColor(named: "LightGray")!))
+                    .foregroundColor(i <= currentValue ? Color.white : Color.cinzaClaro)
                     .frame(height: 5)
             }
         }

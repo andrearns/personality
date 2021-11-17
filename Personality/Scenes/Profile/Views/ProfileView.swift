@@ -28,7 +28,7 @@ struct ProfileView: View {
                         }.padding()
                     }
                     .frame(width: .infinity, height: 400, alignment: .top)
-                    .background(Color(uiColor: UIColor(named: "Green")!))
+                    .background(Color.verde)
                     .cornerRadius(16)
                     .padding()
                 }
