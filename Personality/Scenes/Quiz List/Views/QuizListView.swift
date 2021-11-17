@@ -5,6 +5,7 @@ var firstQuizList: [Quiz] = [
     Quiz(
         name: "Teste 1",
         shortDescription: "Descrição curta",
+        durationInMinutes: 5,
         longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
         backgroundColorName: "Orange",
         questionList: [
@@ -47,6 +48,7 @@ var firstQuizList: [Quiz] = [
     Quiz(
         name: "Teste 2",
         shortDescription: "Descrição curta",
+        durationInMinutes: 5,
         longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
         backgroundColorName: "Pink",
         questionList: [
@@ -93,6 +95,7 @@ var secondQuizList: [Quiz] = [
     Quiz(
         name: "Teste 3",
         shortDescription: "Descrição curta",
+        durationInMinutes: 5,
         longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
         backgroundColorName: "Blue",
         questionList: [
@@ -137,6 +140,7 @@ var secondQuizList: [Quiz] = [
     Quiz(
         name: "Teste 4",
         shortDescription: "Descrição curta",
+        durationInMinutes: 5,
         longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
         backgroundColorName: "Yellow",
         questionList: [
@@ -181,6 +185,7 @@ var secondQuizList: [Quiz] = [
     Quiz(
         name: "Teste 5",
         shortDescription: "Descrição curta",
+        durationInMinutes: 5,
         longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
         backgroundColorName: "Green",
         questionList: [
@@ -225,12 +230,7 @@ var secondQuizList: [Quiz] = [
 ]
 
 struct QuizListView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
-//
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
+    @State var isActive: Bool = false
     
     var body: some View {
         NavigationView {
@@ -267,7 +267,8 @@ struct QuizListView: View {
                                         .foregroundColor(.white)
                                     Text(firstQuizList[0].shortDescription!)
                                         .foregroundColor(.white)
-                                }.padding()
+                                }
+                                .padding()
                                 .frame(width: 200, height: 250, alignment: .leading)
                                 .background(Color(uiColor: UIColor(named: firstQuizList[0].backgroundColorName)!))
                                 .cornerRadius(16)
@@ -280,12 +281,14 @@ struct QuizListView: View {
                                         .foregroundColor(.white)
                                     Text(firstQuizList[1].shortDescription!)
                                         .foregroundColor(.white)
-                                }.padding()
+                                }
+                                .padding()
                                 .frame(width: 200, height: 250, alignment: .leading)
                                 .background(Color(uiColor: UIColor(named: firstQuizList[1].backgroundColorName)!))
                                 .cornerRadius(16)
                             }
-                        }.padding(.horizontal)
+                        }
+                        .padding(.horizontal)
                         .padding(.bottom)
                     }
                     
@@ -297,14 +300,15 @@ struct QuizListView: View {
                     
                     VStack {
                         ForEach(secondQuizList) { quiz in
-                            NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                            NavigationLink(destination:QuizIntroView(quiz: quiz)) {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text(quiz.name)
                                             .foregroundColor(.white)
                                             .font(.system(size: 21, weight: .bold, design: .default))
                                             .padding(.bottom, 5)
-                                        Text(quiz.shortDescription!).foregroundColor(.white)
+                                        Text(quiz.shortDescription!)
+                                            .foregroundColor(.white)
                                     }
                                     .padding()
                                     .cornerRadius(16)
@@ -320,16 +324,19 @@ struct QuizListView: View {
                                     .padding()
                                     .foregroundColor(.white)
                                 }
-                            }.frame(height: 95, alignment: .center)
-                                .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
+                            }
+                            .frame(height: 95, alignment: .center)
+                            .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
                             .cornerRadius(16)
                             .padding(.horizontal)
                         }
                     }
                 }
-            }.navigationBarHidden(true)
-                .navigationBarTitleDisplayMode(.inline)
+            }
+            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .accentColor(.white)
     }
 }
 

@@ -10,16 +10,17 @@ struct QuizCellView: View {
             Text(answer.text)
                 .foregroundColor(.white)
                 .font(.system(size: 20, weight: .regular, design: .default))
+                .frame(width: .infinity, height: .infinity, alignment: .center)
             Spacer()
         }
+        .padding(30)
+        .background(Color(uiColor: UIColor(named: isSelected ? "Green" : "LightGray")!))
+        .cornerRadius(16)
         .onTapGesture {
             print(answer.text)
             isSelected.toggle()
             print(isSelected)
         }
-        .padding(30)
-        .background(Color(uiColor: UIColor(named: isSelected ? "Green" : "LightGray")!))
-        .cornerRadius(16)
     }
 }
 

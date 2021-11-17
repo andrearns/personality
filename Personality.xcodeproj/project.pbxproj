@@ -22,6 +22,8 @@
 		5BDC25A22740904F00D51D9C /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A12740904F00D51D9C /* Answer.swift */; };
 		5BDC25A62740A21E00D51D9C /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A52740A21E00D51D9C /* FriendsView.swift */; };
 		5BDC25A82742DC2300D51D9C /* QuizCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A72742DC2300D51D9C /* QuizCellView.swift */; };
+		5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25BA274487AA00D51D9C /* ProgressBar.swift */; };
+		5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25BC27449EC200D51D9C /* QuizOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		5BDC25A12740904F00D51D9C /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		5BDC25A52740A21E00D51D9C /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		5BDC25A72742DC2300D51D9C /* QuizCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCellView.swift; sourceTree = "<group>"; };
+		5BDC25B92744743700D51D9C /* Personality.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Personality.entitlements; sourceTree = "<group>"; };
+		5BDC25BA274487AA00D51D9C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		5BDC25BC27449EC200D51D9C /* QuizOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +78,9 @@
 		5BDC257E273F2C2D00D51D9C /* Personality */ = {
 			isa = PBXGroup;
 			children = (
+				5BDC25B92744743700D51D9C /* Personality.entitlements */,
 				5BDC25AE2742DFE900D51D9C /* Models */,
 				5BDC25AC2742DFCF00D51D9C /* Scenes */,
-				5BDC2593273F717800D51D9C /* Views */,
 				5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */,
 				5BDC2599274006CF00D51D9C /* MainView.swift */,
 				5BDC2583273F2C3100D51D9C /* Assets.xcassets */,
@@ -92,13 +97,6 @@
 				5BDC2586273F2C3100D51D9C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5BDC2593273F717800D51D9C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		5BDC25A92742DF7100D51D9C /* Quiz */ = {
@@ -126,6 +124,7 @@
 			children = (
 				5BDC259F274062AB00D51D9C /* QuizView.swift */,
 				5BDC2597273F73E200D51D9C /* QuizIntroView.swift */,
+				5BDC25BC27449EC200D51D9C /* QuizOutput.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5BDC25A72742DC2300D51D9C /* QuizCellView.swift */,
+				5BDC25BA274487AA00D51D9C /* ProgressBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -296,6 +296,7 @@
 				5BDC25A82742DC2300D51D9C /* QuizCellView.swift in Sources */,
 				5BDC2598273F73E200D51D9C /* QuizIntroView.swift in Sources */,
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
+				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
 				5BDC25A62740A21E00D51D9C /* FriendsView.swift in Sources */,
 				5BDC2589273F2C3100D51D9C /* Persistence.swift in Sources */,
@@ -303,6 +304,7 @@
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
 				5BDC258C273F2C3100D51D9C /* Personality.xcdatamodeld in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
+				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Personality/Preview Content\"";
@@ -459,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Personality/Preview Content\"";

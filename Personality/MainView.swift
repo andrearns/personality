@@ -3,7 +3,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            QuizListView()
+            QuizListView(isActive: false)
                 .tabItem {
                     Label("Testes", systemImage: "list.dash")
                 }
