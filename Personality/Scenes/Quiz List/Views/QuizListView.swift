@@ -43,6 +43,12 @@ var firstQuizList: [Quiz] = [
                     Answer(text: "Azul"),
                 ]
             )
+        ],
+        outputList: [
+            Output(name: "Sábia", colorName: "Blue"),
+            Output(name: "Doida", colorName: "Pink"),
+            Output(name: "Corajosa", colorName: "Green"),
+            Output(name: "Relax", colorName: "Yellow")
         ]
     ),
     Quiz(
@@ -88,6 +94,12 @@ var firstQuizList: [Quiz] = [
                     Answer(text: "Azul"),
                 ]
             )
+        ],
+        outputList: [
+            Output(name: "Sábia", colorName: "Blue"),
+            Output(name: "Doida", colorName: "Pink"),
+            Output(name: "Corajosa", colorName: "Green"),
+            Output(name: "Relax", colorName: "Yellow")
         ]
     ),
 ]
@@ -135,6 +147,12 @@ var secondQuizList: [Quiz] = [
                     Answer(text: "Azul"),
                 ]
             )
+        ],
+        outputList: [
+            Output(name: "Sábia", colorName: "Blue"),
+            Output(name: "Doida", colorName: "Pink"),
+            Output(name: "Corajosa", colorName: "Green"),
+            Output(name: "Relax", colorName: "Yellow")
         ]
     ),
     Quiz(
@@ -180,6 +198,12 @@ var secondQuizList: [Quiz] = [
                     Answer(text: "Azul"),
                 ]
             )
+        ],
+        outputList: [
+            Output(name: "Sábia", colorName: "Blue"),
+            Output(name: "Doida", colorName: "Pink"),
+            Output(name: "Corajosa", colorName: "Green"),
+            Output(name: "Relax", colorName: "Yellow")
         ]
     ),
     Quiz(
@@ -225,6 +249,12 @@ var secondQuizList: [Quiz] = [
                     Answer(text: "Azul"),
                 ]
             )
+        ],
+        outputList: [
+            Output(name: "Sábia", colorName: "Blue"),
+            Output(name: "Doida", colorName: "Pink"),
+            Output(name: "Corajosa", colorName: "Green"),
+            Output(name: "Relax", colorName: "Yellow")
         ]
     ),
 ]
@@ -242,13 +272,6 @@ struct QuizListView: View {
                             .fontWeight(.bold)
                             .font(.system(size: 30, weight: .bold, design: .default))
                         Spacer()
-                        Button(action: {
-                            // Search function
-                            
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(.white)
-                        }
                     }.padding()
                     
                     HStack {

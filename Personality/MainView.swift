@@ -7,15 +7,11 @@ struct MainView: View {
                 .tabItem {
                     Label("Testes", systemImage: "list.dash")
                 }
-            FriendsView()
-                .tabItem {
-                    Label("Amigos", systemImage: "heart")
-                }
             ProfileView()
                 .tabItem {
                     Label("Perfil", systemImage: "person")
                 }
-        }
+        }.accentColor(Color(uiColor: UIColor(named: "Pink")!))
     }
 }
 

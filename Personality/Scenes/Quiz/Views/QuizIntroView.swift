@@ -4,30 +4,38 @@ import SwiftUI
 struct QuizIntroView: View {
     var quiz: Quiz!
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    
     var body: some View {
         ZStack {
             ScrollView(.vertical) {
                 VStack {
-                    VStack {
-                        // Quiz image
-                        Text(quiz.name)
-                            .font(.system(size: 28, weight: .bold, design:.default))
-                            .padding(.bottom, 10)
-                        HStack {
-                            Image(systemName: "clock")
-                            Text("\(quiz.durationInMinutes) minutos")
-                                .font(.system(size: 16, weight: .regular, design: .default))
-                        }
-                            
-                    }
-                    .frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
-                    .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
+                    IntroHeader(quiz: quiz)
                         
                     HStack {
                         Text(quiz.longDescription!)
                         Spacer()
                     }
                     .padding()
+                    
+                    HStack {
+                        Text("Possíveis resultados")
+                            .font(.system(size: 18, weight: .bold, design: .default))
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
+                    LazyVGrid(columns: columns) {
+                        ForEach(quiz.outputList, id: \.self) { output in
+                            OutputCell(output: output)
+                        }
+                    }.padding()
                 }
             }
             VStack {
@@ -55,58 +63,68 @@ struct QuizIntroView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)
+        .navigationBarItems(trailing: Button(action: {
+            print("Share quiz")
+        }, label: { Image(systemName: "square.and.arrow.up") }))
     }
 }
 
-//struct QuizIntroView_Preview: PreviewProvider {
-//    static var previews: some View {
-//        QuizIntroView(
-//            quiz: Quiz(
-//                name: "Teste 1",
-//                shortDescription: "Descrição curta",
-//                durationInMinutes: 5,
-//                longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-//                backgroundColorName: "Orange",
-//                questionList: [
-//                    Question(
-//                        title: "Qual cor você prefere?",
-//                        answerList: [
-//                            Answer(text: "Rosa"),
-//                            Answer(text: "Vermelho"),
-//                            Answer(text: "Amarelo"),
-//                            Answer(text: "Azul"),
-//                        ]
-//                    ),
-//                    Question(
-//                        title: "Qual cor você prefere?",
-//                        answerList: [
-//                            Answer(text: "Rosa"),
-//                            Answer(text: "Vermelho"),
-//                            Answer(text: "Amarelo"),
-//                            Answer(text: "Azul"),
-//                        ]
-//                    ),
-//                    Question(
-//                        title: "Qual cor você prefere?",
-//                        answerList: [
-//                            Answer(text: "Rosa"),
-//                            Answer(text: "Vermelho"),
-//                            Answer(text: "Amarelo"),
-//                            Answer(text: "Azul"),
-//                        ]
-//                    ),
-//                    Question(
-//                        title: "Qual cor você prefere?",
-//                        answerList: [
-//                            Answer(text: "Rosa"),
-//                            Answer(text: "Vermelho"),
-//                            Answer(text: "Amarelo"),
-//                            Answer(text: "Azul"),
-//                        ]
-//                    )
-//                ]
-//            )
-//        )
-//        .preferredColorScheme(.dark)
-//    }
-//}
+struct QuizIntroView_Preview: PreviewProvider {
+    static var previews: some View {
+        QuizIntroView(
+            quiz:
+                Quiz(
+                    name: "Teste 5",
+                    shortDescription: "Descrição curta",
+                    durationInMinutes: 5,
+                    longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                    backgroundColorName: "Green",
+                    questionList: [
+                        Question(
+                            title: "Qual cor você prefere?",
+                            answerList: [
+                                Answer(text: "Rosa"),
+                                Answer(text: "Vermelho"),
+                                Answer(text: "Amarelo"),
+                                Answer(text: "Azul"),
+                            ]
+                        ),
+                        Question(
+                            title: "Qual cor você prefere?",
+                            answerList: [
+                                Answer(text: "Rosa"),
+                                Answer(text: "Vermelho"),
+                                Answer(text: "Amarelo"),
+                                Answer(text: "Azul"),
+                            ]
+                        ),
+                        Question(
+                            title: "Qual cor você prefere?",
+                            answerList: [
+                                Answer(text: "Rosa"),
+                                Answer(text: "Vermelho"),
+                                Answer(text: "Amarelo"),
+                                Answer(text: "Azul"),
+                            ]
+                        ),
+                        Question(
+                            title: "Qual cor você prefere?",
+                            answerList: [
+                                Answer(text: "Rosa"),
+                                Answer(text: "Vermelho"),
+                                Answer(text: "Amarelo"),
+                                Answer(text: "Azul"),
+                            ]
+                        )
+                    ],
+                    outputList: [
+                        Output(name: "Sábia", colorName: "Blue"),
+                        Output(name: "Doida", colorName: "Pink"),
+                        Output(name: "Corajosa", colorName: "Green"),
+                        Output(name: "Relax", colorName: "Yellow")
+                    ]
+                )
+        )
+        .preferredColorScheme(.dark)
+    }
+}

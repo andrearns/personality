@@ -20,10 +20,12 @@
 		5BDC259E274061AC00D51D9C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC259D274061AC00D51D9C /* Question.swift */; };
 		5BDC25A0274062AB00D51D9C /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC259F274062AB00D51D9C /* QuizView.swift */; };
 		5BDC25A22740904F00D51D9C /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A12740904F00D51D9C /* Answer.swift */; };
-		5BDC25A62740A21E00D51D9C /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A52740A21E00D51D9C /* FriendsView.swift */; };
 		5BDC25A82742DC2300D51D9C /* QuizCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25A72742DC2300D51D9C /* QuizCellView.swift */; };
 		5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25BA274487AA00D51D9C /* ProgressBar.swift */; };
 		5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25BC27449EC200D51D9C /* QuizOutput.swift */; };
+		5BDC25C02744A97500D51D9C /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25BF2744A97500D51D9C /* Output.swift */; };
+		5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25C12744AC6B00D51D9C /* OutputCell.swift */; };
+		5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25C32744AD2900D51D9C /* IntroHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +43,13 @@
 		5BDC259D274061AC00D51D9C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5BDC259F274062AB00D51D9C /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		5BDC25A12740904F00D51D9C /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		5BDC25A52740A21E00D51D9C /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		5BDC25A72742DC2300D51D9C /* QuizCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCellView.swift; sourceTree = "<group>"; };
 		5BDC25B92744743700D51D9C /* Personality.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Personality.entitlements; sourceTree = "<group>"; };
 		5BDC25BA274487AA00D51D9C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		5BDC25BC27449EC200D51D9C /* QuizOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOutput.swift; sourceTree = "<group>"; };
+		5BDC25BF2744A97500D51D9C /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		5BDC25C12744AC6B00D51D9C /* OutputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCell.swift; sourceTree = "<group>"; };
+		5BDC25C32744AD2900D51D9C /* IntroHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,6 @@
 		5BDC25AC2742DFCF00D51D9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				5BDC25B62742E0EB00D51D9C /* Friends */,
 				5BDC25B32742E09400D51D9C /* Profile */,
 				5BDC25B02742E06400D51D9C /* Quiz List */,
 				5BDC25A92742DF7100D51D9C /* Quiz */,
@@ -135,6 +138,7 @@
 				5BDC2595273F719A00D51D9C /* Quiz.swift */,
 				5BDC25A12740904F00D51D9C /* Answer.swift */,
 				5BDC259D274061AC00D51D9C /* Question.swift */,
+				5BDC25BF2744A97500D51D9C /* Output.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +148,8 @@
 			children = (
 				5BDC25A72742DC2300D51D9C /* QuizCellView.swift */,
 				5BDC25BA274487AA00D51D9C /* ProgressBar.swift */,
+				5BDC25C12744AC6B00D51D9C /* OutputCell.swift */,
+				5BDC25C32744AD2900D51D9C /* IntroHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,30 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				5BDC259B274007E300D51D9C /* ProfileView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5BDC25B62742E0EB00D51D9C /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				5BDC25B82742E10000D51D9C /* Views */,
-				5BDC25B72742E0FA00D51D9C /* Components */,
-			);
-			path = Friends;
-			sourceTree = "<group>";
-		};
-		5BDC25B72742E0FA00D51D9C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		5BDC25B82742E10000D51D9C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5BDC25A52740A21E00D51D9C /* FriendsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */,
 				5BDC259E274061AC00D51D9C /* Question.swift in Sources */,
 				5BDC25A0274062AB00D51D9C /* QuizView.swift in Sources */,
 				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
@@ -298,10 +281,11 @@
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
-				5BDC25A62740A21E00D51D9C /* FriendsView.swift in Sources */,
 				5BDC2589273F2C3100D51D9C /* Persistence.swift in Sources */,
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
+				5BDC25C02744A97500D51D9C /* Output.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
+				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
 				5BDC258C273F2C3100D51D9C /* Personality.xcdatamodeld in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
