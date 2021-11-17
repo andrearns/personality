@@ -4,257 +4,257 @@ struct QuizBank {
     static var shared = QuizBank()
     
     var quizList = [
-        Quiz(
+        QuizModel(
             name: "Teste 1",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Orange",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "A"),
-                        Answer(text: "B"),
-                        Answer(text: "C"),
-                        Answer(text: "D"),
+                        AnswerModel(text: "A"),
+                        AnswerModel(text: "B"),
+                        AnswerModel(text: "C"),
+                        AnswerModel(text: "D"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         ),
-        Quiz(
+        QuizModel(
             name: "Teste 2",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Pink",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         ),
-        Quiz(
+        QuizModel(
             name: "Teste 3",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Blue",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         ),
-        Quiz(
+        QuizModel(
             name: "Teste 4",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Yellow",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         ),
-        Quiz(
+        QuizModel(
             name: "Teste 5",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Green",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         ),
     ]

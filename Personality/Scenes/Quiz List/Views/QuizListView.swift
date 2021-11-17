@@ -1,11 +1,11 @@
 import SwiftUI
 import CoreData
 
-var firstQuizList: [Quiz] = [
+var firstQuizList: [QuizModel] = [
     QuizBank.shared.quizList[0],
     QuizBank.shared.quizList[1]
 ]
-var secondQuizList: [Quiz] = [
+var secondQuizList: [QuizModel] = [
     QuizBank.shared.quizList[2],
     QuizBank.shared.quizList[3],
     QuizBank.shared.quizList[4]

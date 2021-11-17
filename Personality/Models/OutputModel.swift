@@ -1,6 +1,6 @@
 import Foundation
 
-struct Output: Hashable {
+struct OutputModel: Hashable {
     var id = UUID()
     var name: String
 //    var imageName: String?

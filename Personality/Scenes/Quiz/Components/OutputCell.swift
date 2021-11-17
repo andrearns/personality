@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OutputCell: View {
-    var output: Output
+    var output: OutputModel
     
     var body: some View {
         VStack {
@@ -21,6 +21,6 @@ struct OutputCell: View {
 
 struct OutputCell_Previews: PreviewProvider {
     static var previews: some View {
-        OutputCell(output: Output(name: "Corajosa", colorName: "Blue"))
+        OutputCell(output: OutputModel(name: "Corajosa", colorName: "Blue"))
     }
 }
