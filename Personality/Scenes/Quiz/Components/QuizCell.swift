@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct QuizCellView: View {
+struct QuizCell: View {
     @State var answer: Answer!
     @State var isSelected: Bool = false
     
@@ -24,9 +24,9 @@ struct QuizCellView: View {
     }
 }
 
-struct QuizCellView_Previews: PreviewProvider {
+struct QuizCell_Previews: PreviewProvider {
     static var previews: some View {
-        QuizCellView(answer: Answer(text: "Balela"))
+        QuizCell(answer: Answer(text: "Balela"))
             .preferredColorScheme(.dark)
     }
 }

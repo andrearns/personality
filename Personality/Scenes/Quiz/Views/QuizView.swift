@@ -55,7 +55,7 @@ struct QuizView: View {
                         .padding(.vertical, 40)
                             
                         ForEach(quiz.questionList[currentQuestionIndex].answerList) { answer in
-                            QuizCellView(answer: answer, isSelected: false)
+                            QuizCell(answer: answer, isSelected: false)
                         }
                     }
                     .padding()
