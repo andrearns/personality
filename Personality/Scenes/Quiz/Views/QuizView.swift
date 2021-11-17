@@ -2,11 +2,11 @@ import SwiftUI
 
 struct QuizView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var quiz: Quiz!
+    var quiz: QuizModel!
     @State var isResultTapped = false
-    @State var currentQuestion: Question?
+    @State var currentQuestion: QuestionModel?
     @State var currentQuestionIndex = 0
-    @State var answerList: [Answer] = []
+    @State var answerList: [AnswerModel] = []
     
     var body: some View {
         ZStack {

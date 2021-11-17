@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HorizontalCard: View {
-    var quiz: Quiz
+    var quiz: QuizModel
     
     var body: some View {
         NavigationLink(destination: QuizIntroView(quiz: quiz)) {
@@ -38,55 +38,55 @@ struct HorizontalCard: View {
 
 struct HorizontalCard_Previews: PreviewProvider {
     static var previews: some View {
-        HorizontalCard(quiz: Quiz(
+        HorizontalCard(quiz: QuizModel(
             name: "Teste 5",
             shortDescription: "Descrição curta",
             durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             backgroundColorName: "Green",
             questionList: [
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 ),
-                Question(
+                QuestionModel(
                     title: "Qual cor você prefere?",
                     answerList: [
-                        Answer(text: "Rosa"),
-                        Answer(text: "Vermelho"),
-                        Answer(text: "Amarelo"),
-                        Answer(text: "Azul"),
+                        AnswerModel(text: "Rosa"),
+                        AnswerModel(text: "Vermelho"),
+                        AnswerModel(text: "Amarelo"),
+                        AnswerModel(text: "Azul"),
                     ]
                 )
             ],
             outputList: [
-                Output(name: "Sábia", colorName: "Blue"),
-                Output(name: "Doida", colorName: "Pink"),
-                Output(name: "Corajosa", colorName: "Green"),
-                Output(name: "Relax", colorName: "Yellow")
+                OutputModel(name: "Sábia", colorName: "Blue"),
+                OutputModel(name: "Doida", colorName: "Pink"),
+                OutputModel(name: "Corajosa", colorName: "Green"),
+                OutputModel(name: "Relax", colorName: "Yellow")
             ]
         )
 )

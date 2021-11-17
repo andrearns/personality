@@ -1,11 +1,12 @@
 import Foundation
 
-final class Question: Identifiable {
+final class QuestionModel: Identifiable {
     var id = UUID()
     var title: String
-    var answerList: [Answer]
+    var answerList: [AnswerModel]
     
-    init(title: String, answerList: [Answer]) {
+    init(title: String, answerList: [
+        AnswerModel]) {
         self.title = title
         self.answerList = answerList
     }

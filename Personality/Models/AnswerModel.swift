@@ -1,6 +1,6 @@
 import Foundation
 
-final class Answer: Identifiable {
+final class AnswerModel: Identifiable {
     var id = UUID()
     var text: String
     

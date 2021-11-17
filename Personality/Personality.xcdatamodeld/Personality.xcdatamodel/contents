@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Answer" representedClassName="Answer" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="label" optional="YES" attributeType="String"/>
@@ -46,16 +46,16 @@
     <entity name="UserResult" representedClassName="UserResult" syncable="YES" codeGenerationType="class">
         <attribute name="isPrivate" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result"/>
+        <attribute name="resultId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="userResults" inverseEntity="User"/>
     </entity>
     <elements>
         <element name="Answer" positionX="-325.2635498046875" positionY="-316.2149353027344" width="128" height="103"/>
-        <element name="Question" positionX="-127.676025390625" positionY="-301.2568969726562" width="121.6448364257812" height="118"/>
-        <element name="Result" positionX="158.677978515625" positionY="-455.44287109375" width="128" height="133"/>
         <element name="Badge" positionX="-128.84033203125" positionY="-440.5132141113281" width="128" height="103"/>
-        <element name="User" positionX="-442.7785034179688" positionY="-621.1665344238281" width="128" height="118"/>
-        <element name="UserResult" positionX="-129.0662231445312" positionY="-605.9420776367188" width="128" height="103"/>
+        <element name="Question" positionX="-127.676025390625" positionY="-301.2568969726562" width="121.6448364257812" height="118"/>
         <element name="Quiz" positionX="-475.4768676757812" positionY="-345.9784545898438" width="128" height="148"/>
+        <element name="Result" positionX="158.677978515625" positionY="-455.44287109375" width="128" height="133"/>
+        <element name="User" positionX="-442.7785034179688" positionY="-621.1665344238281" width="128" height="118"/>
+        <element name="UserResult" positionX="-129.0662231445312" positionY="-605.9420776367188" width="128" height="89"/>
     </elements>
 </model>
