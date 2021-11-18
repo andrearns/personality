@@ -4,258 +4,464 @@ struct QuizBank {
     static var shared = QuizBank()
     
     var quizList = [
-        QuizModel(
-            name: "Teste 1",
+        Quiz(
+            title: "Teste 1",
             shortDescription: "Descrição curta",
-            durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            backgroundColorName: "Orange",
-            questionList: [
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+            durationInMinutes: 5,
+            colorName: "Orange",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "A"),
-                        AnswerModel(text: "B"),
-                        AnswerModel(text: "C"),
-                        AnswerModel(text: "D"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 )
             ],
-            outputList: [
-                OutputModel(name: "Sábia", colorName: "Blue"),
-                OutputModel(name: "Doida", colorName: "Pink"),
-                OutputModel(name: "Corajosa", colorName: "Green"),
-                OutputModel(name: "Relax", colorName: "Yellow")
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
             ]
         ),
-        QuizModel(
-            name: "Teste 2",
+        
+        Quiz(
+            title: "Teste 2",
             shortDescription: "Descrição curta",
-            durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            backgroundColorName: "Pink",
-            questionList: [
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+            durationInMinutes: 5,
+            colorName: "Green",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 )
             ],
-            outputList: [
-                OutputModel(name: "Sábia", colorName: "Blue"),
-                OutputModel(name: "Doida", colorName: "Pink"),
-                OutputModel(name: "Corajosa", colorName: "Green"),
-                OutputModel(name: "Relax", colorName: "Yellow")
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
             ]
         ),
-        QuizModel(
-            name: "Teste 3",
+        
+        Quiz(
+            title: "Teste 3",
             shortDescription: "Descrição curta",
-            durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            backgroundColorName: "Blue",
-            questionList: [
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+            durationInMinutes: 5,
+            colorName: "Pink",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 )
             ],
-            outputList: [
-                OutputModel(name: "Sábia", colorName: "Blue"),
-                OutputModel(name: "Doida", colorName: "Pink"),
-                OutputModel(name: "Corajosa", colorName: "Green"),
-                OutputModel(name: "Relax", colorName: "Yellow")
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
             ]
         ),
-        QuizModel(
-            name: "Teste 4",
+        
+        Quiz(
+            title: "Teste 4",
             shortDescription: "Descrição curta",
-            durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            backgroundColorName: "Yellow",
-            questionList: [
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+            durationInMinutes: 5,
+            colorName: "Yellow",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 )
             ],
-            outputList: [
-                OutputModel(name: "Sábia", colorName: "Blue"),
-                OutputModel(name: "Doida", colorName: "Pink"),
-                OutputModel(name: "Corajosa", colorName: "Green"),
-                OutputModel(name: "Relax", colorName: "Yellow")
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
             ]
         ),
-        QuizModel(
-            name: "Teste 5",
+        
+        Quiz(
+            title: "Teste 5",
             shortDescription: "Descrição curta",
-            durationInMinutes: 5,
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            backgroundColorName: "Green",
-            questionList: [
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+            durationInMinutes: 5,
+            colorName: "Blue",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 ),
-                QuestionModel(
-                    title: "Qual cor você prefere?",
-                    answerList: [
-                        AnswerModel(text: "Rosa"),
-                        AnswerModel(text: "Vermelho"),
-                        AnswerModel(text: "Amarelo"),
-                        AnswerModel(text: "Azul"),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
                     ]
                 )
             ],
-            outputList: [
-                OutputModel(name: "Sábia", colorName: "Blue"),
-                OutputModel(name: "Doida", colorName: "Pink"),
-                OutputModel(name: "Corajosa", colorName: "Green"),
-                OutputModel(name: "Relax", colorName: "Yellow")
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
             ]
-        ),
+        )
     ]
 }

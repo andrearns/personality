@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct QuizCell: View {
-    @State var answer: AnswerModel!
+    @State var answer: Answer
     @State var isSelected: Bool = false
     
     var body: some View {
         HStack {
             Spacer()
-            Text(answer.text)
+            Text(answer.label)
                 .foregroundColor(.white)
                 .font(.system(size: 20, weight: .regular, design: .default))
                 .frame(width: .infinity, height: .infinity, alignment: .center)
@@ -17,7 +17,7 @@ struct QuizCell: View {
         .background(Color(isSelected ? "Green" : "LightGray"))
         .cornerRadius(16)
         .onTapGesture {
-            print(answer.text)
+            print(answer.label)
             isSelected.toggle()
             print(isSelected)
         }
@@ -26,7 +26,7 @@ struct QuizCell: View {
 
 struct QuizCell_Previews: PreviewProvider {
     static var previews: some View {
-        QuizCell(answer: AnswerModel(text: "Balela"))
+        QuizCell(answer: Answer(label: "Balela", score: "A"))
             .preferredColorScheme(.dark)
     }
 }

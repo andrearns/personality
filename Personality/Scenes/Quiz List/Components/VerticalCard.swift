@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct VerticalCard: View {
-    var quiz: QuizModel
+    var quiz: Quiz
     
     var body: some View {
         NavigationLink(destination: QuizIntroView(quiz: quiz)) {
             VStack(alignment: .leading) {
-                Text(quiz.name)
+                Text(quiz.title)
                     .font(.system(size: 28, weight: .bold, design: .default))
                     .padding(.bottom)
                     .foregroundColor(.white)
@@ -15,7 +15,7 @@ struct VerticalCard: View {
             }
             .padding()
             .frame(width: 200, height: 250, alignment: .leading)
-            .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
+            .background(Color(uiColor: UIColor(named: quiz.colorName)!))
             .cornerRadius(16)
         }
     }
@@ -24,55 +24,95 @@ struct VerticalCard: View {
 struct VerticalCard_Previews: PreviewProvider {
     static var previews: some View {
         VerticalCard(quiz:
-                        QuizModel(
-                            name: "Teste 5",
+                        Quiz(
+                            title: "Teste 5",
                             shortDescription: "Descrição curta",
-                            durationInMinutes: 5,
                             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            backgroundColorName: "Green",
-                            questionList: [
-                                QuestionModel(
-                                    title: "Qual cor você prefere?",
-                                    answerList: [
-                                        AnswerModel(text: "Rosa"),
-                                        AnswerModel(text: "Vermelho"),
-                                        AnswerModel(text: "Amarelo"),
-                                        AnswerModel(text: "Azul"),
+                            durationInMinutes: 5,
+                            colorName: "Green",
+                            questions: [
+                                Question(
+                                    label: "Qual cor você prefere?",
+                                    answers: [
+                                        Answer(label: "Rosa", score: "A"),
+                                        Answer(label: "Vermelho", score: "B"),
+                                        Answer(label: "Amarelo", score: "C"),
+                                        Answer(label: "Azul", score: "D"),
                                     ]
                                 ),
-                                QuestionModel(
-                                    title: "Qual cor você prefere?",
-                                    answerList: [
-                                        AnswerModel(text: "Rosa"),
-                                        AnswerModel(text: "Vermelho"),
-                                        AnswerModel(text: "Amarelo"),
-                                        AnswerModel(text: "Azul"),
+                                Question(
+                                    label: "Qual cor você prefere?",
+                                    answers: [
+                                        Answer(label: "Rosa", score: "A"),
+                                        Answer(label: "Vermelho", score: "B"),
+                                        Answer(label: "Amarelo", score: "C"),
+                                        Answer(label: "Azul", score: "D"),
                                     ]
                                 ),
-                                QuestionModel(
-                                    title: "Qual cor você prefere?",
-                                    answerList: [
-                                        AnswerModel(text: "Rosa"),
-                                        AnswerModel(text: "Vermelho"),
-                                        AnswerModel(text: "Amarelo"),
-                                        AnswerModel(text: "Azul"),
+                                Question(
+                                    label: "Qual cor você prefere?",
+                                    answers: [
+                                        Answer(label: "Rosa", score: "A"),
+                                        Answer(label: "Vermelho", score: "B"),
+                                        Answer(label: "Amarelo", score: "C"),
+                                        Answer(label: "Azul", score: "D"),
                                     ]
                                 ),
-                                QuestionModel(
-                                    title: "Qual cor você prefere?",
-                                    answerList: [
-                                        AnswerModel(text: "Rosa"),
-                                        AnswerModel(text: "Vermelho"),
-                                        AnswerModel(text: "Amarelo"),
-                                        AnswerModel(text: "Azul"),
+                                Question(
+                                    label: "Qual cor você prefere?",
+                                    answers: [
+                                        Answer(label: "Rosa", score: "A"),
+                                        Answer(label: "Vermelho", score: "B"),
+                                        Answer(label: "Amarelo", score: "C"),
+                                        Answer(label: "Azul", score: "D"),
                                     ]
                                 )
                             ],
-                            outputList: [
-                                OutputModel(name: "Sábia", colorName: "Blue"),
-                                OutputModel(name: "Doida", colorName: "Pink"),
-                                OutputModel(name: "Corajosa", colorName: "Green"),
-                                OutputModel(name: "Relax", colorName: "Yellow")
+                            results: [
+                                Result(
+                                    label: "Sábia",
+                                    about: "kkkkkkkkkk",
+                                    code: "ACF",
+                                    badge:
+                                        Badge(
+                                            imageURL: "",
+                                            label: ""
+                                        ),
+                                    colorName: "Blue"
+                                ),
+                                Result(
+                                    label: "Legal",
+                                    about: "kkkkkkkkkk",
+                                    code: "ACF",
+                                    badge:
+                                        Badge(
+                                            imageURL: "",
+                                            label: ""
+                                        ),
+                                    colorName: "Pink"
+                                ),
+                                Result(
+                                    label: "Guru",
+                                    about: "kkkkkkkkkk",
+                                    code: "ACF",
+                                    badge:
+                                        Badge(
+                                            imageURL: "",
+                                            label: ""
+                                        ),
+                                    colorName: "Yellow"
+                                ),
+                                Result(
+                                    label: "Raivosa",
+                                    about: "kkkkkkkkkk",
+                                    code: "ACF",
+                                    badge:
+                                        Badge(
+                                            imageURL: "",
+                                            label: ""
+                                        ),
+                                    colorName: "Green"
+                                ),
                             ]
                         )
         )

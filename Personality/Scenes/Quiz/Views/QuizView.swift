@@ -2,11 +2,11 @@ import SwiftUI
 
 struct QuizView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var quiz: QuizModel!
+    var quiz: Quiz!
     @State var isResultTapped = false
-    @State var currentQuestion: QuestionModel?
+    @State var currentQuestion: Question?
     @State var currentQuestionIndex = 0
-    @State var answerList: [AnswerModel] = []
+    @State var answerList: [Answer] = []
     
     var body: some View {
         ZStack {
@@ -15,9 +15,9 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Button(action: {
-                                if currentQuestionIndex <= quiz.questionList.count - 1 && currentQuestionIndex != 0 {
+                                if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
                                     currentQuestionIndex = currentQuestionIndex - 1
-                                    currentQuestion = quiz.questionList[currentQuestionIndex]
+                                    currentQuestion = quiz.questions[currentQuestionIndex]
                                 } else {
                                     // TO DO
                                     print("Go back to quiz list view")
@@ -29,7 +29,7 @@ struct QuizView: View {
                                     .foregroundColor(.white)
                             }
                             Spacer()
-                            Text(quiz.name)
+                            Text(quiz.title)
                                 .font(.system(size: 18, weight: .semibold, design: .default))
                             Spacer()
                             Button(action: {
@@ -44,17 +44,17 @@ struct QuizView: View {
                         }
                         .padding()
                         
-                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questionList.count)
+                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questions.count)
                     }
                     VStack {
                         HStack {
-                            Text("\(currentQuestionIndex + 1). \(quiz.questionList[currentQuestionIndex].title)")
+                            Text("\(currentQuestionIndex + 1). \(quiz.questions[currentQuestionIndex].label)")
                                 .font(.system(size: 24, weight: .bold, design: .default))
                             Spacer()
                         }
                         .padding(.vertical, 40)
                             
-                        ForEach(quiz.questionList[currentQuestionIndex].answerList) { answer in
+                        ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
                             QuizCell(answer: answer, isSelected: false)
                         }
                     }
@@ -64,9 +64,9 @@ struct QuizView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    if currentQuestionIndex < quiz.questionList.count - 1 {
+                    if currentQuestionIndex < quiz.questions.count - 1 {
                         self.currentQuestionIndex += 1
-                        self.currentQuestion = quiz.questionList[currentQuestionIndex]
+                        self.currentQuestion = quiz.questions[currentQuestionIndex]
                     } else {
                         isResultTapped = true
                     }
@@ -74,7 +74,7 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Text(currentQuestionIndex == quiz.questionList.count - 1 ? "Finalizar teste" : "Confirmar resposta")
+                            Text(currentQuestionIndex == quiz.questions.count - 1 ? "Finalizar teste" : "Confirmar resposta")
                                 .bold()
                             Spacer()
                         }
@@ -82,7 +82,7 @@ struct QuizView: View {
                     NavigationLink("", destination: QuizOutput(), isActive: $isResultTapped)
                 }
                 .padding()
-                .background(Color(uiColor: UIColor(named: quiz.backgroundColorName)!))
+                .background(Color(uiColor: UIColor(named: quiz.colorName)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
             }
