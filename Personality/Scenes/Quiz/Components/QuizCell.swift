@@ -2,7 +2,8 @@ import SwiftUI
 
 struct QuizCell: View {
     @State var answer: Answer
-    @State var isSelected: Bool = false
+    var isSelected: Bool = false
+    var onTap: () -> Void = {}
     
     var body: some View {
         HStack {
@@ -17,9 +18,7 @@ struct QuizCell: View {
         .background(Color(isSelected ? "Green" : "LightGray"))
         .cornerRadius(16)
         .onTapGesture {
-            print(answer.label)
-            isSelected.toggle()
-            print(isSelected)
+            onTap()
         }
     }
 }

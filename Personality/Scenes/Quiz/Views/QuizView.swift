@@ -7,6 +7,7 @@ struct QuizView: View {
     @State var currentQuestion: Question?
     @State var currentQuestionIndex = 0
     @State var answerList: [Answer] = []
+    @State var currentAnswer: Answer? = nil
     
     var body: some View {
         ZStack {
@@ -55,7 +56,9 @@ struct QuizView: View {
                         .padding(.vertical, 40)
                             
                         ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
-                            QuizCell(answer: answer, isSelected: false)
+                            QuizCell(answer: answer, isSelected: currentAnswer == answer) {
+                                currentAnswer = answer
+                            }
                         }
                     }
                     .padding()
@@ -64,11 +67,25 @@ struct QuizView: View {
             VStack {
                 Spacer()
                 Button(action: {
+                    answerList.append(currentAnswer!)
+                    currentAnswer = nil
+                    
                     if currentQuestionIndex < quiz.questions.count - 1 {
                         self.currentQuestionIndex += 1
                         self.currentQuestion = quiz.questions[currentQuestionIndex]
                     } else {
                         isResultTapped = true
+                        var result: Result?
+                        
+                        switch quiz.title {
+                        case "DISC":
+                            result = generateDISCResult(answers: answerList)
+                        case "Tipos de criatividade":
+                            result = generateCreativeTypesResult(answers: answerList)
+                        default:
+                            print("There is no functions to generate a result for this quiz")
+                        }
+                        print("Quiz result: \(result)")
                     }
                 }) {
                     VStack {

@@ -5,54 +5,54 @@ struct QuizBank {
     
     var quizList = [
         Quiz(
-            title: "Teste 1",
+            title: "DISC",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
             colorName: "Orange",
             questions: [
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Eu sou uma pessoa...",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Carismática e otimista", score: "i"),
+                        Answer(label: "Acolhedora e Paciente", score: "s"),
+                        Answer(label: "Detalhista e organizada", score: "c"),
+                        Answer(label: "Ousada e direta", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Prefiro focar...",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Em resultados", score: "d"),
+                        Answer(label: "Em planejamento", score: "s"),
+                        Answer(label: "Nas pessoas ao meu redor", score: "i"),
+                        Answer(label: "Nas tarefas que precisam ser feitas", score: "c"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Eu gosto de...",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Tranquilidade", score: "s"),
+                        Answer(label: "Assumir riscos", score: "d"),
+                        Answer(label: "Mudanças", score: "i"),
+                        Answer(label: "Segurança", score: "c"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Eu sou uma pessoa...",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Curiosa", score: "i"),
+                        Answer(label: "Prestativa", score: "s"),
+                        Answer(label: "Conservadora", score: "c"),
+                        Answer(label: "Prática", score: "d"),
                     ]
                 )
             ],
             results: [
                 Result(
-                    label: "Sábia",
-                    about: "kkkkkkkkkk",
-                    code: "ACF",
+                    label: "Dominância",
+                    about: "Quem tem alto perfil de dominância, tende a tomar decisões mais rapidamente, é motivados por assumir riscos, busca objetivos com senso de urgência e prefere fazer as coisas da suamaneira. Seu lema é \"fazer rápido\". Tome cuidado para não se precipitar e buscar o caminho mais fácil. Além disso, fique atento para manter o bom relacionamento com o seu time.",
+                    code: "d",
                     badge:
                         Badge(
                             imageURL: "",
@@ -61,9 +61,9 @@ struct QuizBank {
                     colorName: "Blue"
                 ),
                 Result(
-                    label: "Legal",
+                    label: "Influência",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "i",
                     badge:
                         Badge(
                             imageURL: "",
@@ -72,9 +72,9 @@ struct QuizBank {
                     colorName: "Pink"
                 ),
                 Result(
-                    label: "Guru",
+                    label: "Conformidade",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "c",
                     badge:
                         Badge(
                             imageURL: "",
@@ -83,9 +83,9 @@ struct QuizBank {
                     colorName: "Yellow"
                 ),
                 Result(
-                    label: "Raivosa",
+                    label: "Estabilidade",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "s",
                     badge:
                         Badge(
                             imageURL: "",
@@ -97,54 +97,123 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Teste 2",
+            title: "Tipos de criatividade",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
             colorName: "Green",
             questions: [
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Are you a ruler or a scribble?",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Ruler", score: "c"),
+                        Answer(label: "Scribble", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "When travelling, you always need a...",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Destination", score: "c"),
+                        Answer(label: "Direction", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "My creativity is more",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "Method", score: "c"),
+                        Answer(label: "Madness", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "Qual cor você prefere?",
+                    label: "Everything is connected",
                     answers: [
-                        Answer(label: "Rosa", score: "A"),
-                        Answer(label: "Vermelho", score: "B"),
-                        Answer(label: "Amarelo", score: "C"),
-                        Answer(label: "Azul", score: "D"),
+                        Answer(label: "True", score: "d"),
+                        Answer(label: "False", score: "c"),
+                    ]
+                ),
+                Question(
+                    label: "I tend to see life through the lens of",
+                    answers: [
+                        Answer(label: "Systems", score: "c"),
+                        Answer(label: "Stories", score: "d"),
+                    ]
+                ),
+                Question(
+                    label: "My door is...",
+                    answers: [
+                        Answer(label: "Wide open", score: "b"),
+                        Answer(label: "Usually closed", score: "a"),
+                    ]
+                ),
+                Question(
+                    label: "I’d rather talk to",
+                    answers: [
+                        Answer(label: "Someone I just met", score: "b"),
+                        Answer(label: "Myself", score: "a"),
+                    ]
+                ),
+                Question(
+                    label: "Are you a fortune cookie or a birthday cake?",
+                    answers: [
+                        Answer(label: "Fortune cookie", score: "a"),
+                        Answer(label: "Birthday cake", score: "b"),
+                    ]
+                ),
+                Question(
+                    label: "I’d rather be in",
+                    answers: [
+                        Answer(label: "A cocoon", score: "a"),
+                        Answer(label: "A beehive", score: "b"),
+                    ]
+                ),
+                Question(
+                    label: "I tend to go",
+                    answers: [
+                        Answer(label: "Over the top", score: "b"),
+                        Answer(label: "Under the radar", score: "a"),
+                    ]
+                ),
+                Question(
+                    label: "Updates are ready to install",
+                    answers: [
+                        Answer(label: "Restart now", score: "f"),
+                        Answer(label: "Remind me tomorrow", score: "e"),
+                    ]
+                ),
+                Question(
+                    label: "My brain spends more time",
+                    answers: [
+                        Answer(label: "In the zone", score: "f"),
+                        Answer(label: "Zoning out", score: "e"),
+                    ]
+                ),
+                Question(
+                    label: "Secret weapon?",
+                    answers: [
+                        Answer(label: "Curiosity", score: "e"),
+                        Answer(label: "Endurance", score: "f"),
+                    ]
+                ),
+                Question(
+                    label: "Dip your toes or dive in head first?",
+                    answers: [
+                        Answer(label: "Dip", score: "e"),
+                        Answer(label: "Dive", score: "f"),
+                    ]
+                ),
+                Question(
+                    label: "My first question is always",
+                    answers: [
+                        Answer(label: "Why", score: "e"),
+                        Answer(label: "How", score: "f"),
                     ]
                 )
             ],
             results: [
                 Result(
-                    label: "Sábia",
+                    label: "Artista",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "adf",
                     badge:
                         Badge(
                             imageURL: "",
@@ -153,9 +222,9 @@ struct QuizBank {
                     colorName: "Blue"
                 ),
                 Result(
-                    label: "Legal",
+                    label: "Pensadora",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "ace",
                     badge:
                         Badge(
                             imageURL: "",
@@ -164,9 +233,9 @@ struct QuizBank {
                     colorName: "Pink"
                 ),
                 Result(
-                    label: "Guru",
+                    label: "Aventureira",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "bdf",
                     badge:
                         Badge(
                             imageURL: "",
@@ -175,9 +244,53 @@ struct QuizBank {
                     colorName: "Yellow"
                 ),
                 Result(
-                    label: "Raivosa",
+                    label: "Maker",
                     about: "kkkkkkkkkk",
-                    code: "ACF",
+                    code: "acf",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Green"
+                ),
+                Result(
+                    label: "Producer",
+                    about: "kkkkkkkkkk",
+                    code: "bcf",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Blue"
+                ),
+                Result(
+                    label: "Dreamer",
+                    about: "kkkkkkkkkk",
+                    code: "ade",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Pink"
+                ),
+                Result(
+                    label: "Innovator",
+                    about: "kkkkkkkkkk",
+                    code: "bce",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    colorName: "Yellow"
+                ),
+                Result(
+                    label: "Visionary",
+                    about: "kkkkkkkkkk",
+                    code: "bde",
                     badge:
                         Badge(
                             imageURL: "",
