@@ -58,49 +58,48 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            VStack {
+            ZStack {
                 VStack {
-                    HStack(alignment: .center) {
-                        Button(action: {
-                    
-                        }) {
-                            Image(systemName: "slider.horizontal.3")
-                                .font(.system(size: 18, weight: .semibold))
-                                .foregroundColor(.black)
-                        }
-                        Spacer()
-                        Text("BARBS")
-                            .font(.system(size: 30, weight: .bold, design: .default))
-                            .foregroundColor(.black)
-                        Spacer()
-                        Button(action: {
-                            
-                        }) {
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.system(size: 18, weight: .semibold))
-                                .foregroundColor(.black)
-                        }
+                    HStack {
+                        Image("backgroundTest")
+                            .resizable()
+                            .frame(height: 400)
+                            .padding(.top, -50)
                     }
-                    .padding()
-                    .padding(.horizontal)
-                    .background(Color.yellow)
-                    .cornerRadius(40)
-                    .padding()
+                    Spacer()
                 }
-                Circle()
-                    .frame(width: 300, height: 300, alignment: .center)
-                    .padding()
-                    .foregroundColor(Color.laranja)
-                    .padding(.vertical, 50)
-                
-                LeftTitle(text: "Personalidade")
-                
-                LazyVGrid(columns: columns) {
-                    ForEach(results) { result in
-                        OutputCell(result: result)
+                VStack {
+                    VStack {
+                        HStack(alignment: .center) {
+                            Text("barbs")
+                                .font(.system(size: 40, weight: .black, design: .default))
+                                .foregroundColor(.white)
+                            Spacer()
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        .padding()
+                        .padding(.horizontal)
                     }
-                }.padding()
-                
+                    ZStack {
+                        Image("characterTest")
+                    }
+                    .padding(.top, 80)
+                    .padding(.bottom, 40)
+                    
+                    LeftTitle(text: "Personalidade")
+                    
+                    LazyVGrid(columns: columns) {
+                        ForEach(results) { result in
+                            OutputCell(result: result)
+                        }
+                    }.padding()
+                }
             }
         }
     }
