@@ -9,6 +9,7 @@ struct IntroHeader: View {
             Text(quiz.title)
                 .font(.system(size: 28, weight: .bold, design:.default))
                 .padding(.bottom, 10)
+                .padding(.top, 30)
             HStack {
                 Image(systemName: "clock")
                 Text("\(quiz.durationInMinutes) minutos")

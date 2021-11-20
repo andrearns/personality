@@ -6,20 +6,16 @@ struct QuizCell: View {
     var onTap: () -> Void = {}
     
     var body: some View {
-        HStack {
-            Spacer()
+        HStack(alignment: .center) {
             Text(answer.label)
                 .foregroundColor(.white)
-                .font(.system(size: 20, weight: .regular, design: .default))
-                .frame(width: .infinity, height: .infinity, alignment: .center)
-            Spacer()
+                .font(.system(size: 18, weight: .medium, design: .default))
         }
-        .padding(30)
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
         .background(Color(isSelected ? "Green" : "LightGray"))
         .cornerRadius(16)
-        .onTapGesture {
-            onTap()
-        }
+        .onTapGesture { onTap() }
     }
 }
 
