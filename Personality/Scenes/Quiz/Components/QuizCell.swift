@@ -2,25 +2,20 @@ import SwiftUI
 
 struct QuizCell: View {
     @State var answer: Answer
-    @State var isSelected: Bool = false
+    var isSelected: Bool = false
+    var onTap: () -> Void = {}
     
     var body: some View {
-        HStack {
-            Spacer()
+        HStack(alignment: .center) {
             Text(answer.label)
                 .foregroundColor(.white)
-                .font(.system(size: 20, weight: .regular, design: .default))
-                .frame(width: .infinity, height: .infinity, alignment: .center)
-            Spacer()
+                .font(.system(size: 18, weight: .medium, design: .default))
         }
-        .padding(30)
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
         .background(Color(isSelected ? "Green" : "LightGray"))
         .cornerRadius(16)
-        .onTapGesture {
-            print(answer.label)
-            isSelected.toggle()
-            print(isSelected)
-        }
+        .onTapGesture { onTap() }
     }
 }
 

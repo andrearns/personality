@@ -14,7 +14,7 @@ struct OutputCell: View {
                     .cornerRadius(25)
             }
             Text(result.label)
-                .font(.system(size: 14, weight: .regular, design: .default))
+                .font(.system(size: 12, weight: .regular, design: .default))
         }
     }
 }
