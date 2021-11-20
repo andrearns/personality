@@ -1,12 +1,14 @@
 import SwiftUI
 
 struct QuizView: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var quiz: Quiz!
+    
     @State var isResultTapped = false
     @State var currentQuestion: Question?
     @State var currentQuestionIndex = 0
-    @State var answerList: [Answer] = []
+    @State var answerList: [Int : Answer] = [:]
     @State var currentAnswer: Answer? = nil
     
     var body: some View {
@@ -19,8 +21,8 @@ struct QuizView: View {
                                 if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
                                     currentQuestionIndex = currentQuestionIndex - 1
                                     currentQuestion = quiz.questions[currentQuestionIndex]
+                                    currentAnswer = answerList[currentQuestionIndex]
                                 } else {
-                                    // TO DO
                                     print("Go back to quiz list view")
                                     self.presentationMode.wrappedValue.dismiss()
                                 }
@@ -34,7 +36,6 @@ struct QuizView: View {
                                 .font(.system(size: 18, weight: .semibold, design: .default))
                             Spacer()
                             Button(action: {
-                                // TO DO
                                 print("Go back to quiz list view")
                                 self.presentationMode.wrappedValue.dismiss()
                             }) {
@@ -67,25 +68,34 @@ struct QuizView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    answerList.append(currentAnswer!)
-                    currentAnswer = nil
-                    
-                    if currentQuestionIndex < quiz.questions.count - 1 {
-                        self.currentQuestionIndex += 1
-                        self.currentQuestion = quiz.questions[currentQuestionIndex]
-                    } else {
-                        isResultTapped = true
-                        var result: Result?
+                    if currentAnswer != nil {
+                        answerList[currentQuestionIndex] = currentAnswer
                         
-                        switch quiz.title {
-                        case "DISC":
-                            result = generateDISCResult(answers: answerList)
-                        case "Tipos de criatividade":
-                            result = generateCreativeTypesResult(answers: answerList)
-                        default:
-                            print("There is no functions to generate a result for this quiz")
+                        if currentQuestionIndex < quiz.questions.count - 1 {
+                            self.currentQuestionIndex += 1
+                            self.currentQuestion = quiz.questions[currentQuestionIndex]
+                            
+                            if answerList[currentQuestionIndex] != nil {
+                                currentAnswer = answerList[currentQuestionIndex]
+                            } else {
+                                currentAnswer = nil
+                            }
+                            
+                        } else {
+                            var result: Result?
+
+                            switch quiz.title {
+                            case "DISC":
+                                result = generateDISCResult(answers: answerList)
+                            case "Tipos de criatividade":
+                                result = generateCreativeTypesResult(answers: answerList)
+                            default:
+                                print("There is no functions to generate a result for this quiz")
+                            }
+                            print("Quiz result: \(result)")
+                            
+                            isResultTapped = true
                         }
-                        print("Quiz result: \(result)")
                     }
                 }) {
                     VStack {

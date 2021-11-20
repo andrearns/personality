@@ -1,6 +1,6 @@
 import Foundation
 
-func generateDISCResult(answers: [Answer]) -> Result {
+func generateDISCResult(answers: [Int : Answer]) -> Result {
     
     var scores: [String : Int] = [
         "d" : 0,
@@ -10,7 +10,7 @@ func generateDISCResult(answers: [Answer]) -> Result {
     ]
     
     for i in 0..<answers.count {
-        switch answers[i].score {
+        switch answers[i]!.score {
         case "d":
             scores["d"]! += 1
         case "i":

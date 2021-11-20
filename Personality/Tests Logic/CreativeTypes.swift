@@ -1,6 +1,6 @@
 import Foundation
 
-func generateCreativeTypesResult(answers: [Answer]) -> Result {
+func generateCreativeTypesResult(answers: [Int : Answer]) -> Result {
     
     var scores: [String : Int] = [
         "a" : 0,
@@ -12,7 +12,7 @@ func generateCreativeTypesResult(answers: [Answer]) -> Result {
     ]
     
     for i in 0..<answers.count {
-        switch answers[i].score {
+        switch answers[i]!.score {
         case "a":
             scores["a"]! += 1
         case "b":
