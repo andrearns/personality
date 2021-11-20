@@ -3,9 +3,11 @@ import SwiftUI
 struct QuizView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var quiz: Quiz!
     
     @State var isResultTapped = false
+    @State var isLoading = false
     @State var currentQuestion: Question?
     @State var currentQuestionIndex = 0
     @State var answerList: [Int : Answer] = [:]
@@ -94,7 +96,11 @@ struct QuizView: View {
                             }
                             print("Quiz result: \(result)")
                             
-                            isResultTapped = true
+                            isLoading = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                isResultTapped = true
+                            }
                         }
                     }
                 }) {
@@ -112,8 +118,13 @@ struct QuizView: View {
                 .background(Color(uiColor: UIColor(named: quiz.colorName)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
+                
             }
             .padding()
+            
+            if isLoading {
+                LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
+            }
         }
         .navigationBarHidden(true)
     }

@@ -35,6 +35,7 @@
 		5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D72745FAF700D51D9C /* UserResult.swift */; };
 		5BDC25E027484B8800D51D9C /* DISC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25DF27484B8600D51D9C /* DISC.swift */; };
 		5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */; };
+		5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		5BDC25D72745FAF700D51D9C /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
 		5BDC25DF27484B8600D51D9C /* DISC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISC.swift; sourceTree = "<group>"; };
 		5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreativeTypes.swift; sourceTree = "<group>"; };
+		5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		5BDC25AC2742DFCF00D51D9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BDC25E32749409300D51D9C /* LoadingAnimation */,
 				5BDC25B32742E09400D51D9C /* Profile */,
 				5BDC25B02742E06400D51D9C /* Quiz List */,
 				5BDC25A92742DF7100D51D9C /* Quiz */,
@@ -254,6 +257,30 @@
 			path = "Tests Logic";
 			sourceTree = "<group>";
 		};
+		5BDC25E32749409300D51D9C /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E5274940B100D51D9C /* Components */,
+				5BDC25E4274940AB00D51D9C /* Views */,
+			);
+			path = LoadingAnimation;
+			sourceTree = "<group>";
+		};
+		5BDC25E4274940AB00D51D9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BDC25E5274940B100D51D9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +365,7 @@
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
 				5BDC25D62745FAAD00D51D9C /* User.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
+				5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
 				5BDC25CA2744B24100D51D9C /* QuizBank.swift in Sources */,
 				5BDC25CF2744B53200D51D9C /* Color.swift in Sources */,
