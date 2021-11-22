@@ -1,44 +1,105 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    
+    var results = [
+        Result(
+            label: "Sábia",
+            about: "kkkkkkkkkk",
+            code: "ACF",
+            badge:
+                Badge(
+                    imageURL: "",
+                    label: ""
+                ),
+            colorName: "Blue"
+        ),
+        Result(
+            label: "Legal",
+            about: "kkkkkkkkkk",
+            code: "ACF",
+            badge:
+                Badge(
+                    imageURL: "",
+                    label: ""
+                ),
+            colorName: "Pink"
+        ),
+        Result(
+            label: "Guru",
+            about: "kkkkkkkkkk",
+            code: "ACF",
+            badge:
+                Badge(
+                    imageURL: "",
+                    label: ""
+                ),
+            colorName: "Yellow"
+        ),
+        Result(
+            label: "Raivosa",
+            about: "kkkkkkkkkk",
+            code: "ACF",
+            badge:
+                Badge(
+                    imageURL: "",
+                    label: ""
+                ),
+            colorName: "Green"
+        ),
+    ]
+    
     var body: some View {
         ScrollView(.vertical) {
-            VStack {
+            ZStack {
                 VStack {
-                    ZStack {
+                    HStack {
+                        Image("backgroundTest")
+                            .resizable()
+                            .frame(height: 400)
+                            .padding(.top, -50)
+                    }
+                    Spacer()
+                }
+                VStack {
+                    VStack {
                         HStack(alignment: .center) {
-                            Button(action: {
-                                
-                            }) {
-                                Image(systemName: "slider.horizontal.3")
-                                    .font(.system(size: 18, weight: .semibold))
-                                    .foregroundColor(.black)
-                            }
-                            Spacer()
-                            Text("@andrearns")
-                                .font(.system(size: 24, weight: .bold, design: .default))
+                            Text("barbs")
+                                .font(.system(size: 40, weight: .black, design: .default))
+                                .foregroundColor(.white)
                             Spacer()
                             Button(action: {
                                 
                             }) {
                                 Image(systemName: "square.and.arrow.up")
                                     .font(.system(size: 18, weight: .semibold))
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.white)
                             }
-                        }.padding()
+                        }
+                        .padding()
+                        .padding(.horizontal)
                     }
-                    .frame(width: .infinity, height: 400, alignment: .top)
-                    .background(Color.verde)
-                    .cornerRadius(16)
-                    .padding()
+                    ZStack {
+                        Image("characterTest")
+                    }
+                    .padding(.top, 80)
+                    .padding(.bottom, 40)
+                    
+                    LeftTitle(text: "Personalidade")
+                    
+                    LazyVGrid(columns: columns) {
+                        ForEach(results) { result in
+                            OutputCell(result: result)
+                        }
+                    }.padding()
                 }
-                HStack {
-                    Text("Badges")
-                        .font(.system(size: 20, weight: .medium, design: .default))
-                    Spacer()
-                }.padding(.horizontal)
-                Spacer()
-                
             }
         }
     }
