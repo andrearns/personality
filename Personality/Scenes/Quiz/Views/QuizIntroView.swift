@@ -13,7 +13,7 @@ struct QuizIntroView: View {
     
     var body: some View {
         ZStack {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     IntroHeader(quiz: quiz)
                         
@@ -37,6 +37,7 @@ struct QuizIntroView: View {
                         }
                     }.padding()
                 }
+                .padding(.bottom, 80)
             }
             VStack {
                 Spacer()
@@ -66,6 +67,7 @@ struct QuizIntroView: View {
         .navigationBarItems(trailing: Button(action: {
             print("Share quiz")
         }, label: { Image(systemName: "square.and.arrow.up") }))
+        .statusBar(hidden: true)
     }
 }
 

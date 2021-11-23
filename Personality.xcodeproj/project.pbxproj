@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		564239752749BA8C00424227 /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564239742749BA8C00424227 /* ExitButtonView.swift */; };
+		56423979274C030700424227 /* Font .swift in Sources */ = {isa = PBXBuildFile; fileRef = 56423978274C030700424227 /* Font .swift */; };
+		5642397B274C26A900424227 /* BuildImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5642397A274C26A900424227 /* BuildImage.swift */; };
+		565E6A75274D6194009B68E7 /* PaytoneOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */; };
+		565E6A76274D6194009B68E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 565E6A74274D6194009B68E7 /* OFL.txt */; };
 		5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */; };
 		5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* QuizListView.swift */; };
 		5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2583273F2C3100D51D9C /* Assets.xcassets */; };
@@ -33,6 +38,9 @@
 		5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D32745FA4C00D51D9C /* Badge.swift */; };
 		5BDC25D62745FAAD00D51D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D52745FAAD00D51D9C /* User.swift */; };
 		5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D72745FAF700D51D9C /* UserResult.swift */; };
+		5BDC25E027484B8800D51D9C /* DISC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25DF27484B8600D51D9C /* DISC.swift */; };
+		5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */; };
+		5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */; };
 		900D7B83274AC24700548E9C /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D7B82274AC24700548E9C /* NicknameView.swift */; };
 		90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B99369274D5C500086B00A /* SnapCarousel.swift */; };
 		90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD6CFF274807BF00FE5072 /* LoginView.swift */; };
@@ -40,6 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		564239742749BA8C00424227 /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
+		56423978274C030700424227 /* Font .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font .swift"; sourceTree = "<group>"; };
+		5642397A274C26A900424227 /* BuildImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildImage.swift; sourceTree = "<group>"; };
+		565E6A67274D50BE009B68E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PaytoneOne-Regular.ttf"; sourceTree = "<group>"; };
+		565E6A74274D6194009B68E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		5BDC257C273F2C2D00D51D9C /* Personality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityApp.swift; sourceTree = "<group>"; };
 		5BDC2581273F2C2D00D51D9C /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
@@ -68,6 +82,9 @@
 		5BDC25D32745FA4C00D51D9C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		5BDC25D52745FAAD00D51D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BDC25D72745FAF700D51D9C /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		5BDC25DF27484B8600D51D9C /* DISC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISC.swift; sourceTree = "<group>"; };
+		5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreativeTypes.swift; sourceTree = "<group>"; };
+		5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		900D7B82274AC24700548E9C /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		90B99369274D5C500086B00A /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 		90CD6CFF274807BF00FE5072 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -86,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		565E6A72274D6194009B68E7 /* Paytone_One */ = {
+			isa = PBXGroup;
+			children = (
+				565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */,
+				565E6A74274D6194009B68E7 /* OFL.txt */,
+			);
+			path = Paytone_One;
+			sourceTree = "<group>";
+		};
 		5BDC2573273F2C2D00D51D9C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +132,8 @@
 		5BDC257E273F2C2D00D51D9C /* Personality */ = {
 			isa = PBXGroup;
 			children = (
+				565E6A67274D50BE009B68E7 /* Info.plist */,
+				5BDC25DE27484B7100D51D9C /* Tests Logic */,
 				5BDC25CD2744B4D600D51D9C /* Utils */,
 				5BDC25AE2742DFE900D51D9C /* Models */,
 				5BDC25AC2742DFCF00D51D9C /* Scenes */,
@@ -113,6 +141,7 @@
 				5BDC2599274006CF00D51D9C /* MainView.swift */,
 				5BDC25C92744B24100D51D9C /* QuizBank.swift */,
 				5BDC25B92744743700D51D9C /* Personality.entitlements */,
+				565E6A72274D6194009B68E7 /* Paytone_One */,
 				5BDC2583273F2C3100D51D9C /* Assets.xcassets */,
 				5BDC2585273F2C3100D51D9C /* Preview Content */,
 			);
@@ -139,6 +168,7 @@
 		5BDC25AC2742DFCF00D51D9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BDC25E32749409300D51D9C /* LoadingAnimation */,
 				90CD6CFD2748065200FE5072 /* Onboarding */,
 				5BDC25B32742E09400D51D9C /* Profile */,
 				5BDC25B02742E06400D51D9C /* Quiz List */,
@@ -178,6 +208,8 @@
 				5BDC25C12744AC6B00D51D9C /* OutputCell.swift */,
 				5BDC25BA274487AA00D51D9C /* ProgressBar.swift */,
 				5BDC25C32744AD2900D51D9C /* IntroHeader.swift */,
+				564239742749BA8C00424227 /* ExitButtonView.swift */,
+				5642397A274C26A900424227 /* BuildImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -237,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				5BDC25CE2744B53200D51D9C /* Color.swift */,
+				56423978274C030700424227 /* Font .swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -247,6 +280,39 @@
 				5BDC25D12745920100D51D9C /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BDC25DE27484B7100D51D9C /* Tests Logic */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25DF27484B8600D51D9C /* DISC.swift */,
+				5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */,
+			);
+			path = "Tests Logic";
+			sourceTree = "<group>";
+		};
+		5BDC25E32749409300D51D9C /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E5274940B100D51D9C /* Components */,
+				5BDC25E4274940AB00D51D9C /* Views */,
+			);
+			path = LoadingAnimation;
+			sourceTree = "<group>";
+		};
+		5BDC25E4274940AB00D51D9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BDC25E5274940B100D51D9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		90B99368274D5C320086B00A /* Components */ = {
@@ -334,6 +400,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565E6A76274D6194009B68E7 /* OFL.txt in Resources */,
+				565E6A75274D6194009B68E7 /* PaytoneOne-Regular.ttf in Resources */,
 				5BDC2587273F2C3100D51D9C /* Preview Assets.xcassets in Resources */,
 				5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */,
 			);
@@ -346,25 +414,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDC25E027484B8800D51D9C /* DISC.swift in Sources */,
 				5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */,
 				5BDC259E274061AC00D51D9C /* Question.swift in Sources */,
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
 				5BDC25A0274062AB00D51D9C /* QuizView.swift in Sources */,
 				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
+				56423979274C030700424227 /* Font .swift in Sources */,
 				5BDC25A82742DC2300D51D9C /* QuizCell.swift in Sources */,
 				90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */,
 				5BDC2598273F73E200D51D9C /* QuizIntroView.swift in Sources */,
+				564239752749BA8C00424227 /* ExitButtonView.swift in Sources */,
 				900D7B83274AC24700548E9C /* NicknameView.swift in Sources */,
 				90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */,
 				5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */,
+				5642397B274C26A900424227 /* BuildImage.swift in Sources */,
 				5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */,
 				5BDC25C82744B06D00D51D9C /* HorizontalCard.swift in Sources */,
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
 				5BDC25D62745FAAD00D51D9C /* User.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
+				5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
 				5BDC25CA2744B24100D51D9C /* QuizBank.swift in Sources */,
 				5BDC25CF2744B53200D51D9C /* Color.swift in Sources */,
+				5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */,
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
 				5BDC25C62744B06000D51D9C /* VerticalCard.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* Result.swift in Sources */,
@@ -500,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -507,6 +582,8 @@
 				DEVELOPMENT_TEAM = VWZ6P536SX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Personality/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ego;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -530,6 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -537,6 +615,8 @@
 				DEVELOPMENT_TEAM = VWZ6P536SX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ego;
+				INFOPLIST_FILE = Personality/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

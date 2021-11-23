@@ -5,13 +5,28 @@ struct VerticalCard: View {
     
     var body: some View {
         NavigationLink(destination: QuizIntroView(quiz: quiz)) {
-            VStack(alignment: .leading) {
-                Text(quiz.title)
-                    .font(.system(size: 28, weight: .bold, design: .default))
-                    .padding(.bottom)
-                    .foregroundColor(.white)
-                Text(quiz.shortDescription!)
-                    .foregroundColor(.white)
+            ZStack {
+                if quiz.imageName != nil {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Image(quiz.imageName!)
+                                .frame(maxHeight: 75)
+                        }
+                    }
+                }
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(quiz.title)
+                            .font(.system(size: 26, weight: .black, design: .default))
+                            .padding(.vertical)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
+                        Spacer()
+                    }
+                    Spacer()
+                }
             }
             .padding()
             .frame(width: 200, height: 250, alignment: .leading)
@@ -26,6 +41,7 @@ struct VerticalCard_Previews: PreviewProvider {
         VerticalCard(quiz:
                         Quiz(
                             title: "Teste 5",
+                            imageName: "disc",
                             shortDescription: "Descrição curta",
                             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
                             durationInMinutes: 5,
