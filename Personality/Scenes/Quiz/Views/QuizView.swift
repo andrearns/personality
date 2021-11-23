@@ -1,12 +1,17 @@
 import SwiftUI
 
 struct QuizView: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var quiz: Quiz!
+    
     @State var isResultTapped = false
+    @State var isLoading = false
     @State var currentQuestion: Question?
     @State var currentQuestionIndex = 0
-    @State var answerList: [Answer] = []
+    @State var answerList: [Int : Answer] = [:]
+    @State var currentAnswer: Answer? = nil
     
     var body: some View {
         ZStack {
@@ -18,8 +23,8 @@ struct QuizView: View {
                                 if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
                                     currentQuestionIndex = currentQuestionIndex - 1
                                     currentQuestion = quiz.questions[currentQuestionIndex]
+                                    currentAnswer = answerList[currentQuestionIndex]
                                 } else {
-                                    // TO DO
                                     print("Go back to quiz list view")
                                     self.presentationMode.wrappedValue.dismiss()
                                 }
@@ -33,7 +38,6 @@ struct QuizView: View {
                                 .font(.system(size: 18, weight: .semibold, design: .default))
                             Spacer()
                             Button(action: {
-                                // TO DO
                                 print("Go back to quiz list view")
                                 self.presentationMode.wrappedValue.dismiss()
                             }) {
@@ -55,7 +59,9 @@ struct QuizView: View {
                         .padding(.vertical, 40)
                             
                         ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
-                            QuizCell(answer: answer, isSelected: false)
+                            QuizCell(answer: answer, isSelected: currentAnswer == answer) {
+                                currentAnswer = answer
+                            }
                         }
                     }
                     .padding()
@@ -64,11 +70,38 @@ struct QuizView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    if currentQuestionIndex < quiz.questions.count - 1 {
-                        self.currentQuestionIndex += 1
-                        self.currentQuestion = quiz.questions[currentQuestionIndex]
-                    } else {
-                        isResultTapped = true
+                    if currentAnswer != nil {
+                        answerList[currentQuestionIndex] = currentAnswer
+                        
+                        if currentQuestionIndex < quiz.questions.count - 1 {
+                            self.currentQuestionIndex += 1
+                            self.currentQuestion = quiz.questions[currentQuestionIndex]
+                            
+                            if answerList[currentQuestionIndex] != nil {
+                                currentAnswer = answerList[currentQuestionIndex]
+                            } else {
+                                currentAnswer = nil
+                            }
+                            
+                        } else {
+                            var result: Result?
+
+                            switch quiz.title {
+                            case "DISC":
+                                result = generateDISCResult(answers: answerList)
+                            case "Tipos de criatividade":
+                                result = generateCreativeTypesResult(answers: answerList)
+                            default:
+                                print("There is no functions to generate a result for this quiz")
+                            }
+                            print("Quiz result: \(result)")
+                            
+                            isLoading = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                isResultTapped = true
+                            }
+                        }
                     }
                 }) {
                     VStack {
@@ -85,8 +118,13 @@ struct QuizView: View {
                 .background(Color(uiColor: UIColor(named: quiz.colorName)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
+                
             }
             .padding()
+            
+            if isLoading {
+                LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
+            }
         }
         .navigationBarHidden(true)
     }

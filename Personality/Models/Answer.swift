@@ -1,6 +1,10 @@
 import Foundation
 
-final class Answer: Identifiable {
+final class Answer: Identifiable, Equatable {
+    static func == (lhs: Answer, rhs: Answer) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     var id = UUID()
     var label: String
     var score: String

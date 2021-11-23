@@ -38,6 +38,9 @@
 		5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D32745FA4C00D51D9C /* Badge.swift */; };
 		5BDC25D62745FAAD00D51D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D52745FAAD00D51D9C /* User.swift */; };
 		5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D72745FAF700D51D9C /* UserResult.swift */; };
+		5BDC25E027484B8800D51D9C /* DISC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25DF27484B8600D51D9C /* DISC.swift */; };
+		5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */; };
+		5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,9 @@
 		5BDC25D32745FA4C00D51D9C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		5BDC25D52745FAAD00D51D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BDC25D72745FAF700D51D9C /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		5BDC25DF27484B8600D51D9C /* DISC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISC.swift; sourceTree = "<group>"; };
+		5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreativeTypes.swift; sourceTree = "<group>"; };
+		5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				565E6A67274D50BE009B68E7 /* Info.plist */,
+				5BDC25DE27484B7100D51D9C /* Tests Logic */,
 				5BDC25CD2744B4D600D51D9C /* Utils */,
 				5BDC25AE2742DFE900D51D9C /* Models */,
 				5BDC25AC2742DFCF00D51D9C /* Scenes */,
@@ -153,6 +160,7 @@
 		5BDC25AC2742DFCF00D51D9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5BDC25E32749409300D51D9C /* LoadingAnimation */,
 				5BDC25B32742E09400D51D9C /* Profile */,
 				5BDC25B02742E06400D51D9C /* Quiz List */,
 				5BDC25A92742DF7100D51D9C /* Quiz */,
@@ -265,6 +273,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5BDC25DE27484B7100D51D9C /* Tests Logic */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25DF27484B8600D51D9C /* DISC.swift */,
+				5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */,
+			);
+			path = "Tests Logic";
+			sourceTree = "<group>";
+		};
+		5BDC25E32749409300D51D9C /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E5274940B100D51D9C /* Components */,
+				5BDC25E4274940AB00D51D9C /* Views */,
+			);
+			path = LoadingAnimation;
+			sourceTree = "<group>";
+		};
+		5BDC25E4274940AB00D51D9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BDC25E5274940B100D51D9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDC25E027484B8800D51D9C /* DISC.swift in Sources */,
 				5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */,
 				5BDC259E274061AC00D51D9C /* Question.swift in Sources */,
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
@@ -353,9 +395,11 @@
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
 				5BDC25D62745FAAD00D51D9C /* User.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
+				5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
 				5BDC25CA2744B24100D51D9C /* QuizBank.swift in Sources */,
 				5BDC25CF2744B53200D51D9C /* Color.swift in Sources */,
+				5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */,
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
 				5BDC25C62744B06000D51D9C /* VerticalCard.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* Result.swift in Sources */,
@@ -490,6 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -498,6 +543,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Personality/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ego;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Personality/Personality.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -528,6 +575,7 @@
 				DEVELOPMENT_TEAM = VWZ6P536SX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ego;
 				INFOPLIST_FILE = Personality/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
