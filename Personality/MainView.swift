@@ -11,6 +11,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Perfil", systemImage: "person")
                 }
+            BagdesInfo()
+                .tabItem {
+                    Label("Teste", systemImage: "")
+                }
         }.accentColor(Color.rosa)
     }
 }

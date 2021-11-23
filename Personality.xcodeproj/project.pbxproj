@@ -33,6 +33,8 @@
 		5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D32745FA4C00D51D9C /* Badge.swift */; };
 		5BDC25D62745FAAD00D51D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D52745FAAD00D51D9C /* User.swift */; };
 		5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC25D72745FAF700D51D9C /* UserResult.swift */; };
+		C726A7FC27497CB000541921 /* BagdesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A7FB27497CB000541921 /* BagdesInfo.swift */; };
+		C7AA344E274D5DEF00687B88 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		5BDC25D32745FA4C00D51D9C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		5BDC25D52745FAAD00D51D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BDC25D72745FAF700D51D9C /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		C726A7FB27497CB000541921 /* BagdesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagdesInfo.swift; sourceTree = "<group>"; };
+		C7AA344D274D5DEF00687B88 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				5BDC259B274007E300D51D9C /* ProfileView.swift */,
+				C726A7FB27497CB000541921 /* BagdesInfo.swift */,
+				C7AA344D274D5DEF00687B88 /* ModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
 				5BDC25A0274062AB00D51D9C /* QuizView.swift in Sources */,
 				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
+				C726A7FC27497CB000541921 /* BagdesInfo.swift in Sources */,
 				5BDC25A82742DC2300D51D9C /* QuizCell.swift in Sources */,
 				5BDC2598273F73E200D51D9C /* QuizIntroView.swift in Sources */,
 				5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */,
@@ -333,6 +340,7 @@
 				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
+				C7AA344E274D5DEF00687B88 /* ModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
