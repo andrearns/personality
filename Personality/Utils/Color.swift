@@ -8,4 +8,7 @@ extension Color {
     static var rosa = Color("Pink")
     static var roxo = Color("Purple")
     static var amarelo = Color("Amarelo")
+    static var branco = Color("White")
+    static var preto = Color("Black")
+
 }
