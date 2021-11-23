@@ -7,12 +7,13 @@ struct OutputCell: View {
         VStack {
             ZStack {
                 Color.cinzaClaro
-                    .frame(width: 75, height: 75)
                     .cornerRadius(16)
-                Color(uiColor: UIColor(named: result.colorName)!)
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(25)
+                Image(result.badge!.imageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(5)
             }
+            .frame(width: 75, height: 75)
             Text(result.label)
                 .font(.system(size: 12, weight: .regular, design: .default))
         }
@@ -28,7 +29,7 @@ struct OutputCell_Previews: PreviewProvider {
                 code: "ACF",
                 badge:
                     Badge(
-                        imageURL: "",
+                        imageURL: "tenis1",
                         label: ""
                     ),
                 colorName: "Blue"

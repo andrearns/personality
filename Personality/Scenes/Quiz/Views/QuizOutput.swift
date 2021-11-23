@@ -2,7 +2,7 @@ import SwiftUI
 
 struct QuizOutput: View {
     
-    var result = Result (label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
+    var result: Result
     
     var body: some View {
         
@@ -79,7 +79,8 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-            QuizOutput()
+            QuizOutput(result: Result(label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
+            )
         }
     }
 }

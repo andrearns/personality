@@ -36,5 +36,6 @@ struct  ExitButtonView: View {
 struct ExitButtonView_Previews: PreviewProvider {
     static var previews: some View {
         ExitButtonView(fieldName: "story", action: {}, hasError: .constant(false))
+            .preferredColorScheme(.dark)
     }
 }

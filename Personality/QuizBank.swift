@@ -56,7 +56,7 @@ struct QuizBank {
                     code: "d",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "tenis3",
                             label: ""
                         ),
                     colorName: "Blue"
@@ -67,7 +67,7 @@ struct QuizBank {
                     code: "i",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "tenis2",
                             label: ""
                         ),
                     colorName: "Pink"
@@ -78,7 +78,7 @@ struct QuizBank {
                     code: "c",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "tenis4",
                             label: ""
                         ),
                     colorName: "Yellow"
@@ -89,7 +89,7 @@ struct QuizBank {
                     code: "s",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "tenis1",
                             label: ""
                         ),
                     colorName: "Green"
@@ -218,7 +218,7 @@ struct QuizBank {
                     code: "adf",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu1",
                             label: ""
                         ),
                     colorName: "Blue"
@@ -229,7 +229,7 @@ struct QuizBank {
                     code: "ace",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu2",
                             label: ""
                         ),
                     colorName: "Pink"
@@ -240,7 +240,7 @@ struct QuizBank {
                     code: "bdf",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu3",
                             label: ""
                         ),
                     colorName: "Yellow"
@@ -251,7 +251,7 @@ struct QuizBank {
                     code: "acf",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu4",
                             label: ""
                         ),
                     colorName: "Green"
@@ -262,7 +262,7 @@ struct QuizBank {
                     code: "bcf",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu5",
                             label: ""
                         ),
                     colorName: "Blue"
@@ -273,7 +273,7 @@ struct QuizBank {
                     code: "ade",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu6",
                             label: ""
                         ),
                     colorName: "Pink"
@@ -284,7 +284,7 @@ struct QuizBank {
                     code: "bce",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu7",
                             label: ""
                         ),
                     colorName: "Yellow"
@@ -295,7 +295,7 @@ struct QuizBank {
                     code: "bde",
                     badge:
                         Badge(
-                            imageURL: "",
+                            imageURL: "chapeu8",
                             label: ""
                         ),
                     colorName: "Green"

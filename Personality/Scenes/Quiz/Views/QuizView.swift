@@ -12,6 +12,7 @@ struct QuizView: View {
     @State var currentQuestionIndex = 0
     @State var answerList: [Int : Answer] = [:]
     @State var currentAnswer: Answer? = nil
+    @State var result: Result?
     
     var body: some View {
         ZStack {
@@ -85,12 +86,10 @@ struct QuizView: View {
                             }
                             
                         } else {
-                            var result: Result?
-
                             switch quiz.title {
-                            case "DISC":
+                            case "DISK ME":
                                 result = generateDISCResult(answers: answerList)
-                            case "Tipos de criatividade":
+                            case "Creative \nTypes":
                                 result = generateCreativeTypesResult(answers: answerList)
                             default:
                                 print("There is no functions to generate a result for this quiz")
@@ -113,7 +112,9 @@ struct QuizView: View {
                             Spacer()
                         }
                     }
-                    NavigationLink("", destination: QuizOutput(), isActive: $isResultTapped)
+                    if result != nil {
+                        NavigationLink("", destination: QuizOutput(result: self.result!), isActive: $isResultTapped)
+                    }
                 }
                 .padding()
                 .background(Color(uiColor: UIColor(named: quiz.colorName)!))
