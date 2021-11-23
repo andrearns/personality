@@ -45,6 +45,8 @@
 		90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B99369274D5C500086B00A /* SnapCarousel.swift */; };
 		90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD6CFF274807BF00FE5072 /* LoginView.swift */; };
 		90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD6D01274809A200FE5072 /* ChooseEgoView.swift */; };
+		C726A7FC27497CB000541921 /* BagdesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A7FB27497CB000541921 /* BagdesInfo.swift */; };
+		C7AA344E274D5DEF00687B88 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		5BDC25D32745FA4C00D51D9C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		5BDC25D52745FAAD00D51D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BDC25D72745FAF700D51D9C /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		C726A7FB27497CB000541921 /* BagdesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagdesInfo.swift; sourceTree = "<group>"; };
+		C7AA344D274D5DEF00687B88 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		5BDC25DF27484B8600D51D9C /* DISC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISC.swift; sourceTree = "<group>"; };
 		5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreativeTypes.swift; sourceTree = "<group>"; };
 		5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				5BDC259B274007E300D51D9C /* ProfileView.swift */,
+				C726A7FB27497CB000541921 /* BagdesInfo.swift */,
+				C7AA344D274D5DEF00687B88 /* ModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
 				5BDC25A0274062AB00D51D9C /* QuizView.swift in Sources */,
 				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
+				C726A7FC27497CB000541921 /* BagdesInfo.swift in Sources */,
 				56423979274C030700424227 /* Font .swift in Sources */,
 				5BDC25A82742DC2300D51D9C /* QuizCell.swift in Sources */,
 				90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */,
@@ -447,6 +454,7 @@
 				90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
+				C7AA344E274D5DEF00687B88 /* ModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
