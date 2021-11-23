@@ -2,6 +2,9 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State var showModal = false
+    @State var selectedResult: Result?
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -10,50 +13,8 @@ struct ProfileView: View {
     ]
     
     var results = [
-        Result(
-            label: "Sábia",
-            about: "kkkkkkkkkk",
-            code: "ACF",
-            badge:
-                Badge(
-                    imageURL: "",
-                    label: ""
-                ),
-            colorName: "Blue"
-        ),
-        Result(
-            label: "Legal",
-            about: "kkkkkkkkkk",
-            code: "ACF",
-            badge:
-                Badge(
-                    imageURL: "",
-                    label: ""
-                ),
-            colorName: "Pink"
-        ),
-        Result(
-            label: "Guru",
-            about: "kkkkkkkkkk",
-            code: "ACF",
-            badge:
-                Badge(
-                    imageURL: "",
-                    label: ""
-                ),
-            colorName: "Yellow"
-        ),
-        Result(
-            label: "Raivosa",
-            about: "kkkkkkkkkk",
-            code: "ACF",
-            badge:
-                Badge(
-                    imageURL: "",
-                    label: ""
-                ),
-            colorName: "Green"
-        ),
+        QuizBank.shared.quizList[0].results[0],
+        QuizBank.shared.quizList[1].results[0],
     ]
     
     var body: some View {
@@ -96,18 +57,24 @@ struct ProfileView: View {
                     
                     LazyVGrid(columns: columns) {
                         ForEach(results) { result in
-                            OutputCell(result: result)
+                            Button(action: {
+                                selectedResult = result
+                                showModal = true
+                            }){
+                                OutputCell(result: result)
+                            }
                         }
                     }.padding()
                 }
             }
         }
+        .sheet(isPresented: $showModal) { ModalView(result: self.$selectedResult ?? Binding.constant(nil))}
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

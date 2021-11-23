@@ -16,6 +16,7 @@ struct OutputCell: View {
             .frame(width: 75, height: 75)
             Text(result.label)
                 .font(.system(size: 12, weight: .regular, design: .default))
+                .foregroundColor(.branco)
         }
     }
 }

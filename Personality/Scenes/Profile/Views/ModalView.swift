@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ModalView: View {
 
-    var result : Result
+    @Binding var result: Result?
 
     @State var value: Bool = false
     @State var aboutArray : [String] = [""]
@@ -30,8 +30,9 @@ struct ModalView: View {
                 .padding(20)
                 .padding(.top, 10)
                 
-            Image(result.badge!.imageURL)
+            Image(result!.badge!.imageURL)
             .resizable()
+            .aspectRatio(contentMode: .fit)
             .frame(width: 170, height: 170, alignment: .center)
             .padding(20)
             .padding(.top, 30)
@@ -52,20 +53,10 @@ struct ModalView: View {
             .padding(.top, 165)
         }
         
-        
-        Text(result.label)
+        Text(result!.label)
             .fontWeight(.bold)
             .font(.title)
             .foregroundColor(.white)
-        
-//        Text(result.about)
-//            .font(.body)
-//            .padding(.horizontal, 20)
-//            .padding(.top)
-//            .foregroundColor(.white)
-//            .multilineTextAlignment(.center)
-        
-//        Divider()
         
         ForEach(aboutArray, id: \.self){ section in
             Text(section)
@@ -74,7 +65,6 @@ struct ModalView: View {
                 .padding(.top, 10)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-//            Divider()
         }
 
         Spacer()
@@ -92,15 +82,9 @@ struct ModalView: View {
         }
     } .background(Color.black)
             .onAppear {
-                self.aboutArray = result.about.components(separatedBy: "\n")
+                self.aboutArray = result!.about.components(separatedBy: "\n")
             }
         
-    }
-}
-
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView(result: Result(label: "Dominância", about: "Ousado, Questionador & Autosuficiente. \n Quem tem alto perfil de dominância, tende a tomar decisões mais rapidamente, é motivado por assumir riscos, busca objetivos com senso de urgência e prefere fazer as coisas da sua maneira. \n Seu lema é Fazer Rápido. \n Tome cuidado para não se precipitar e buscar o caminho mais fácil. Além disso, fique atento para manter o bom relacionamento com o seu time.", code: "", badge: Badge(imageURL: "BadgeTeste", label: ""), colorName: ""))
     }
 }
     
