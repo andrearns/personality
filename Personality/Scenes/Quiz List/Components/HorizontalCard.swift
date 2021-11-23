@@ -5,28 +5,38 @@ struct HorizontalCard: View {
     
     var body: some View {
         NavigationLink(destination: QuizIntroView(quiz: quiz)) {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(quiz.title)
-                        .foregroundColor(.white)
-                        .font(.system(size: 24, weight: .black, design: .default))
-                        .padding(.bottom, 1)
-                    Text(quiz.shortDescription!)
-                        .foregroundColor(.white)
+            ZStack {
+                if quiz.imageName != nil {
+                    HStack {
+                        Image(quiz.imageName!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.leading, 80)
+                    }
                 }
-                .padding()
-                .cornerRadius(16)
-                
-                Spacer()
-                
                 HStack {
-                    Text("Icon")
+                    VStack(alignment: .leading) {
+                        Text(quiz.title)
+                            .foregroundColor(.white)
+                            .font(.system(size: 24, weight: .black, design: .default))
+                            .padding(.bottom, 1)
+                        Text(quiz.shortDescription!)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .cornerRadius(16)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Text("Icon")
+                    }
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .background(Color(.systemPink))
+                    .cornerRadius(25)
+                    .padding()
+                    .foregroundColor(.white)
                 }
-                .frame(width: 50, height: 50, alignment: .center)
-                .background(Color(.systemPink))
-                .cornerRadius(25)
-                .padding()
-                .foregroundColor(.white)
             }
         }
         .frame(height: 95, alignment: .center)
@@ -41,6 +51,7 @@ struct HorizontalCard_Previews: PreviewProvider {
         HorizontalCard(quiz:
                         Quiz(
                             title: "Teste 5",
+                            imageName: "IlustraSoLove",
                             shortDescription: "Descrição curta",
                             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
                             durationInMinutes: 5,

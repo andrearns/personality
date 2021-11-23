@@ -11,6 +11,9 @@ struct IntroHeader: View {
                     VStack {
                         Spacer()
                         Image(quiz.imageName!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200)
                             .padding()
                     }
                 }

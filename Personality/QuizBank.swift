@@ -5,12 +5,12 @@ struct QuizBank {
     
     var quizList = [
         Quiz(
-            title: "DISC me",
+            title: "DISK ME",
             imageName: "disc",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
-            colorName: "Orange",
+            colorName: "Blue",
             questions: [
                 Question(
                     label: "Eu sou uma pessoa...",
@@ -304,11 +304,12 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Teste 3",
+            title: "Sabotage",
+            imageName: "IlustraSabotagem",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
-            colorName: "Pink",
+            colorName: "Purple",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",
@@ -396,7 +397,8 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Teste 4",
+            title: "Só love",
+            imageName: "IlustraSoLove",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
