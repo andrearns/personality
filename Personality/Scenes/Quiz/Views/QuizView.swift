@@ -36,6 +36,7 @@ struct QuizView: View {
                             Spacer()
                             Text(quiz.title)
                                 .font(.system(size: 18, weight: .semibold, design: .default))
+                                .multilineTextAlignment(.center)
                             Spacer()
                             Button(action: {
                                 print("Go back to quiz list view")

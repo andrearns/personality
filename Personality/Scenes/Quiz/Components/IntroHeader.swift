@@ -4,20 +4,42 @@ struct IntroHeader: View {
     var quiz: Quiz
     
     var body: some View {
-        VStack {
-            // Quiz image
-            Text(quiz.title)
-                .font(.system(size: 28, weight: .bold, design:.default))
-                .padding(.bottom, 10)
-                .padding(.top, 30)
-            HStack {
-                Image(systemName: "clock")
-                Text("\(quiz.durationInMinutes) minutos")
-                    .font(.system(size: 16, weight: .regular, design: .default))
+        ZStack{
+            if quiz.imageName != nil {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        Image(quiz.imageName!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200)
+                            .padding()
+                    }
+                }
             }
-                
+            VStack(alignment: .leading) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(quiz.title)
+                            .font(.system(size: 40, weight: .black, design:.default))
+                            .padding(.bottom, 10)
+                            .padding(.top, 40)
+                        HStack {
+                            Image(systemName: "clock")
+                            Text("\(quiz.durationInMinutes) minutos")
+                                .font(.system(size: 16, weight: .regular, design: .default))
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                }
+                .padding(32)
+                    
+            }
         }
-        .frame(width: UIScreen.main.bounds.width, height: 250, alignment: .center)
+        .frame(maxWidth: .infinity)
+        .frame(height: 300)
         .background(Color(uiColor: UIColor(named: quiz.colorName)!))
     }
 }
@@ -26,7 +48,8 @@ struct IntroHeader_Previews: PreviewProvider {
     static var previews: some View {
         IntroHeader(quiz:
                         Quiz(
-                            title: "Teste 5",
+                            title: "tipos de criatividade",
+                            imageName: "creativeTypes",
                             shortDescription: "Descrição curta",
                             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
                             durationInMinutes: 5,
