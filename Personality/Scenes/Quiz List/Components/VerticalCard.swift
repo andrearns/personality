@@ -6,29 +6,43 @@ struct VerticalCard: View {
     var body: some View {
         NavigationLink(destination: QuizIntroView(quiz: quiz)) {
             ZStack {
+                Image("backgroundTest")
+                    .resizable()
                 if quiz.imageName != nil {
                     VStack {
                         Spacer()
                         HStack {
+                            Spacer()
                             Image(quiz.imageName!)
-                                .frame(maxHeight: 75)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(8)
+                                .padding(.top, 60)
+                                .padding(.leading, 60)
                         }
                     }
                 }
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(quiz.title)
-                            .font(.system(size: 26, weight: .black, design: .default))
-                            .padding(.vertical)
+                        Text(quiz.title.uppercased())
+                            .font(.system(size: 30, weight: .black, design: .default))
+                            .padding(.vertical, 5)
                             .foregroundColor(.white)
                             .multilineTextAlignment(.leading)
-                            .lineLimit(2)
+                            .lineLimit(3)
+                        
                         Spacer()
+                    }
+                    HStack {
+                        Text(quiz.shortDescription!)
+                            .personalityFont(.subheadline, textSize: 12)
+                            .foregroundColor(.branco)
+                            .padding(.trailing, 40)
                     }
                     Spacer()
                 }
+                .padding()
             }
-            .padding()
             .frame(width: 200, height: 250, alignment: .leading)
             .background(Color(uiColor: UIColor(named: quiz.colorName)!))
             .cornerRadius(16)
@@ -41,11 +55,11 @@ struct VerticalCard_Previews: PreviewProvider {
         VerticalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "disc",
-                            shortDescription: "Descrição curta",
+                            imageName: "IlustraDISK",
+                            shortDescription: "Descrição curta Descrição curta Descrição curta",
                             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
                             durationInMinutes: 5,
-                            colorName: "Green",
+                            colorName: "Blue",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",

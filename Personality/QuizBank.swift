@@ -6,7 +6,7 @@ struct QuizBank {
     var quizList = [
         Quiz(
             title: "DISK ME",
-            imageName: "disc",
+            imageName: "IlustraDISK",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
@@ -99,7 +99,7 @@ struct QuizBank {
         
         Quiz(
             title: "Creative \nTypes",
-            imageName: "creativeTypes",
+            imageName: "IlustraCriatividade",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
@@ -397,12 +397,12 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Só love",
+            title: "Só love\nSó love",
             imageName: "IlustraSoLove",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
-            colorName: "Yellow",
+            colorName: "Blue",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",
@@ -494,7 +494,7 @@ struct QuizBank {
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
-            colorName: "Blue",
+            colorName: "Pink",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",

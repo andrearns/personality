@@ -20,7 +20,10 @@ struct HorizontalCard: View {
                             .foregroundColor(.white)
                             .font(.system(size: 24, weight: .black, design: .default))
                             .padding(.bottom, 1)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
                         Text(quiz.shortDescription!)
+                            .personalityFont(.subheadline, textSize: 12)
                             .foregroundColor(.white)
                     }
                     .padding()
@@ -28,14 +31,11 @@ struct HorizontalCard: View {
                     
                     Spacer()
                     
-                    HStack {
-                        Text("Icon")
-                    }
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .background(Color(.systemPink))
-                    .cornerRadius(25)
-                    .padding()
-                    .foregroundColor(.white)
+                    Image("estrelaApagada")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 46, height: 46)
+                        .padding()
                 }
             }
         }
