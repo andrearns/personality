@@ -9,8 +9,8 @@ struct HorizontalCard: View {
                 VStack(alignment: .leading) {
                     Text(quiz.title)
                         .foregroundColor(.white)
-                        .font(.system(size: 21, weight: .bold, design: .default))
-                        .padding(.bottom, 5)
+                        .font(.system(size: 24, weight: .black, design: .default))
+                        .padding(.bottom, 1)
                     Text(quiz.shortDescription!)
                         .foregroundColor(.white)
                 }

@@ -5,7 +5,8 @@ struct QuizBank {
     
     var quizList = [
         Quiz(
-            title: "DISC",
+            title: "DISC me",
+            imageName: "disc",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
@@ -97,7 +98,8 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Tipos de criatividade",
+            title: "Creative \nTypes",
+            imageName: "creativeTypes",
             shortDescription: "Descrição curta",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,

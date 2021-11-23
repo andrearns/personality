@@ -2,8 +2,8 @@ import SwiftUI
 import CoreData
 
 var firstQuizList: [Quiz] = [
-    QuizBank.shared.quizList[0],
-    QuizBank.shared.quizList[1]
+    QuizBank.shared.quizList[1],
+    QuizBank.shared.quizList[0]
 ]
 var secondQuizList: [Quiz] = [
     QuizBank.shared.quizList[2],
@@ -20,9 +20,7 @@ struct QuizListView: View {
                 VStack {
                     HStack {
                         Text("Olá, Fulana!")
-                            .bold()
-                            .fontWeight(.bold)
-                            .font(.system(size: 30, weight: .bold, design: .default))
+                            .font(.system(size: 35, weight: .black, design: .default))
                         Spacer()
                     }.padding()
                     
