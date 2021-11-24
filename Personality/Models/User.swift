@@ -1,6 +1,6 @@
 import Foundation
 
-final class User {
+final class User: Decodable {
     var id = UUID()
     var name: String
     var baseAvatarURL: String
