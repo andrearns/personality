@@ -39,7 +39,15 @@ struct QuizListView: View {
                     
                     VStack {
                         ForEach(secondQuizList) { quiz in
-                           HorizontalCard(quiz: quiz)
+                            if quiz.questions.count != 0 {
+                                NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                                    HorizontalCard(quiz: quiz)
+                                }
+                            } else {
+                                NavigationLink(destination: ComingSoonQuizPopUpView()) {
+                                    HorizontalCard(quiz: quiz)
+                                }
+                            }
                         }
                     }
                 }
