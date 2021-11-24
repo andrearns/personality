@@ -4,43 +4,45 @@ struct HorizontalCard: View {
     var quiz: Quiz
     
     var body: some View {
-        ZStack {
-            if quiz.imageName != nil {
+        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+            ZStack {
+                if quiz.imageName != nil {
+                    HStack {
+                        Image(quiz.imageName!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.leading, 80)
+                    }
+                }
                 HStack {
-                    Image(quiz.imageName!)
+                    VStack(alignment: .leading) {
+                        Text(quiz.title)
+                            .foregroundColor(.white)
+                            .font(.system(size: 24, weight: .black, design: .default))
+                            .padding(.bottom, 1)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
+                        Text(quiz.shortDescription!)
+                            .personalityFont(.subheadline, textSize: 12)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .cornerRadius(16)
+                    
+                    Spacer()
+                    
+                    Image("estrelaApagada")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(.leading, 80)
+                        .frame(width: 46, height: 46)
+                        .padding()
                 }
             }
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(quiz.title)
-                        .foregroundColor(.white)
-                        .font(.system(size: 24, weight: .black, design: .default))
-                        .padding(.bottom, 1)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .multilineTextAlignment(.leading)
-                    Text(quiz.shortDescription!)
-                        .personalityFont(.subheadline, textSize: 12)
-                        .foregroundColor(.white)
-                }
-                .padding()
-                .cornerRadius(16)
-                
-                Spacer()
-                
-                Image("estrelaApagada")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 46, height: 46)
-                    .padding()
-            }
+            .frame(height: 95, alignment: .center)
+            .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+            .cornerRadius(16)
+            .padding(.horizontal)
         }
-        .frame(height: 95, alignment: .center)
-        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
-        .cornerRadius(16)
-        .padding(.horizontal)
     }
 }
 

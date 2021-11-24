@@ -13,47 +13,48 @@ var secondQuizList: [Quiz] = [
 
 struct QuizListView: View {
     @State var isActive: Bool = false
+    @State private var showPopUp: Bool = false
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    HStack {
-                        Text("Olá, Fulana!")
-                            .font(.system(size: 35, weight: .black, design: .default))
-                        Spacer()
-                    }.padding()
-                    
-                    LeftTitle(text: "Em alta")
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            VerticalCard(quiz: firstQuizList[0])
-                            VerticalCard(quiz: firstQuizList[1])
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                    }
-                    
-                    LeftTitle(text: "Encontre seu teste ideal")
-                    
+            ZStack {
+                ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                        ForEach(secondQuizList) { quiz in
-                            if quiz.questions.count != 0 {
-                                NavigationLink(destination: QuizIntroView(quiz: quiz)) {
-                                    HorizontalCard(quiz: quiz)
-                                }
-                            } else {
-                                NavigationLink(destination: ComingSoonQuizPopUpView()) {
-                                    HorizontalCard(quiz: quiz)
+                        HStack {
+                            Text("Olá, Fulana!")
+                                .font(.system(size: 35, weight: .black, design: .default))
+                            Spacer()
+                        }.padding()
+                        
+                        LeftTitle(text: "Em alta")
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                VerticalCard(quiz: firstQuizList[0])
+                                VerticalCard(quiz: firstQuizList[1])
+                            }
+                            .padding(.horizontal)
+                            .padding(.bottom)
+                        }
+                        
+                        LeftTitle(text: "Encontre seu teste ideal")
+                        
+                        VStack {
+                            ForEach(secondQuizList) { quiz in
+                                Button(action: {
+                                    
+                                }) {
+                                    
                                 }
                             }
                         }
                     }
                 }
+                .navigationBarHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationBarHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
+            
+            ComingSoonQuizPopUpView(show: $showPopUp)
         }
         .accentColor(.white)
     }
