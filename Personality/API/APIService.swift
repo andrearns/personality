@@ -10,9 +10,9 @@ import Foundation
 class APIService {
     static let shared = APIService()
     
-    private let API_URL = "189.26.33.22"
+    private let API_URL = "http://189.26.33.22"
     
-    func postRequest(route: String, body: [String: String], completion: @escaping (Data) -> Void) {
+    func postRequest(route: String, body: [String: String?], completion: @escaping (Data) -> Void) {
         guard let jsonData = try? JSONEncoder().encode(body) else {
             print("Invalid body data")
             return
@@ -24,6 +24,7 @@ class APIService {
         var request = URLRequest(url: url)
         request.httpBody = jsonData
         request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { return }
