@@ -10,7 +10,7 @@ import Foundation
 class APIService {
     static let shared = APIService()
     
-    private let API_URL = "http://189.26.33.22"
+    private let API_URL = "https://thihxm.dev.br"
     
     func postRequest(route: String, body: [String: String?], completion: @escaping (Data) -> Void) {
         guard let jsonData = try? JSONEncoder().encode(body) else {
