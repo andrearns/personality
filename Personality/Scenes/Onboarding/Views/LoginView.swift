@@ -96,6 +96,10 @@ struct LoginView: View {
                         
                         guard let jsonData = try? JSONEncoder().encode(body) else { return }
                         
+                        APIService.shared.postRequest(route: "/auth", body: body) { data in
+                            print(data)
+                        }
+                        
                         // Send jsonData to API
                     case .failure(let error):
                         print("Authorization failed: \(error.localizedDescription)")

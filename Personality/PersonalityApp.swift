@@ -5,7 +5,7 @@ struct PersonalityApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            LoginView()
         }
     }
 }
