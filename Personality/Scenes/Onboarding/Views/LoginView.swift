@@ -89,7 +89,7 @@ struct LoginView: View {
                         let givenName = credentials.fullName?.givenName
 
                         let body = [
-                            "code": identityTokenString,
+                            "id_token ": identityTokenString,
                             "name": givenName,
                             "email": email
                         ]
