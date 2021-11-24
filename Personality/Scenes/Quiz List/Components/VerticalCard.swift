@@ -4,49 +4,47 @@ struct VerticalCard: View {
     var quiz: Quiz
     
     var body: some View {
-        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
-            ZStack {
-                Image("backgroundTest")
-                    .resizable()
-                if quiz.imageName != nil {
-                    VStack {
+        ZStack {
+            Image("backgroundTest")
+                .resizable()
+            if quiz.imageName != nil {
+                VStack {
+                    Spacer()
+                    HStack {
                         Spacer()
-                        HStack {
-                            Spacer()
-                            Image(quiz.imageName!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(8)
-                                .padding(.top, 60)
-                                .padding(.leading, 60)
-                        }
+                        Image(quiz.imageName!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(8)
+                            .padding(.top, 60)
+                            .padding(.leading, 60)
                     }
                 }
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(quiz.title.uppercased())
-                            .font(.system(size: 30, weight: .black, design: .default))
-                            .padding(.vertical, 5)
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(3)
-                        
-                        Spacer()
-                    }
-                    HStack {
-                        Text(quiz.shortDescription!)
-                            .personalityFont(.subheadline, textSize: 12)
-                            .foregroundColor(.branco)
-                            .padding(.trailing, 40)
-                    }
+            }
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(quiz.title.uppercased())
+                        .font(.system(size: 30, weight: .black, design: .default))
+                        .padding(.vertical, 5)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(3)
+                    
                     Spacer()
                 }
-                .padding()
+                HStack {
+                    Text(quiz.shortDescription!)
+                        .personalityFont(.subheadline, textSize: 12)
+                        .foregroundColor(.branco)
+                        .padding(.trailing, 40)
+                }
+                Spacer()
             }
-            .frame(width: 200, height: 250, alignment: .leading)
-            .background(Color(uiColor: UIColor(named: quiz.colorName)!))
-            .cornerRadius(16)
+            .padding()
         }
+        .frame(width: 200, height: 250, alignment: .leading)
+        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+        .cornerRadius(16)
     }
 }
 

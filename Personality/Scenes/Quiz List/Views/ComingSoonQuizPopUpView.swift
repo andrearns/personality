@@ -15,7 +15,7 @@ struct ComingSoonQuizPopUpView: View {
         ZStack {
             if show {
                 // Pop up background color
-                Color.black.opacity(show ? 0.3 : 0).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(show ? 0.7 : 0).edgesIgnoringSafeArea(.all)
                 
                 // Pop up window
                 VStack {
@@ -60,9 +60,9 @@ struct ComingSoonQuizPopUpView: View {
     }
 }
 
-struct ComingSoonQuizPopUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        ComingSoonQuizPopUpView()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct ComingSoonQuizPopUpView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ComingSoonQuizPopUpView()
+//            .preferredColorScheme(.dark)
+//    }
+//}

@@ -16,8 +16,8 @@ struct QuizListView: View {
     @State private var showPopUp: Bool = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
+        ZStack {
+            NavigationView {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
                         HStack {
@@ -30,8 +30,21 @@ struct QuizListView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                VerticalCard(quiz: firstQuizList[0])
-                                VerticalCard(quiz: firstQuizList[1])
+                                ForEach(firstQuizList) { quiz in
+                                    if quiz.questions.count != 0 {
+                                        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                                            VerticalCard(quiz: quiz)
+                                        }
+                                    } else {
+                                        Button(action: {
+                                            withAnimation(.linear(duration: 0.2)) {
+                                                showPopUp.toggle()
+                                            }
+                                        }) {
+                                            VerticalCard(quiz: quiz)
+                                        }
+                                    }
+                                }
                             }
                             .padding(.horizontal)
                             .padding(.bottom)
@@ -41,10 +54,18 @@ struct QuizListView: View {
                         
                         VStack {
                             ForEach(secondQuizList) { quiz in
-                                Button(action: {
-                                    
-                                }) {
-                                    
+                                if quiz.questions.count != 0 {
+                                    NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                                        HorizontalCard(quiz: quiz)
+                                    }
+                                } else {
+                                    Button(action: {
+                                        withAnimation(.linear(duration: 0.2)) {
+                                            showPopUp.toggle()
+                                        }
+                                    }) {
+                                        HorizontalCard(quiz: quiz)
+                                    }
                                 }
                             }
                         }
