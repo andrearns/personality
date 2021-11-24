@@ -43,7 +43,36 @@ struct LoginView: View {
             
             Spacer()
             
-            SignInWithAppleButton(onRequest: {_ in }, onCompletion: {_ in })
+            SignInWithAppleButton(
+                onRequest: { request in
+                    request.requestedScopes = [.fullName, .email]
+                },
+                onCompletion: { result in
+                    switch result {
+                    case .success(let authResults):
+                        print("Authorization successful")
+                        guard let credentials = authResults.credential as? ASAuthorizationAppleIDCredential,
+                              let identityToken = credentials.identityToken,
+                              let identityTokenString = String(data: identityToken, encoding: .utf8),
+                              let email = credentials.email
+                        else { return }
+                        
+                        let givenName = credentials.fullName?.givenName
+
+                        let body = [
+                            "code": identityTokenString,
+                            "name": givenName,
+                            "email": email
+                        ]
+                        
+                        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+                        
+                        // Send jsonData to API
+                    case .failure(let error):
+                        print("Authorization failed: \(error.localizedDescription)")
+                    }
+                }
+            )
                 .frame(width: 280, height: 60, alignment: .center)
                 .cornerRadius(60)
             
