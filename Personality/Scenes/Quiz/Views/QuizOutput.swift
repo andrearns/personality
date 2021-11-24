@@ -6,42 +6,50 @@ struct QuizOutput: View {
     
     var body: some View {
         
-        //        Text("Resultado")
         ScrollView {
             VStack {
-                //            ExitButtonView(fieldName: "", action: {}, hasError: .constant(false))
-                //                .padding(.leading, -50)
+                ExitButtonView(fieldName: "", action: {
+                    print("Voltar para quizzos")
+                }, hasError: .constant(false))
+                    .padding(.leading, -50)
                 
                 Buildimage(result: result)
                     .padding(.top)
-                _buildTitleAndDescription
-                _buildButton1
-                _buildButton2
                 
-               
+                VStack(alignment: .center) {
+                    _buildTitle
+                        .padding(.bottom)
+                    _buildDescription
+                        .padding(.bottom, 32)
+                    Spacer()
+                }
+                Button(action: {
+                    print("Share result")
+                }) {
+                    _buildButton1
+                        .padding(.bottom)
+                }
+        
+                Button(action: {
+                    print("Go back to quizzos screen")
+                }) {
+                    _buildButton2
+                        
+                }
             }
             .padding(.horizontal)
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
-    }
-    var _buildTitleAndDescription: some View {
-        VStack (alignment: .center) {
-            _buildTitle
-            _buildDescription
-        }
-        .padding()
     }
     
     var _buildTitle: some View {
         VStack {
             Text(result.label)
                 .personalityFont(.largeTitle)
-            //                .font(.custom("paytone-regular", size: 30))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.branco)
             
         }
-        .padding()
     }
     
     var _buildDescription: some View {
@@ -49,29 +57,33 @@ struct QuizOutput: View {
             Text(result.about)
                 .multilineTextAlignment(.trailing)
                 .foregroundColor(.branco)
-                .padding()
-               
         }
     }
     var _buildButton1: some View {
         HStack{
-            Text ("compartilhar")
-            Image (systemName: "arrow.right")
+            Text("COMPARTILHAR")
+                .personalityFont(.largeTitle, textSize: 18)
+            Image(systemName: "arrow.right")
+                .font(Font.title2.weight(.bold))
         }
+        .foregroundColor(Color.preto)
         .padding(.horizontal, 28)
-        .padding(.vertical, 17)
+        .padding(.vertical, 16)
         .background(Color.branco)
         .clipShape(Capsule ())
         .frame(maxWidth: .infinity, alignment: .trailing)
     }
     var _buildButton2: some View {
             HStack{
-                Image (systemName: "arrow.left")
-                Text ("compartilhar")
+                Image(systemName: "arrow.left")
+                    .font(Font.title2.weight(.bold))
+                Text("QUIZZOS")
+                    .personalityFont(.largeTitle, textSize: 18)
+                    .padding(.leading, 50)
             }
             .foregroundColor(Color.branco)
             .padding(.horizontal, 28)
-            .padding(.vertical, 17)
+            .padding(.vertical, 16)
             .overlay(Capsule().stroke(Color.branco,lineWidth: 2))
             .frame(maxWidth: .infinity, alignment: .leading)
         
