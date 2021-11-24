@@ -5,13 +5,19 @@ struct MainView: View {
         TabView {
             QuizListView(isActive: false)
                 .tabItem {
-                    Label("Testes", systemImage: "list.dash")
+                    VStack {
+                        Image("quizIcon").renderingMode(.template)
+                        Text("Quizzos")
+                    }
                 }
             ProfileView()
                 .tabItem {
-                    Label("Perfil", systemImage: "person")
+                    VStack {
+                        Image("profileIcon").renderingMode(.template)
+                        Text("Perfil")
+                    }
                 }
-        }.accentColor(Color.rosa)
+        }.accentColor(Color.azul)
     }
 }
 
