@@ -11,7 +11,6 @@ class APIService {
     static let shared = APIService()
     
     private let API_URL = "https://thihxm.dev.br"
-//    private let API_URL = "http://192.168.15.46"
     
     func postRequest(route: String, body: [String: String?], completion: @escaping (Data) -> Void) {
         guard let jsonData = try? JSONEncoder().encode(body) else {
