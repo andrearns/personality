@@ -7,6 +7,7 @@ struct PersonalityApp: App {
         WindowGroup {
             MainView()
                 .background(Color.preto.edgesIgnoringSafeArea(.all))
+                .environmentObject(NavigationHelper())
         }
     }
 }

@@ -3,6 +3,7 @@ import SwiftUI
 struct QuizView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var navigationHelper: NavigationHelper
     
     var quiz: Quiz!
     
@@ -41,7 +42,7 @@ struct QuizView: View {
                             Spacer()
                             Button(action: {
                                 print("Go back to quiz list view")
-                                self.presentationMode.wrappedValue.dismiss()
+                                navigationHelper.selectedView = nil
                             }) {
                                 Image(systemName: "xmark")
                                     .font(.system(size: 24, weight: .bold, design: .default))
