@@ -13,9 +13,14 @@ var secondQuizList: [Quiz] = [
 
 struct QuizListView: View {
     @State var isActive: Bool = false
+<<<<<<< HEAD
     @State private var showPopUp: Bool = false
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel: UserViewModel
+=======
+    @State var quizzes: [Quiz] = secondQuizList
+    let quizzesRepository = QuizzesRepository()
+>>>>>>> abee6af (feat: QuizzesRepository)
     
     var body: some View {
         ZStack {
@@ -38,6 +43,7 @@ struct QuizListView: View {
                         }
                         .padding(.horizontal)
                         .padding(.bottom)
+<<<<<<< HEAD
                         
                         LeftTitle(text: "Em alta")
                         
@@ -81,6 +87,15 @@ struct QuizListView: View {
                                     }
                                 }
                             }
+=======
+                    }
+                    
+                    LeftTitle(text: "Encontre seu teste ideal")
+                    
+                    VStack {
+                        ForEach(quizzes) { quiz in
+                           HorizontalCard(quiz: quiz)
+>>>>>>> abee6af (feat: QuizzesRepository)
                         }
                     }
                 }
@@ -93,6 +108,12 @@ struct QuizListView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
+        .onAppear {
+            quizzesRepository.listQuizzes { quizzes in
+                print(quizzes)
+                self.quizzes.append(contentsOf: quizzes)
+            }
+        }
     }
 }
 

@@ -8,10 +8,15 @@ struct PersonalityApp: App {
     
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
             ChooseEgoView()
                 .background(Color.preto.edgesIgnoringSafeArea(.all))
                 .environmentObject(navigationHelper)
                 .environmentObject(userViewModel)
+=======
+//            LoginView()
+            MainView()
+>>>>>>> abee6af (feat: QuizzesRepository)
         }
     }
 }

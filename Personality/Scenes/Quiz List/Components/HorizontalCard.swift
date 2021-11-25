@@ -4,10 +4,41 @@ struct HorizontalCard: View {
     var quiz: Quiz
     
     var body: some View {
+<<<<<<< HEAD
         ZStack {
             if quiz.imageName != nil {
                 HStack {
                     Image(quiz.imageName!)
+=======
+        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+            ZStack {
+                if quiz.image != nil {
+                    HStack {
+                        Image(quiz.image!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.leading, 80)
+                    }
+                }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(quiz.title)
+                            .foregroundColor(.white)
+                            .font(.system(size: 24, weight: .black, design: .default))
+                            .padding(.bottom, 1)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
+                        Text(quiz.subtitle!)
+                            .personalityFont(.subheadline, textSize: 12)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    .cornerRadius(16)
+                    
+                    Spacer()
+                    
+                    Image("estrelaApagada")
+>>>>>>> abee6af (feat: QuizzesRepository)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.leading, 80)
@@ -38,7 +69,7 @@ struct HorizontalCard: View {
             }
         }
         .frame(height: 95, alignment: .center)
-        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+        .background(Color(uiColor: UIColor(named: quiz.color)!))
         .cornerRadius(16)
         .padding(.horizontal)
     }
@@ -49,11 +80,11 @@ struct HorizontalCard_Previews: PreviewProvider {
         HorizontalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "IlustraSoLove",
-                            shortDescription: "Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Green",
+                            image: "IlustraSoLove",
+                            subtitle: "Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Green",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -107,7 +138,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
                                 Result(
                                     label: "Legal",
@@ -123,7 +154,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
                                 Result(
                                     label: "Guru",
@@ -139,7 +170,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
                                 Result(
                                     label: "Raivosa",
@@ -155,7 +186,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )

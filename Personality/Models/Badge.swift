@@ -1,6 +1,10 @@
 import Foundation
 
+<<<<<<< HEAD
 struct Badge {
+=======
+final class Badge: Decodable {
+>>>>>>> abee6af (feat: QuizzesRepository)
     var id = UUID()
     var iconImageURL: String
     var profileImagesURL: [Ego : String]

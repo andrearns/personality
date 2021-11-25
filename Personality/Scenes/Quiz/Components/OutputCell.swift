@@ -38,7 +38,7 @@ struct OutputCell_Previews: PreviewProvider {
                             .florzinha : "Z"
                         ]
                     ),
-                colorName: "Blue"
+                color: "Blue"
             )
         )
     }

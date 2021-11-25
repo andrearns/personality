@@ -60,7 +60,7 @@ struct LoginView: View {
                         let givenName = credentials.fullName?.givenName
 
                         let body = [
-                            "code": identityTokenString,
+                            "apple_id": identityTokenString,
                             "name": givenName,
                             "email": email
                         ]

@@ -32,9 +32,22 @@ func generateCreativeTypesResult(answers: [Int : Answer]) -> Result {
     
     let resultCode = (scores["a"]! > scores["b"]! ? "a": "b") + (scores["c"]! > scores["d"]! ? "c": "d") + (scores["e"]! > scores["f"]! ? "e": "f")
     
-    let quizResult = QuizBank.shared.quizList[1].results.first { result in
-        result.code == resultCode
+    if let quizResults = QuizBank.shared.quizList[1].results {
+        let quizResult = quizResults.first { result in
+            result.code == resultCode
+        }
+        return quizResult!
     }
     
-    return quizResult!
+    return Result(
+        label: "Placeholder",
+        about: "Top, muito top",
+        code: "i",
+        badge:
+            Badge(
+                imageURL: "tenis2",
+                label: ""
+            ),
+        color: "Pink"
+    )
 }

@@ -4,12 +4,34 @@ struct VerticalCard: View {
     var quiz: Quiz
     
     var body: some View {
+<<<<<<< HEAD
         ZStack {
             Image("backgroundTest")
                 .resizable()
             if quiz.imageName != nil {
                 VStack {
                     Spacer()
+=======
+        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+            ZStack {
+                Image("backgroundTest")
+                    .resizable()
+                if quiz.image != nil {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Image(quiz.image!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(8)
+                                .padding(.top, 60)
+                                .padding(.leading, 60)
+                        }
+                    }
+                }
+                VStack(alignment: .leading) {
+>>>>>>> abee6af (feat: QuizzesRepository)
                     HStack {
                         Spacer()
                         Image(quiz.imageName!)
@@ -19,6 +41,7 @@ struct VerticalCard: View {
                             .padding(.top, 60)
                             .padding(.leading, 60)
                     }
+<<<<<<< HEAD
                 }
             }
             VStack(alignment: .leading) {
@@ -39,11 +62,25 @@ struct VerticalCard: View {
                         .foregroundColor(.branco)
                         .padding(.trailing, 40)
                         .multilineTextAlignment(.leading)
+=======
+                    HStack {
+                        Text(quiz.subtitle!)
+                            .personalityFont(.subheadline, textSize: 12)
+                            .foregroundColor(.branco)
+                            .padding(.trailing, 40)
+                    }
+>>>>>>> abee6af (feat: QuizzesRepository)
                     Spacer()
                 }
                 Spacer()
             }
+<<<<<<< HEAD
             .padding()
+=======
+            .frame(width: 200, height: 250, alignment: .leading)
+            .background(Color(uiColor: UIColor(named: quiz.color)!))
+            .cornerRadius(16)
+>>>>>>> abee6af (feat: QuizzesRepository)
         }
         .frame(width: 200, height: 250, alignment: .leading)
         .background(Color(uiColor: UIColor(named: quiz.colorName)!))
@@ -56,11 +93,11 @@ struct VerticalCard_Previews: PreviewProvider {
         VerticalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "IlustraDISK",
-                            shortDescription: "Descrição curta Descrição curta Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Blue",
+                            image: "IlustraDISK",
+                            subtitle: "Descrição curta Descrição curta Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Blue",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -114,7 +151,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
                                 Result(
                                     label: "Legal",
@@ -130,7 +167,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
                                 Result(
                                     label: "Guru",
@@ -146,7 +183,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
                                 Result(
                                     label: "Raivosa",
@@ -162,7 +199,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )

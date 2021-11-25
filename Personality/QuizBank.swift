@@ -6,11 +6,19 @@ struct QuizBank {
     var quizList = [
         Quiz(
             title: "DISK ME",
+<<<<<<< HEAD
             imageName: "IlustraDISK",
             shortDescription: "Dominância, influência, conformidade ou estabilidade?",
             longDescription: "Com o teste DISC você consegue entender melhor suas habilidades e limitações, pontos fortes e fracos. Vamo lá?",
             durationInMinutes: 5,
             colorName: "Blue",
+=======
+            image: "IlustraDISK",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Blue",
+>>>>>>> abee6af (feat: QuizzesRepository)
             questions: [
                 Question(
                     label: "Eu sou uma pessoa...",
@@ -154,7 +162,7 @@ struct QuizBank {
                                 .florzinha : "DISC_Dominante_Flor"
                             ]
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Influência",
@@ -170,7 +178,7 @@ struct QuizBank {
                                 .florzinha : "DISC_Influencer_Flor"
                             ]
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Conformidade",
@@ -186,7 +194,7 @@ struct QuizBank {
                                 .florzinha : "DISC_Equilibrado_Flor"
                             ]
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Estabilidade",
@@ -202,18 +210,27 @@ struct QuizBank {
                                 .florzinha : "DISC_Cauteloso_Flor"
                             ]
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
+<<<<<<< HEAD
             title: "tipos de criatividade",
             imageName: "IlustraCriatividade",
             shortDescription: "Encontre seu chapéu ideal",
             longDescription: "Todos nós somos criativos! A criatividade só se manifesta de formas diferentes em cada um. Nesse teste você vai descobrir qual dos 8 tipos de criatividade é a sua. Let's go!!!",
             durationInMinutes: 5,
             colorName: "Green",
+=======
+            title: "Creative \nTypes",
+            image: "IlustraCriatividade",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Green",
+>>>>>>> abee6af (feat: QuizzesRepository)
             questions: [
                 Question(
                     label: "Você normalmente:",
@@ -336,7 +353,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Artista_Flor"
                             ]
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Pensadora",
@@ -352,7 +369,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Pensador_Flor"
                             ]
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Aventureira",
@@ -368,7 +385,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Aventureiro_Flor"
                             ]
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Criador",
@@ -384,7 +401,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Criador_Flor"
                             ]
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
                 Result(
                     label: "Mão na massa",
@@ -400,7 +417,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Maonamassa_Flor"
                             ]
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Sonhador",
@@ -416,7 +433,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Sonhador_Flor"
                             ]
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Inovador",
@@ -432,7 +449,7 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Inovador_Flor"
                             ]
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Visionário",
@@ -448,12 +465,13 @@ struct QuizBank {
                                 .florzinha : "Criatividade_Visionario_Flor"
                             ]
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
+<<<<<<< HEAD
             title: "sabotagem",
             imageName: "IlustraSabotagem",
             shortDescription: "Quais são seus sabotadores",
@@ -462,10 +480,103 @@ struct QuizBank {
             colorName: "Purple",
             questions: [],
             results: []
+=======
+            title: "Sabotage",
+            image: "IlustraSabotagem",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Purple",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                )
+            ],
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Green"
+                ),
+            ]
+>>>>>>> abee6af (feat: QuizzesRepository)
         ),
         
         Quiz(
             title: "Só love\nSó love",
+<<<<<<< HEAD
             imageName: "IlustraSoLove",
             shortDescription: "Qual a sua linguagem do amor?",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
@@ -484,6 +595,189 @@ struct QuizBank {
             colorName: "Pink",
             questions: [],
             results: []
+=======
+            image: "IlustraSoLove",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Blue",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                )
+            ],
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Green"
+                ),
+            ]
+        ),
+        
+        Quiz(
+            title: "Teste 5",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Pink",
+            questions: [
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                ),
+                Question(
+                    label: "Qual cor você prefere?",
+                    answers: [
+                        Answer(label: "Rosa", score: "A"),
+                        Answer(label: "Vermelho", score: "B"),
+                        Answer(label: "Amarelo", score: "C"),
+                        Answer(label: "Azul", score: "D"),
+                    ]
+                )
+            ],
+            results: [
+                Result(
+                    label: "Sábia",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Blue"
+                ),
+                Result(
+                    label: "Legal",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Pink"
+                ),
+                Result(
+                    label: "Guru",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Yellow"
+                ),
+                Result(
+                    label: "Raivosa",
+                    about: "kkkkkkkkkk",
+                    code: "ACF",
+                    badge:
+                        Badge(
+                            imageURL: "",
+                            label: ""
+                        ),
+                    color: "Green"
+                ),
+            ]
+>>>>>>> abee6af (feat: QuizzesRepository)
         )
     ]
 }

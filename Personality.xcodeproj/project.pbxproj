@@ -63,6 +63,7 @@
 		C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */; };
 		AF13D89D274DBC170090F35E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13D89C274DBC170090F35E /* APIService.swift */; };
 		AF13D89F274DC5F20090F35E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13D89E274DC5F20090F35E /* Auth.swift */; };
+		AF67E08D27500AC10091C5ED /* QuizzesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67E08C27500AC10091C5ED /* QuizzesRepository.swift */; };
 		C7AA344E274D5DEF00687B88 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalView.swift; sourceTree = "<group>"; };
 		AF13D89C274DBC170090F35E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AF13D89E274DC5F20090F35E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		AF67E08C27500AC10091C5ED /* QuizzesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesRepository.swift; sourceTree = "<group>"; };
 		C7AA344D274D5DEF00687B88 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				AF13D89C274DBC170090F35E /* APIService.swift */,
+				AF67E08C27500AC10091C5ED /* QuizzesRepository.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				5B36F68D2753E37200273F1E /* InstagramShareView.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* Result.swift in Sources */,
 				5B36F68F2754186700273F1E /* Snapshot.swift in Sources */,
+				AF67E08D27500AC10091C5ED /* QuizzesRepository.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
 				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
 				90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */,
@@ -655,7 +659,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Personality/Preview Content\"";
-				DEVELOPMENT_TEAM = VWZ6P536SX;
+				DEVELOPMENT_TEAM = 3GTJZ8KSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Personality/Info.plist;
@@ -670,7 +674,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrearns.Personality;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrearns.Personalitya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -688,7 +692,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Personality/Preview Content\"";
-				DEVELOPMENT_TEAM = VWZ6P536SX;
+				DEVELOPMENT_TEAM = 3GTJZ8KSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Personality/Info.plist;
@@ -703,7 +707,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrearns.Personality;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrearns.Personalitya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
