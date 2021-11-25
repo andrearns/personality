@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LoadingAnimationView: View {
-    @State var isClockwise = true
+
     @State var degrees: Double = 0
     var labelText: String = ""
     
@@ -31,9 +31,6 @@ struct LoadingAnimationView: View {
         .background(Color.black)
         .onAppear {
             degrees = 360
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                isClockwise = false
-            }
         }
     }
 }

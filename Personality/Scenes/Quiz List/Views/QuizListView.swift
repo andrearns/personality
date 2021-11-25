@@ -73,10 +73,12 @@ struct QuizListView: View {
                 }
                 .navigationBarHidden(true)
                 .navigationBarTitleDisplayMode(.inline)
+                .background(Color.preto.edgesIgnoringSafeArea(.all))
             }
             
             ComingSoonQuizPopUpView(show: $showPopUp)
         }
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
     }
 }

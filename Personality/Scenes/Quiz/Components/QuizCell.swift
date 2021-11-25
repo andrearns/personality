@@ -10,6 +10,8 @@ struct QuizCell: View {
             Text(answer.label)
                 .foregroundColor(.white)
                 .font(.system(size: 18, weight: .medium, design: .default))
+                .multilineTextAlignment(.center)
+                .padding()
         }
         .frame(maxWidth: .infinity)
         .frame(height: 80)

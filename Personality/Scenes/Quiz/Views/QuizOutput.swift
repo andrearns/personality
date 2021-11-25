@@ -6,21 +6,16 @@ struct QuizOutput: View {
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
-                ExitButtonView(fieldName: "", action: {
-                    print("Voltar para quizzos")
-                }, hasError: .constant(false))
-                    .padding(.leading, -50)
-                
-                Buildimage(result: result)
-                    .padding(.top)
+                BadgeComponentView(result: result)
                 
                 VStack(alignment: .center) {
                     _buildTitle
                         .padding(.bottom)
                     _buildDescription
                         .padding(.bottom, 32)
+                        .padding(.horizontal)
                     Spacer()
                 }
                 Button(action: {
@@ -40,6 +35,16 @@ struct QuizOutput: View {
             .padding(.horizontal)
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .navigationBarItems(trailing:
+            Button(action: {
+                print("Go back to quizzos")
+            }) {
+                Image(systemName: "xmark")
+                    .font(.system(size: 24, weight: .bold, design: .default))
+                    .foregroundColor(.white)
+            }
+        )
+        .navigationBarBackButtonHidden(true)
     }
     
     var _buildTitle: some View {
@@ -55,7 +60,7 @@ struct QuizOutput: View {
     var _buildDescription: some View {
         VStack {
             Text(result.about)
-                .multilineTextAlignment(.trailing)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.branco)
         }
     }
@@ -91,7 +96,7 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-            QuizOutput(result: Result(label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
+            QuizOutput(result: Result(label: "Dominancia", about: "Você vive em um mundo de possibilidades infinitas, preferindo ver as coisas não como eles são, mas pelo o que elas podem ser. Você sabe que na vida existem limites, mas você busca, de alguma maneira, ultrapassar todos eles. É emocional, apaixonado e cheio de ideias. Sua natureza é introspectiva e intuitiva, é equilibrada por um grande interesse pelo mundo ao seu redor e desejo de contribuir para a sociedade. Carismático e expressivo, você adora compartilhar suas ideias malucas com outras pessoas.", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
             )
         }
     }

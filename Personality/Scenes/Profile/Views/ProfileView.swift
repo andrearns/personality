@@ -37,10 +37,10 @@ struct ProfileView: View {
                                 .foregroundColor(.white)
                             Spacer()
                             Button(action: {
-                                
+                                print("Share profile")
                             }) {
                                 Image(systemName: "square.and.arrow.up")
-                                    .font(.system(size: 18, weight: .semibold))
+                                    .font(.system(size: 24, weight: .semibold, design: .default))
                                     .foregroundColor(.white)
                             }
                         }
@@ -53,7 +53,7 @@ struct ProfileView: View {
                     .padding(.top, 80)
                     .padding(.bottom, 40)
                     
-                    LeftTitle(text: "Personalidade")
+                    LeftTitle(text: "Traços da sua personalidade")
                     
                     LazyVGrid(columns: columns) {
                         ForEach(results) { result in
@@ -68,7 +68,8 @@ struct ProfileView: View {
                 }
             }
         }
-        .sheet(isPresented: $showModal) { ModalView(result: self.$selectedResult ?? Binding.constant(nil))}
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .sheet(isPresented: $showModal) { BadgeModalView(result: self.$selectedResult ?? Binding.constant(nil))}
     }
 }
 
