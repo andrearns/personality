@@ -9,9 +9,10 @@ import SwiftUI
 
 struct BadgeModalView: View {
 
-    @Binding var result: Result?
+    @ObservedObject var userViewModel: UserViewModel
     @State var isSelected: Bool = true
     @State var aboutArray : [String] = [""]
+    @Binding var user: User
     
     var body: some View{
     VStack{
@@ -25,11 +26,11 @@ struct BadgeModalView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BadgeComponentView(result: result!)
+                    BadgeComponentView(result: userViewModel.selectedUserResult!.result)
                     Spacer()
                 }
                 
-                Text(result!.label)
+                Text(userViewModel.selectedUserResult!.result.label)
                     .fontWeight(.bold)
                     .font(.title)
                     .foregroundColor(.white)
@@ -65,7 +66,11 @@ struct BadgeModalView: View {
     }
     .background(Material.ultraThinMaterial)
     .onAppear {
-        self.aboutArray = result!.about.components(separatedBy: "\n")
+        self.aboutArray = userViewModel.selectedUserResult!.result.about.components(separatedBy: "\n")
+        self.isSelected = userViewModel.selectedUserResult!.isPrivate
+    }
+    .onChange(of: isSelected) { newValue in
+        userViewModel.updateUserResultVisibility(isPrivate: newValue)
     }
         
     }
