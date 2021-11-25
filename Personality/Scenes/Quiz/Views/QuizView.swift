@@ -128,6 +128,7 @@ struct QuizView: View {
                 LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
             }
         }
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
     }
 }
