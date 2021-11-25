@@ -14,6 +14,7 @@ var secondQuizList: [Quiz] = [
 struct QuizListView: View {
     @State var isActive: Bool = false
     @State private var showPopUp: Bool = false
+    @EnvironmentObject var navigationHelper: NavigationHelper
     
     var body: some View {
         ZStack {
@@ -32,7 +33,7 @@ struct QuizListView: View {
                             HStack {
                                 ForEach(firstQuizList) { quiz in
                                     if quiz.questions.count != 0 {
-                                        NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                                        NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
                                             VerticalCard(quiz: quiz)
                                         }
                                     } else {
@@ -55,7 +56,7 @@ struct QuizListView: View {
                         VStack {
                             ForEach(secondQuizList) { quiz in
                                 if quiz.questions.count != 0 {
-                                    NavigationLink(destination: QuizIntroView(quiz: quiz)) {
+                                    NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
                                         HorizontalCard(quiz: quiz)
                                     }
                                 } else {

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct QuizOutput: View {
     
+    @EnvironmentObject var navigationHelper: NavigationHelper
     var result: Result
     
     var body: some View {
@@ -27,6 +28,7 @@ struct QuizOutput: View {
         
                 Button(action: {
                     print("Go back to quizzos screen")
+                    navigationHelper.selectedView = nil
                 }) {
                     _buildButton2
                         
@@ -38,6 +40,7 @@ struct QuizOutput: View {
         .navigationBarItems(trailing:
             Button(action: {
                 print("Go back to quizzos")
+                navigationHelper.selectedView = nil
             }) {
                 Image(systemName: "xmark")
                     .font(.system(size: 24, weight: .bold, design: .default))

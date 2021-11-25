@@ -15,6 +15,7 @@
 		5B23A678274F3AFB002084B3 /* BadgeComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A677274F3AFB002084B3 /* BadgeComponentView.swift */; };
 		5B23A67A274F3D4E002084B3 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A679274F3D4E002084B3 /* EyeView.swift */; };
 		5B23A67C274F3D9C002084B3 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A67B274F3D9C002084B3 /* StarView.swift */; };
+		5B23A67E275003E1002084B3 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A67D275003E1002084B3 /* NavigationHelper.swift */; };
 		5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */; };
 		5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* QuizListView.swift */; };
 		5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2583273F2C3100D51D9C /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		5B23A677274F3AFB002084B3 /* BadgeComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponentView.swift; sourceTree = "<group>"; };
 		5B23A679274F3D4E002084B3 /* EyeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		5B23A67B274F3D9C002084B3 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		5B23A67D275003E1002084B3 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		5BDC257C273F2C2D00D51D9C /* Personality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityApp.swift; sourceTree = "<group>"; };
 		5BDC2581273F2C2D00D51D9C /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				5BDC25CE2744B53200D51D9C /* Color.swift */,
 				56423978274C030700424227 /* Font .swift */,
+				5B23A67D275003E1002084B3 /* NavigationHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				5BDC25CF2744B53200D51D9C /* Color.swift in Sources */,
 				5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */,
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
+				5B23A67E275003E1002084B3 /* NavigationHelper.swift in Sources */,
 				5BDC25C62744B06000D51D9C /* VerticalCard.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* Result.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
