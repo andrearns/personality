@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		564239752749BA8C00424227 /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564239742749BA8C00424227 /* ExitButtonView.swift */; };
 		56423979274C030700424227 /* Font .swift in Sources */ = {isa = PBXBuildFile; fileRef = 56423978274C030700424227 /* Font .swift */; };
 		5642397B274C26A900424227 /* BuildImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5642397A274C26A900424227 /* BuildImage.swift */; };
 		565E6A75274D6194009B68E7 /* PaytoneOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */; };
@@ -50,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		564239742749BA8C00424227 /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
 		56423978274C030700424227 /* Font .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font .swift"; sourceTree = "<group>"; };
 		5642397A274C26A900424227 /* BuildImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildImage.swift; sourceTree = "<group>"; };
 		565E6A67274D50BE009B68E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				5BDC25C12744AC6B00D51D9C /* OutputCell.swift */,
 				5BDC25BA274487AA00D51D9C /* ProgressBar.swift */,
 				5BDC25C32744AD2900D51D9C /* IntroHeader.swift */,
-				564239742749BA8C00424227 /* ExitButtonView.swift */,
 				5642397A274C26A900424227 /* BuildImage.swift */,
 			);
 			path = Components;
@@ -430,7 +427,6 @@
 				5BDC25A82742DC2300D51D9C /* QuizCell.swift in Sources */,
 				90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */,
 				5BDC2598273F73E200D51D9C /* QuizIntroView.swift in Sources */,
-				564239752749BA8C00424227 /* ExitButtonView.swift in Sources */,
 				900D7B83274AC24700548E9C /* NicknameView.swift in Sources */,
 				90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */,
 				5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */,

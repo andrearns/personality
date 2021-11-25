@@ -8,11 +8,6 @@ struct QuizOutput: View {
         
         ScrollView {
             VStack {
-                ExitButtonView(fieldName: "", action: {
-                    print("Voltar para quizzos")
-                }, hasError: .constant(false))
-                    .padding(.leading, -50)
-                
                 Buildimage(result: result)
                     .padding(.top)
                 
@@ -40,6 +35,15 @@ struct QuizOutput: View {
             .padding(.horizontal)
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .navigationBarItems(trailing:
+            Button(action: {
+                print("Go back to quizzos")
+            }) {
+                Image(systemName: "xmark")
+                    .font(.system(size: 24, weight: .bold, design: .default))
+                    .foregroundColor(.white)
+            }
+        )
     }
     
     var _buildTitle: some View {
