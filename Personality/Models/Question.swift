@@ -1,6 +1,6 @@
 import Foundation
 
-final class Question: Identifiable {
+final class Question: Identifiable, Decodable {
     var id = UUID()
     var label: String
     var answers: [Answer]

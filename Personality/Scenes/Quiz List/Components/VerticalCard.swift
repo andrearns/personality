@@ -8,12 +8,12 @@ struct VerticalCard: View {
             ZStack {
                 Image("backgroundTest")
                     .resizable()
-                if quiz.imageName != nil {
+                if quiz.image != nil {
                     VStack {
                         Spacer()
                         HStack {
                             Spacer()
-                            Image(quiz.imageName!)
+                            Image(quiz.image!)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(8)
@@ -34,7 +34,7 @@ struct VerticalCard: View {
                         Spacer()
                     }
                     HStack {
-                        Text(quiz.shortDescription!)
+                        Text(quiz.subtitle!)
                             .personalityFont(.subheadline, textSize: 12)
                             .foregroundColor(.branco)
                             .padding(.trailing, 40)
@@ -44,7 +44,7 @@ struct VerticalCard: View {
                 .padding()
             }
             .frame(width: 200, height: 250, alignment: .leading)
-            .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+            .background(Color(uiColor: UIColor(named: quiz.color)!))
             .cornerRadius(16)
         }
     }
@@ -55,11 +55,11 @@ struct VerticalCard_Previews: PreviewProvider {
         VerticalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "IlustraDISK",
-                            shortDescription: "Descrição curta Descrição curta Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Blue",
+                            image: "IlustraDISK",
+                            subtitle: "Descrição curta Descrição curta Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Blue",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -108,7 +108,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
                                 Result(
                                     label: "Legal",
@@ -119,7 +119,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
                                 Result(
                                     label: "Guru",
@@ -130,7 +130,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
                                 Result(
                                     label: "Raivosa",
@@ -141,7 +141,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )

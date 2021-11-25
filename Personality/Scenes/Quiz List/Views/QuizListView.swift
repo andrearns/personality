@@ -13,6 +13,8 @@ var secondQuizList: [Quiz] = [
 
 struct QuizListView: View {
     @State var isActive: Bool = false
+    @State var quizzes: [Quiz] = secondQuizList
+    let quizzesRepository = QuizzesRepository()
     
     var body: some View {
         NavigationView {
@@ -38,7 +40,7 @@ struct QuizListView: View {
                     LeftTitle(text: "Encontre seu teste ideal")
                     
                     VStack {
-                        ForEach(secondQuizList) { quiz in
+                        ForEach(quizzes) { quiz in
                            HorizontalCard(quiz: quiz)
                         }
                     }
@@ -48,6 +50,12 @@ struct QuizListView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .accentColor(.white)
+        .onAppear {
+            quizzesRepository.listQuizzes { quizzes in
+                print(quizzes)
+                self.quizzes.append(contentsOf: quizzes)
+            }
+        }
     }
 }
 

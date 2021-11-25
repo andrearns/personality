@@ -5,12 +5,12 @@ struct IntroHeader: View {
     
     var body: some View {
         ZStack{
-            if quiz.imageName != nil {
+            if quiz.image != nil {
                 HStack {
                     Spacer()
                     VStack {
                         Spacer()
-                        Image(quiz.imageName!)
+                        Image(quiz.image!)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 200)
@@ -27,7 +27,7 @@ struct IntroHeader: View {
                             .padding(.top, 40)
                         HStack {
                             Image(systemName: "clock")
-                            Text("\(quiz.durationInMinutes) minutos")
+                            Text("\(quiz.estimatedTimeInMinutes) minutos")
                                 .font(.system(size: 16, weight: .regular, design: .default))
                             Spacer()
                         }
@@ -40,7 +40,7 @@ struct IntroHeader: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 300)
-        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+        .background(Color(uiColor: UIColor(named: quiz.color)!))
     }
 }
 
@@ -49,11 +49,11 @@ struct IntroHeader_Previews: PreviewProvider {
         IntroHeader(quiz:
                         Quiz(
                             title: "tipos de criatividade",
-                            imageName: "creativeTypes",
-                            shortDescription: "Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Green",
+                            image: "creativeTypes",
+                            subtitle: "Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Green",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -102,7 +102,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
                                 Result(
                                     label: "Legal",
@@ -113,7 +113,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
                                 Result(
                                     label: "Guru",
@@ -124,7 +124,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
                                 Result(
                                     label: "Raivosa",
@@ -135,7 +135,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                             imageURL: "",
                                             label: ""
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )

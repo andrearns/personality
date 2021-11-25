@@ -79,7 +79,7 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-            QuizOutput(result: Result(label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
+            QuizOutput(result: Result(label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), color: "")
             )
         }
     }

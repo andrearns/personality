@@ -18,7 +18,7 @@ struct QuizIntroView: View {
                     IntroHeader(quiz: quiz)
                         
                     HStack {
-                        Text(quiz.longDescription!)
+                        Text(quiz.about!)
                         Spacer()
                     }
                     .padding()
@@ -32,7 +32,7 @@ struct QuizIntroView: View {
                     .padding(.top)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(quiz.results) { result in
+                        ForEach(quiz.results ?? []) { result in
                             OutputCell(result: result)
                         }
                     }.padding()
@@ -56,7 +56,7 @@ struct QuizIntroView: View {
                 }
                 .isDetailLink(false)
                 .padding()
-                .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+                .background(Color(uiColor: UIColor(named: quiz.color)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
             }
@@ -77,10 +77,10 @@ struct QuizIntroView_Preview: PreviewProvider {
             quiz:
                 Quiz(
                     title: "Teste 5",
-                    shortDescription: "Descrição curta",
-                    longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                    durationInMinutes: 5,
-                    colorName: "Green",
+                    subtitle: "Descrição curta",
+                    about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                    estimatedTimeInMinutes: 5,
+                    color: "Green",
                     questions: [
                         Question(
                             label: "Qual cor você prefere?",
@@ -129,7 +129,7 @@ struct QuizIntroView_Preview: PreviewProvider {
                                     imageURL: "",
                                     label: ""
                                 ),
-                            colorName: "Blue"
+                            color: "Blue"
                         ),
                         Result(
                             label: "Legal",
@@ -140,7 +140,7 @@ struct QuizIntroView_Preview: PreviewProvider {
                                     imageURL: "",
                                     label: ""
                                 ),
-                            colorName: "Pink"
+                            color: "Pink"
                         ),
                         Result(
                             label: "Guru",
@@ -151,7 +151,7 @@ struct QuizIntroView_Preview: PreviewProvider {
                                     imageURL: "",
                                     label: ""
                                 ),
-                            colorName: "Yellow"
+                            color: "Yellow"
                         ),
                         Result(
                             label: "Raivosa",
@@ -162,7 +162,7 @@ struct QuizIntroView_Preview: PreviewProvider {
                                     imageURL: "",
                                     label: ""
                                 ),
-                            colorName: "Green"
+                            color: "Green"
                         ),
                     ]
                 )

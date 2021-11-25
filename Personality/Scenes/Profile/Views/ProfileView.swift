@@ -12,9 +12,9 @@ struct ProfileView: View {
         GridItem(.flexible()),
     ]
     
-    var results = [
-        QuizBank.shared.quizList[0].results[0],
-        QuizBank.shared.quizList[1].results[0],
+    var results: [Result] = [
+//        QuizBank.shared.quizList[0].results[0],
+//        QuizBank.shared.quizList[1].results[0],
     ]
     
     var body: some View {

@@ -21,9 +21,9 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Button(action: {
-                                if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
+                                if currentQuestionIndex <= quiz.questions!.count - 1 && currentQuestionIndex != 0 {
                                     currentQuestionIndex = currentQuestionIndex - 1
-                                    currentQuestion = quiz.questions[currentQuestionIndex]
+                                    currentQuestion = quiz.questions![currentQuestionIndex]
                                     currentAnswer = answerList[currentQuestionIndex]
                                 } else {
                                     print("Go back to quiz list view")
@@ -50,17 +50,17 @@ struct QuizView: View {
                         }
                         .padding()
                         
-                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questions.count)
+                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questions!.count)
                     }
                     VStack {
                         HStack {
-                            Text("\(currentQuestionIndex + 1). \(quiz.questions[currentQuestionIndex].label)")
+                            Text("\(currentQuestionIndex + 1). \(quiz.questions![currentQuestionIndex].label)")
                                 .font(.system(size: 24, weight: .bold, design: .default))
                             Spacer()
                         }
                         .padding(.vertical, 40)
                             
-                        ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
+                        ForEach(quiz.questions![currentQuestionIndex].answers) { answer in
                             QuizCell(answer: answer, isSelected: currentAnswer == answer) {
                                 currentAnswer = answer
                             }
@@ -75,9 +75,9 @@ struct QuizView: View {
                     if currentAnswer != nil {
                         answerList[currentQuestionIndex] = currentAnswer
                         
-                        if currentQuestionIndex < quiz.questions.count - 1 {
+                        if currentQuestionIndex < quiz.questions!.count - 1 {
                             self.currentQuestionIndex += 1
-                            self.currentQuestion = quiz.questions[currentQuestionIndex]
+                            self.currentQuestion = quiz.questions![currentQuestionIndex]
                             
                             if answerList[currentQuestionIndex] != nil {
                                 currentAnswer = answerList[currentQuestionIndex]
@@ -107,7 +107,7 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Text(currentQuestionIndex == quiz.questions.count - 1 ? "Finalizar teste" : "Confirmar resposta")
+                            Text(currentQuestionIndex == quiz.questions!.count - 1 ? "Finalizar teste" : "Confirmar resposta")
                                 .bold()
                             Spacer()
                         }
@@ -117,7 +117,7 @@ struct QuizView: View {
                     }
                 }
                 .padding()
-                .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+                .background(Color(uiColor: UIColor(named: quiz.color)!))
                 .cornerRadius(25)
                 .foregroundColor(.white)
                 

@@ -6,11 +6,11 @@ struct QuizBank {
     var quizList = [
         Quiz(
             title: "DISK ME",
-            imageName: "IlustraDISK",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            durationInMinutes: 5,
-            colorName: "Blue",
+            image: "IlustraDISK",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Blue",
             questions: [
                 Question(
                     label: "Eu sou uma pessoa...",
@@ -59,7 +59,7 @@ struct QuizBank {
                             imageURL: "tenis3",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Influência",
@@ -70,7 +70,7 @@ struct QuizBank {
                             imageURL: "tenis2",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Conformidade",
@@ -81,7 +81,7 @@ struct QuizBank {
                             imageURL: "tenis4",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Estabilidade",
@@ -92,18 +92,18 @@ struct QuizBank {
                             imageURL: "tenis1",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
             title: "Creative \nTypes",
-            imageName: "IlustraCriatividade",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            durationInMinutes: 5,
-            colorName: "Green",
+            image: "IlustraCriatividade",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Green",
             questions: [
                 Question(
                     label: "Are you a ruler or a scribble?",
@@ -221,7 +221,7 @@ struct QuizBank {
                             imageURL: "chapeu1",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Pensadora",
@@ -232,7 +232,7 @@ struct QuizBank {
                             imageURL: "chapeu2",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Aventureira",
@@ -243,7 +243,7 @@ struct QuizBank {
                             imageURL: "chapeu3",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Maker",
@@ -254,7 +254,7 @@ struct QuizBank {
                             imageURL: "chapeu4",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
                 Result(
                     label: "Producer",
@@ -265,7 +265,7 @@ struct QuizBank {
                             imageURL: "chapeu5",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Dreamer",
@@ -276,7 +276,7 @@ struct QuizBank {
                             imageURL: "chapeu6",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Innovator",
@@ -287,7 +287,7 @@ struct QuizBank {
                             imageURL: "chapeu7",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Visionary",
@@ -298,18 +298,18 @@ struct QuizBank {
                             imageURL: "chapeu8",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
             title: "Sabotage",
-            imageName: "IlustraSabotagem",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            durationInMinutes: 5,
-            colorName: "Purple",
+            image: "IlustraSabotagem",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Purple",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",
@@ -358,7 +358,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Legal",
@@ -369,7 +369,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Guru",
@@ -380,7 +380,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Raivosa",
@@ -391,18 +391,18 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
             title: "Só love\nSó love",
-            imageName: "IlustraSoLove",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            durationInMinutes: 5,
-            colorName: "Blue",
+            image: "IlustraSoLove",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Blue",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",
@@ -451,7 +451,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Legal",
@@ -462,7 +462,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Guru",
@@ -473,7 +473,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Raivosa",
@@ -484,17 +484,17 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         ),
         
         Quiz(
             title: "Teste 5",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-            durationInMinutes: 5,
-            colorName: "Pink",
+            subtitle: "Descrição curta",
+            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            estimatedTimeInMinutes: 5,
+            color: "Pink",
             questions: [
                 Question(
                     label: "Qual cor você prefere?",
@@ -543,7 +543,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Blue"
+                    color: "Blue"
                 ),
                 Result(
                     label: "Legal",
@@ -554,7 +554,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Pink"
+                    color: "Pink"
                 ),
                 Result(
                     label: "Guru",
@@ -565,7 +565,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Yellow"
+                    color: "Yellow"
                 ),
                 Result(
                     label: "Raivosa",
@@ -576,7 +576,7 @@ struct QuizBank {
                             imageURL: "",
                             label: ""
                         ),
-                    colorName: "Green"
+                    color: "Green"
                 ),
             ]
         )

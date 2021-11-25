@@ -33,7 +33,7 @@ struct OutputCell_Previews: PreviewProvider {
                         imageURL: "tenis1",
                         label: ""
                     ),
-                colorName: "Blue"
+                color: "Blue"
             )
         )
     }

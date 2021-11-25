@@ -28,9 +28,22 @@ func generateDISCResult(answers: [Int : Answer]) -> Result {
     
     print("Biggest Score: \(biggestScore)")
     
-    let quizResult = QuizBank.shared.quizList[0].results.first { result in
-        result.code == biggestScore?.key
+    if let quizResults = QuizBank.shared.quizList[1].results {
+        let quizResult = quizResults.first { result in
+            result.code == biggestScore?.key
+        }
+        return quizResult!
     }
     
-    return quizResult!
+    return Result(
+        label: "Placeholder",
+        about: "Top, muito top",
+        code: "i",
+        badge:
+            Badge(
+                imageURL: "tenis2",
+                label: ""
+            ),
+        color: "Pink"
+    )
 }
