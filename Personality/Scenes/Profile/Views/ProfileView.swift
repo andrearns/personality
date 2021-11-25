@@ -49,7 +49,9 @@ struct ProfileView: View {
                                 .aspectRatio(contentMode: .fit)
                             
                             ForEach(userViewModel.user.userResults) { userResult in
-                                Image(userResult.result.badge!.imageURL)
+                                if !userResult.isPrivate {
+                                    Image(userResult.result.badge!.imageURL)
+                                }
                             }
                         }
                         .padding(.horizontal, 40)
@@ -76,10 +78,3 @@ struct ProfileView: View {
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
     }
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileView()
-//            .preferredColorScheme(.dark)
-//    }
-//}

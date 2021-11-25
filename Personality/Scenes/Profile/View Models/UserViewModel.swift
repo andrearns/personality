@@ -26,4 +26,7 @@ class UserViewModel: ObservableObject {
         user.userResults[index].isPrivate = isPrivate
     }
     
+    func splitAboutTextInParagraphs() -> [String] {
+        return selectedUserResult!.result.about.components(separatedBy: "\n")
+    }
 }
