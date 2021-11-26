@@ -47,6 +47,7 @@ struct QuizOutput: View {
             }
         )
         .navigationBarBackButtonHidden(true)
+        .statusBar(hidden: true)
     }
     
     struct QuizOutput_Previews: PreviewProvider {

@@ -82,6 +82,7 @@ struct QuizListView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
+        .statusBar(hidden: true)
     }
 }
 

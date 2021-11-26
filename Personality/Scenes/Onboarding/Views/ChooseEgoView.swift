@@ -65,8 +65,11 @@ struct ChooseEgoView: View {
                 Spacer()
             }
             .navigationBarHidden(true)
+            .navigationTitle("")
             .background(Color.preto.edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .statusBar(hidden: true)
     }
 }
 
