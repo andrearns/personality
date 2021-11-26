@@ -11,8 +11,10 @@ struct BadgeModalView: View {
 
     @ObservedObject var userViewModel: UserViewModel
     @State var isPrivate: Bool = false
-    @State var aboutArray : [String] = [""]
     @Binding var user: User
+    var aboutArray : [String] {
+        userViewModel.splitAboutTextInParagraphs()
+    }
     
     var body: some View {
         VStack{
@@ -23,16 +25,9 @@ struct BadgeModalView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack {
-                    HStack {
-                        Spacer()
-                        BadgeComponentView(result: userViewModel.selectedUserResult!.result)
-                        Spacer()
-                    }
+                    BadgeComponentView(result: userViewModel.selectedUserResult!.result)
                     
-                    Text(userViewModel.selectedUserResult!.result.label)
-                        .fontWeight(.bold)
-                        .font(.title)
-                        .foregroundColor(.white)
+                    ResultTitle(label: userViewModel.selectedUserResult!.result.label)
                     
                     ForEach(aboutArray, id: \.self) { section in
                         Text(section)
@@ -65,7 +60,6 @@ struct BadgeModalView: View {
         }
         .background(Material.ultraThinMaterial)
         .onAppear {
-            self.aboutArray = userViewModel.splitAboutTextInParagraphs()
             self.isPrivate = userViewModel.selectedUserResult!.isPrivate
         }
         .onChange(of: isPrivate) { newValue in

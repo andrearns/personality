@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		56423979274C030700424227 /* Font .swift in Sources */ = {isa = PBXBuildFile; fileRef = 56423978274C030700424227 /* Font .swift */; };
-		5642397B274C26A900424227 /* BuildImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5642397A274C26A900424227 /* BuildImage.swift */; };
 		565E6A75274D6194009B68E7 /* PaytoneOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */; };
 		565E6A76274D6194009B68E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 565E6A74274D6194009B68E7 /* OFL.txt */; };
 		5B23A672274EB9C3002084B3 /* ComingSoonQuizPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A671274EB9C3002084B3 /* ComingSoonQuizPopUpView.swift */; };
@@ -20,6 +19,10 @@
 		5B23A68B27507A62002084B3 /* EgoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A68A27507A62002084B3 /* EgoCardView.swift */; };
 		5B23A68D27507A83002084B3 /* EgoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A68C27507A83002084B3 /* EgoCard.swift */; };
 		5B23A68F27507DCA002084B3 /* Ego.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A68E27507DCA002084B3 /* Ego.swift */; };
+		5B23A69127508D67002084B3 /* RightButtonStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A69027508D67002084B3 /* RightButtonStuff.swift */; };
+		5B23A69327508E65002084B3 /* LeftButtonStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A69227508E65002084B3 /* LeftButtonStuff.swift */; };
+		5B23A69527509001002084B3 /* ResultTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A69427509001002084B3 /* ResultTitle.swift */; };
+		5B23A697275096F4002084B3 /* EgoFaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A696275096F4002084B3 /* EgoFaceImage.swift */; };
 		5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */; };
 		5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* QuizListView.swift */; };
 		5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2583273F2C3100D51D9C /* Assets.xcassets */; };
@@ -58,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		56423978274C030700424227 /* Font .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font .swift"; sourceTree = "<group>"; };
-		5642397A274C26A900424227 /* BuildImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildImage.swift; sourceTree = "<group>"; };
 		565E6A67274D50BE009B68E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		565E6A73274D6194009B68E7 /* PaytoneOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PaytoneOne-Regular.ttf"; sourceTree = "<group>"; };
 		565E6A74274D6194009B68E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -71,6 +73,10 @@
 		5B23A68A27507A62002084B3 /* EgoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgoCardView.swift; sourceTree = "<group>"; };
 		5B23A68C27507A83002084B3 /* EgoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgoCard.swift; sourceTree = "<group>"; };
 		5B23A68E27507DCA002084B3 /* Ego.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ego.swift; sourceTree = "<group>"; };
+		5B23A69027508D67002084B3 /* RightButtonStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightButtonStuff.swift; sourceTree = "<group>"; };
+		5B23A69227508E65002084B3 /* LeftButtonStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftButtonStuff.swift; sourceTree = "<group>"; };
+		5B23A69427509001002084B3 /* ResultTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTitle.swift; sourceTree = "<group>"; };
+		5B23A696275096F4002084B3 /* EgoFaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgoFaceImage.swift; sourceTree = "<group>"; };
 		5BDC257C273F2C2D00D51D9C /* Personality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityApp.swift; sourceTree = "<group>"; };
 		5BDC2581273F2C2D00D51D9C /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
@@ -236,7 +242,9 @@
 				5BDC25C12744AC6B00D51D9C /* OutputCell.swift */,
 				5BDC25BA274487AA00D51D9C /* ProgressBar.swift */,
 				5BDC25C32744AD2900D51D9C /* IntroHeader.swift */,
-				5642397A274C26A900424227 /* BuildImage.swift */,
+				5B23A69027508D67002084B3 /* RightButtonStuff.swift */,
+				5B23A69227508E65002084B3 /* LeftButtonStuff.swift */,
+				5B23A69427509001002084B3 /* ResultTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 				90B99369274D5C500086B00A /* SnapCarousel.swift */,
 				5B23A679274F3D4E002084B3 /* EyeView.swift */,
 				5B23A68A27507A62002084B3 /* EgoCardView.swift */,
+				5B23A696275096F4002084B3 /* EgoFaceImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -465,18 +474,21 @@
 				900D7B83274AC24700548E9C /* NicknameView.swift in Sources */,
 				90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */,
 				5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */,
-				5642397B274C26A900424227 /* BuildImage.swift in Sources */,
+				5B23A69127508D67002084B3 /* RightButtonStuff.swift in Sources */,
 				5B23A672274EB9C3002084B3 /* ComingSoonQuizPopUpView.swift in Sources */,
 				5B23A68D27507A83002084B3 /* EgoCard.swift in Sources */,
 				5BDC25D82745FAF700D51D9C /* UserResult.swift in Sources */,
 				5BDC25C82744B06D00D51D9C /* HorizontalCard.swift in Sources */,
 				5BDC259A274006CF00D51D9C /* MainView.swift in Sources */,
+				5B23A697275096F4002084B3 /* EgoFaceImage.swift in Sources */,
 				5BDC25D62745FAAD00D51D9C /* User.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
 				5B23A68127501FDE002084B3 /* UserViewModel.swift in Sources */,
 				5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */,
 				5B23A67A274F3D4E002084B3 /* EyeView.swift in Sources */,
+				5B23A69327508E65002084B3 /* LeftButtonStuff.swift in Sources */,
 				5B23A68F27507DCA002084B3 /* Ego.swift in Sources */,
+				5B23A69527509001002084B3 /* ResultTitle.swift in Sources */,
 				5BDC25A22740904F00D51D9C /* Answer.swift in Sources */,
 				5BDC25CA2744B24100D51D9C /* QuizBank.swift in Sources */,
 				5BDC25CF2744B53200D51D9C /* Color.swift in Sources */,

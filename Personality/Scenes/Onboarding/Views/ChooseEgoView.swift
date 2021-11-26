@@ -13,27 +13,29 @@ struct ChooseEgoView: View {
     @State var selectedEgo: Ego = .florzinha
     let egos: [Ego] = Ego.allCases
     
-    
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
             
-            VStack(alignment: .leading) {
-                Text("BORA COMEÇAR")
-                    .font(.largeTitle)
-                
-                Text("Escolha seu EGOzinho")
-                    .font(.title2)
-                
-            }.padding(50)
-            .padding(.bottom, -30)
+            HStack {
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text("BORA \nCOMEÇAR")
+                        .personalityFont(.largeTitle, textSize: 40)
+                        .padding(.bottom, 2)
+                    
+                    Text("Escolha seu personagem")
+                        .personalityFont(.title, textSize: 18)
+                    
+                }
+                .padding(.bottom, 30)
+                Spacer()
+            }
             
             SnapCarousel(spacing: 0, index: $currentIndex, items: egos) { ego in
-                
                 GeometryReader { _ in
                     EgoCardView(ego: ego)
                 }
-                
             }
             .onChange(of: currentIndex) { value in
                 selectedEgo = egos[value]
@@ -41,37 +43,18 @@ struct ChooseEgoView: View {
             
             Spacer()
             
-            HStack {
-                
-                NavigationLink(destination: {
-                    NicknameView(ego: selectedEgo)
-                }) {
-                    HStack {
-                        Text("PRÓXIMO")
-                            .bold()
-                            .foregroundColor(.black)
-                            .padding(30)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "arrow.right")
-                            .padding(30)
-                            .foregroundColor(.black)
-                            
-                    }
-                    .frame(width: 250, height: 60, alignment: .center)
-                    .font(.system(size: 20))
-                    .background(
-                        RoundedRectangle(cornerRadius: 60)
-                            .fill(Color("Branco"))
-                    )
-                }
-                .padding()
+            NavigationLink(destination: {
+                NicknameView(ego: selectedEgo)
+            }) {
+                RightButtonStuff(title: "Próximo", systemImageName: "arrow.right", textColor: Color.preto)
             }
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+            .padding(.vertical)
+            .padding(.trailing)
             
+            Spacer()
             Image("LogoEgo")
-                .padding(40)
+                .padding(20)
+            Spacer()
         }
     }
 }
