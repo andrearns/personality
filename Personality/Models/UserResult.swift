@@ -1,15 +1,20 @@
 import Foundation
 
-final class UserResult {
-    var user: User
-    var result: Result
-    var isSelected: Bool
-    var isPrivate: Bool
+final class UserResult: Identifiable, Equatable {
+    static func == (lhs: UserResult, rhs: UserResult) -> Bool {
+        lhs.id == rhs.id
+    }
     
-    init(user: User, result: Result, isSelected: Bool, isPrivate: Bool) {
-        self.user = user
+    var id = UUID()
+    var result: Result
+    var isPrivate: Bool
+    //    var user: User
+    //    var isSelected: Bool
+    
+    init(result: Result, isPrivate: Bool) {
         self.result = result
-        self.isSelected = isSelected
         self.isPrivate = isPrivate
+        //        self.user = user
+        //        self.isSelected = isSelected
     }
 }

@@ -103,8 +103,13 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            imageURL: "",
-                                            label: ""
+                                            iconImageURL: "chapeu2",
+                                            profileImagesURL: [
+                                                .coracaozinho : "X",
+                                                .diabinho : "Y",
+                                                .estrelinha : "W",
+                                                .florzinha : "Z"
+                                            ]
                                         ),
                                     colorName: "Blue"
                                 ),
@@ -114,8 +119,13 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            imageURL: "",
-                                            label: ""
+                                            iconImageURL: "chapeu2",
+                                            profileImagesURL: [
+                                                .coracaozinho : "X",
+                                                .diabinho : "Y",
+                                                .estrelinha : "W",
+                                                .florzinha : "Z"
+                                            ]
                                         ),
                                     colorName: "Pink"
                                 ),
@@ -125,8 +135,13 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            imageURL: "",
-                                            label: ""
+                                            iconImageURL: "chapeu2",
+                                            profileImagesURL: [
+                                                .coracaozinho : "X",
+                                                .diabinho : "Y",
+                                                .estrelinha : "W",
+                                                .florzinha : "Z"
+                                            ]
                                         ),
                                     colorName: "Yellow"
                                 ),
@@ -136,8 +151,13 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            imageURL: "",
-                                            label: ""
+                                            iconImageURL: "chapeu2",
+                                            profileImagesURL: [
+                                                .coracaozinho : "X",
+                                                .diabinho : "Y",
+                                                .estrelinha : "W",
+                                                .florzinha : "Z"
+                                            ]
                                         ),
                                     colorName: "Green"
                                 ),

@@ -18,7 +18,7 @@ struct BadgeComponentView: View {
                 .padding(20)
                 .padding(.top, 10)
                 
-            Image(result.badge!.imageURL)
+            Image(result.badge!.iconImageURL)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding(25)

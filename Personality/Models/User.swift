@@ -3,12 +3,12 @@ import Foundation
 final class User {
     var id = UUID()
     var name: String
-    var baseAvatarURL: String
+    var baseAvatar: Ego
     var userResults: [UserResult]
     
-    init(name: String, baseAvatarURL: String, userResults: [UserResult]) {
+    init(name: String, baseAvatar: Ego, userResults: [UserResult]) {
         self.name = name
-        self.baseAvatarURL = baseAvatarURL
+        self.baseAvatar = baseAvatar
         self.userResults = userResults
     }
 }

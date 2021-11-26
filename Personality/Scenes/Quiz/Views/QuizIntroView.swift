@@ -130,8 +130,13 @@ struct QuizIntroView_Preview: PreviewProvider {
                             code: "ACF",
                             badge:
                                 Badge(
-                                    imageURL: "",
-                                    label: ""
+                                    iconImageURL: "chapeu2",
+                                    profileImagesURL: [
+                                        .coracaozinho : "X",
+                                        .diabinho : "Y",
+                                        .estrelinha : "W",
+                                        .florzinha : "Z"
+                                    ]
                                 ),
                             colorName: "Blue"
                         ),
@@ -141,8 +146,13 @@ struct QuizIntroView_Preview: PreviewProvider {
                             code: "ACF",
                             badge:
                                 Badge(
-                                    imageURL: "",
-                                    label: ""
+                                    iconImageURL: "chapeu2",
+                                    profileImagesURL: [
+                                        .coracaozinho : "X",
+                                        .diabinho : "Y",
+                                        .estrelinha : "W",
+                                        .florzinha : "Z"
+                                    ]
                                 ),
                             colorName: "Pink"
                         ),
@@ -152,8 +162,13 @@ struct QuizIntroView_Preview: PreviewProvider {
                             code: "ACF",
                             badge:
                                 Badge(
-                                    imageURL: "",
-                                    label: ""
+                                    iconImageURL: "chapeu2",
+                                    profileImagesURL: [
+                                        .coracaozinho : "X",
+                                        .diabinho : "Y",
+                                        .estrelinha : "W",
+                                        .florzinha : "Z"
+                                    ]
                                 ),
                             colorName: "Yellow"
                         ),
@@ -163,8 +178,13 @@ struct QuizIntroView_Preview: PreviewProvider {
                             code: "ACF",
                             badge:
                                 Badge(
-                                    imageURL: "",
-                                    label: ""
+                                    iconImageURL: "chapeu2",
+                                    profileImagesURL: [
+                                        .coracaozinho : "X",
+                                        .diabinho : "Y",
+                                        .estrelinha : "W",
+                                        .florzinha : "Z"
+                                    ]
                                 ),
                             colorName: "Green"
                         ),
