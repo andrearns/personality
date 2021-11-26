@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var userViewModel: UserViewModel
     @State var showModal = false
-    @ObservedObject var userViewModel = UserViewModel()
     
     let columns = [
         GridItem(.flexible()),
@@ -13,55 +13,55 @@ struct ProfileView: View {
     ]
     
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    Image("backgroundTest")
-                        .resizable()
-                        .frame(height: 400)
-                        .padding(.top, -50)
+        ScrollView(.vertical, showsIndicators: false) {
+            ZStack {
+                VStack {
+                    HStack {
+                        Image("backgroundTest")
+                            .resizable()
+                            .frame(height: 400)
+                            .padding(.top, -50)
+                    }
+                    Spacer()
                 }
-                Spacer()
-            }
-            ScrollView(.vertical) {
-                ZStack {
+                VStack {
                     VStack {
-                        VStack {
-                            HStack(alignment: .center) {
-                                Text(userViewModel.user.name)
-                                    .font(.system(size: 40, weight: .black, design: .default))
+                        HStack(alignment: .center) {
+                            Text(userViewModel.user.name)
+                                .font(.system(size: 40, weight: .black, design: .default))
+                                .foregroundColor(.white)
+                            Spacer()
+                            Button(action: {
+                                print("Share profile")
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.system(size: 24, weight: .semibold, design: .default))
                                     .foregroundColor(.white)
-                                Spacer()
-                                Button(action: {
-                                    print("Share profile")
-                                }) {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .font(.system(size: 24, weight: .semibold, design: .default))
-                                        .foregroundColor(.white)
-                                }
-                            }
-                            .padding()
-                            .padding(.horizontal)
-                        }
-                        ZStack {
-                            Image(userViewModel.user.baseAvatar.getProfileImageName())
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                            ForEach(userViewModel.user.userResults) { userResult in
-                                if !userResult.isPrivate {
-                                    Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                }
                             }
                         }
-                        .padding(.horizontal, 40)
+                        .padding()
+                        .padding(.horizontal)
+                    }
+                    ZStack {
+                        Image(userViewModel.user.baseAvatar.getProfileImageName())
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                        ForEach(userViewModel.user.userResults) { userResult in
+                            if !userResult.isPrivate {
+                                Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 40)
 //                        .padding(.top, 80)
 //                        .padding(.bottom, 40)
-                        
-                        LeftTitle(text: "Traços da sua personalidade")
-                        
+                    
+                    LeftTitle(text: "Traços da sua personalidade")
+                    
+                    if userViewModel.user.userResults.count != 0 {
                         LazyVGrid(columns: columns) {
                             ForEach(userViewModel.user.userResults) { userResult in
                                 Button(action: {
@@ -72,11 +72,30 @@ struct ProfileView: View {
                                 }
                             }
                         }.padding()
+                    } else {
+                        HStack {
+                            Spacer()
+                            VStack(alignment: .center) {
+                                Text("zero acessórios\n por aqui")
+                                    .personalityFont(.largeTitle, textSize: 30)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.bottom)
+                                
+                                Text("Faça um teste aí pô")
+                                    .personalityFont(.title, textSize: 18)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .background(Material.ultraThinMaterial)
+                        .cornerRadius(16)
+                        .padding(.horizontal)
                     }
                 }
             }
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .navigationBarHidden(true)
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
     }
 }

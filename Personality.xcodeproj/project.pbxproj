@@ -200,7 +200,6 @@
 		5BDC25AC2742DFCF00D51D9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				5BDC25E32749409300D51D9C /* LoadingAnimation */,
 				90CD6CFD2748065200FE5072 /* Onboarding */,
 				5BDC25B32742E09400D51D9C /* Profile */,
 				5BDC25B02742E06400D51D9C /* Quiz List */,
@@ -212,6 +211,7 @@
 		5BDC25AD2742DFE200D51D9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */,
 				5BDC259F274062AB00D51D9C /* QuizView.swift */,
 				5BDC2597273F73E200D51D9C /* QuizIntroView.swift */,
 				5BDC25BC27449EC200D51D9C /* QuizOutput.swift */,
@@ -330,30 +330,6 @@
 				5BDC25E127484B9D00D51D9C /* CreativeTypes.swift */,
 			);
 			path = "Tests Logic";
-			sourceTree = "<group>";
-		};
-		5BDC25E32749409300D51D9C /* LoadingAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				5BDC25E5274940B100D51D9C /* Components */,
-				5BDC25E4274940AB00D51D9C /* Views */,
-			);
-			path = LoadingAnimation;
-			sourceTree = "<group>";
-		};
-		5BDC25E4274940AB00D51D9C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5BDC25E6274940CD00D51D9C /* LoadingAnimationView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5BDC25E5274940B100D51D9C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		90B99368274D5C320086B00A /* Components */ = {

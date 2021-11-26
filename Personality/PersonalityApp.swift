@@ -2,12 +2,13 @@ import SwiftUI
 
 @main
 struct PersonalityApp: App {
-
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ChooseEgoView()
                 .background(Color.preto.edgesIgnoringSafeArea(.all))
                 .environmentObject(NavigationHelper())
+                .environmentObject(UserViewModel())
         }
     }
 }

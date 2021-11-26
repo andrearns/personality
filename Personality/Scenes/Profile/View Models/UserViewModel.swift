@@ -9,10 +9,7 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     
-    @Published var user: User = User(name: "ronaldinho", baseAvatar: .diabinho, userResults: [
-        UserResult(result: QuizBank.shared.quizList[0].results[0], isPrivate: false),
-        UserResult(result: QuizBank.shared.quizList[1].results[0], isPrivate: false)
-    ])
+    @Published var user: User = User(name: "", baseAvatar: .diabinho, userResults: [])
     
     @Published var selectedUserResult: UserResult?
     
@@ -28,5 +25,17 @@ class UserViewModel: ObservableObject {
     
     func splitAboutTextInParagraphs() -> [String] {
         return selectedUserResult!.result.about.components(separatedBy: "\n")
+    }
+    
+    func updateUserAvatar(ego: Ego) {
+        user.baseAvatar = ego
+    }
+    
+    func updateUsername(newName: String) {
+        user.name = newName
+    }
+    
+    func addUserResult(userResult: UserResult) {
+        user.userResults.append(userResult)
     }
 }
