@@ -23,13 +23,8 @@ struct QuizIntroView: View {
                     }
                     .padding()
                     
-                    HStack {
-                        Text("Possíveis resultados")
-                            .font(.system(size: 18, weight: .bold, design: .default))
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    .padding(.top)
+                    LeftTitle(text: "Possíveis resultados")
+                        .padding(.top)
                     
                     LazyVGrid(columns: columns) {
                         ForEach(quiz.results) { result in
@@ -64,134 +59,20 @@ struct QuizIntroView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)
+        .statusBar(hidden: true)
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarItems(trailing: Button(action: {
             print("Share quiz")
         }, label: {
             Image(systemName: "square.and.arrow.up")
                 .font(.system(size: 18, weight: .semibold, design: .default))
         }))
-        .statusBar(hidden: true)
-        .background(Color.preto.edgesIgnoringSafeArea(.all))
     }
 }
 
 struct QuizIntroView_Preview: PreviewProvider {
     static var previews: some View {
-        QuizIntroView(
-            quiz:
-                Quiz(
-                    title: "Teste 5",
-                    shortDescription: "Descrição curta",
-                    longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                    durationInMinutes: 5,
-                    colorName: "Green",
-                    questions: [
-                        Question(
-                            label: "Qual cor você prefere?",
-                            answers: [
-                                Answer(label: "Rosa", score: "A"),
-                                Answer(label: "Vermelho", score: "B"),
-                                Answer(label: "Amarelo", score: "C"),
-                                Answer(label: "Azul", score: "D"),
-                            ]
-                        ),
-                        Question(
-                            label: "Qual cor você prefere?",
-                            answers: [
-                                Answer(label: "Rosa", score: "A"),
-                                Answer(label: "Vermelho", score: "B"),
-                                Answer(label: "Amarelo", score: "C"),
-                                Answer(label: "Azul", score: "D"),
-                            ]
-                        ),
-                        Question(
-                            label: "Qual cor você prefere?",
-                            answers: [
-                                Answer(label: "Rosa", score: "A"),
-                                Answer(label: "Vermelho", score: "B"),
-                                Answer(label: "Amarelo", score: "C"),
-                                Answer(label: "Azul", score: "D"),
-                            ]
-                        ),
-                        Question(
-                            label: "Qual cor você prefere?",
-                            answers: [
-                                Answer(label: "Rosa", score: "A"),
-                                Answer(label: "Vermelho", score: "B"),
-                                Answer(label: "Amarelo", score: "C"),
-                                Answer(label: "Azul", score: "D"),
-                            ]
-                        )
-                    ],
-                    results: [
-                        Result(
-                            label: "Sábia",
-                            about: "kkkkkkkkkk",
-                            code: "ACF",
-                            badge:
-                                Badge(
-                                    iconImageURL: "chapeu2",
-                                    profileImagesURL: [
-                                        .coracaozinho : "X",
-                                        .diabinho : "Y",
-                                        .estrelinha : "W",
-                                        .florzinha : "Z"
-                                    ]
-                                ),
-                            colorName: "Blue"
-                        ),
-                        Result(
-                            label: "Legal",
-                            about: "kkkkkkkkkk",
-                            code: "ACF",
-                            badge:
-                                Badge(
-                                    iconImageURL: "chapeu2",
-                                    profileImagesURL: [
-                                        .coracaozinho : "X",
-                                        .diabinho : "Y",
-                                        .estrelinha : "W",
-                                        .florzinha : "Z"
-                                    ]
-                                ),
-                            colorName: "Pink"
-                        ),
-                        Result(
-                            label: "Guru",
-                            about: "kkkkkkkkkk",
-                            code: "ACF",
-                            badge:
-                                Badge(
-                                    iconImageURL: "chapeu2",
-                                    profileImagesURL: [
-                                        .coracaozinho : "X",
-                                        .diabinho : "Y",
-                                        .estrelinha : "W",
-                                        .florzinha : "Z"
-                                    ]
-                                ),
-                            colorName: "Yellow"
-                        ),
-                        Result(
-                            label: "Raivosa",
-                            about: "kkkkkkkkkk",
-                            code: "ACF",
-                            badge:
-                                Badge(
-                                    iconImageURL: "chapeu2",
-                                    profileImagesURL: [
-                                        .coracaozinho : "X",
-                                        .diabinho : "Y",
-                                        .estrelinha : "W",
-                                        .florzinha : "Z"
-                                    ]
-                                ),
-                            colorName: "Green"
-                        ),
-                    ]
-                )
-
-        )
-        .preferredColorScheme(.dark)
+        QuizIntroView(quiz: QuizBank.shared.quizList[0])
+            .preferredColorScheme(.dark)
     }
 }

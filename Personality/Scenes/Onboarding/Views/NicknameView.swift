@@ -14,83 +14,42 @@ struct NicknameView: View {
     var body: some View {
         VStack {
             Spacer()
-            
-            Image(ego.getImageFace())
-                .resizable()
-                .scaledToFit()
-                .frame(width: 130)
-            
+            EgoFaceImage(ego: ego)
             Spacer()
             
             VStack(alignment: .leading) {
-                Text("INHAI MERMÃO")
-                    .font(.largeTitle)
-                    .bold()
+                Text("EAE MERMÃO")
+                    .personalityFont(.largeTitle, textSize: 40)
                 
                 Text("Como podemos te chamar?")
+                    .personalityFont(.title, textSize: 21)
+                    .padding(.bottom)
+                
+                TextField("Nickname", text: $nickname)
+                    .padding(10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.cinzaClaro)
+                        )
             }
-            TextField("Nickname", text: $nickname)
-                .padding(10)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.cinzaClaro)
-                    )
-                .padding(.leading, 62)
-                .padding(.trailing, 62)
+            .padding(.horizontal, 50)
             
             Spacer()
             
-            Button(action: {
-                print("apertou no botao")
-            }) {
-                HStack {
-                    Text("LET'S GO!")
-                        .bold()
-                        .padding(30)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "arrow.right")
-                        .padding(30)
-                        
-                        
+            VStack {
+                Button(action: {
+                    print("apertou no botao")
+                }) {
+                    RightButtonStuff(title: "Let's go", systemImageName: "arrow.right", textColor: ego.getColorBackground())
                 }
-                .foregroundColor(ego.getColorBackground())
-                .frame(width: 250, height: 60, alignment: .center)
-                .font(.system(size: 20))
-                .background(
-                    RoundedRectangle(cornerRadius: 60)
-                        .fill(Color("Branco"))
-                )
+                
+                Button(action: {
+                    print("apertou no botao")
+                }) {
+                    LeftButtonStuff(title: "Voltar", systemImageName: "arrow.left")
+                }
             }
-            .padding()
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            
-            Button(action: {
-                print("apertou no botao")
-            }) {
-                HStack {
-                    Image(systemName: "arrow.left")
-                        .padding(30)
-                    
-                                
-                    Spacer()
-                                
-                    Text("VOLTAR")
-                        .bold()
-                        .padding(30)
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: 250, height: 60, alignment: .center)
-                    .font(.system(size: 20))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 60)
-                            .stroke(.white, lineWidth: 2)
-                        )
-                    }
-            .padding(.leading)
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            
+            .padding(.horizontal, 50)
             
             Image("LogoEgo")
                 .padding(40)

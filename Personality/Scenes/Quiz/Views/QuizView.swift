@@ -27,7 +27,6 @@ struct QuizView: View {
                                     currentQuestion = quiz.questions[currentQuestionIndex]
                                     currentAnswer = answerList[currentQuestionIndex]
                                 } else {
-                                    print("Go back to quiz list view")
                                     self.presentationMode.wrappedValue.dismiss()
                                 }
                             }) {
@@ -35,13 +34,16 @@ struct QuizView: View {
                                     .font(.system(size: 24, weight: .bold, design: .default))
                                     .foregroundColor(.white)
                             }
+                            
                             Spacer()
+                            
                             Text(quiz.title)
-                                .font(.system(size: 18, weight: .semibold, design: .default))
+                                .personalityFont(.title, textSize: 18)
                                 .multilineTextAlignment(.center)
+                            
                             Spacer()
+                            
                             Button(action: {
-                                print("Go back to quiz list view")
                                 navigationHelper.selectedView = nil
                             }) {
                                 Image(systemName: "xmark")
