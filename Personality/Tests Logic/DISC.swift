@@ -26,8 +26,6 @@ func generateDISCResult(answers: [Int : Answer]) -> Result {
     
     let biggestScore = scores.max { a, b in a.value < b.value }
     
-    print("Biggest Score: \(biggestScore)")
-    
     let quizResult = QuizBank.shared.quizList[0].results.first { result in
         result.code == biggestScore?.key
     }
