@@ -20,10 +20,10 @@ struct ProfileView: View {
                         Image("backgroundTest")
                             .resizable()
                             .frame(height: 400)
-                            .padding(.top, -50)
                     }
                     Spacer()
                 }
+                
                 VStack {
                     VStack {
                         HStack(alignment: .center) {
@@ -42,6 +42,7 @@ struct ProfileView: View {
                         .padding()
                         .padding(.horizontal)
                     }
+                    .padding(.top, 50)
                     ZStack {
                         Image(userViewModel.user.baseAvatar.getProfileImageName())
                             .resizable()
@@ -56,8 +57,7 @@ struct ProfileView: View {
                         }
                     }
                     .padding(.horizontal, 40)
-//                        .padding(.top, 80)
-//                        .padding(.bottom, 40)
+                    .frame(height: 400)
                     
                     LeftTitle(text: "Traços da sua personalidade")
                     
@@ -96,6 +96,8 @@ struct ProfileView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
+        .edgesIgnoringSafeArea(.top)
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
     }
 }

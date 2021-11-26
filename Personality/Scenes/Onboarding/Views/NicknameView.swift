@@ -65,6 +65,7 @@ struct NicknameView: View {
         }
         .background(ego.getColorBackground().edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
+        .statusBar(hidden: true)
     }
 }
 

@@ -141,5 +141,6 @@ struct QuizView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
     }
 }
