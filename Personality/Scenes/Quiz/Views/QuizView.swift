@@ -4,6 +4,7 @@ struct QuizView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var navigationHelper: NavigationHelper
+    @EnvironmentObject var userViewModel : UserViewModel
     
     var quiz: Quiz!
     
@@ -97,7 +98,14 @@ struct QuizView: View {
                             default:
                                 print("There is no functions to generate a result for this quiz")
                             }
-                            print("Quiz result: \(result)")
+                            
+                            guard let result = result else {
+                                return
+                            }
+                            
+                            let userResult = UserResult(result: result, isPrivate: false)
+                            
+                            userViewModel.addUserResult(userResult: userResult)
                             
                             isLoading = true
                             

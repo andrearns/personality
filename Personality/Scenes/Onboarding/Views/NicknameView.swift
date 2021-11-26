@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct NicknameView: View {
+    
+    @EnvironmentObject var userViewModel: UserViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var nickname: String = ""
+    @State var isNextButtonPressed: Bool = false
     let ego: Ego
     
-    @State private var nickname: String = ""
     var body: some View {
         VStack {
             Spacer()
@@ -20,12 +24,14 @@ struct NicknameView: View {
             VStack(alignment: .leading) {
                 Text("EAE MERMÃO")
                     .personalityFont(.largeTitle, textSize: 40)
+                    .foregroundColor(Color.branco)
                 
                 Text("Como podemos te chamar?")
                     .personalityFont(.title, textSize: 21)
                     .padding(.bottom)
+                    .foregroundColor(Color.branco)
                 
-                TextField("Nickname", text: $nickname)
+                TextField("", text: $nickname)
                     .padding(10)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
@@ -38,13 +44,15 @@ struct NicknameView: View {
             
             VStack {
                 Button(action: {
-                    print("apertou no botao")
+                    isNextButtonPressed = true
+                    userViewModel.updateUsername(newName: nickname.lowercased())
                 }) {
                     RightButtonStuff(title: "Let's go", systemImageName: "arrow.right", textColor: ego.getColorBackground())
+                    NavigationLink("", destination: MainView(), isActive: $isNextButtonPressed)
                 }
                 
                 Button(action: {
-                    print("apertou no botao")
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     LeftButtonStuff(title: "Voltar", systemImageName: "arrow.left")
                 }
@@ -56,13 +64,13 @@ struct NicknameView: View {
             
         }
         .background(ego.getColorBackground().edgesIgnoringSafeArea(.all))
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct NicknameView_Previews: PreviewProvider {
     static var previews: some View {
         NicknameView(ego: .diabinho)
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }

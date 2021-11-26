@@ -15,6 +15,7 @@ struct QuizListView: View {
     @State var isActive: Bool = false
     @State private var showPopUp: Bool = false
     @EnvironmentObject var navigationHelper: NavigationHelper
+    @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {
         ZStack {
@@ -22,7 +23,7 @@ struct QuizListView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
                         HStack {
-                            Text("Olá, Fulana!")
+                            Text("Olá, \(userViewModel.user.name)!")
                                 .font(.system(size: 35, weight: .black, design: .default))
                             Spacer()
                         }.padding()

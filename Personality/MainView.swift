@@ -10,6 +10,9 @@ struct MainView: View {
                         Text("Quizzos")
                     }
                 }
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                
             ProfileView()
                 .tabItem {
                     VStack {
@@ -17,7 +20,13 @@ struct MainView: View {
                         Text("Perfil")
                     }
                 }
-        }.accentColor(Color.azul)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                
+        }
+        .accentColor(Color.azul)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
