@@ -7,94 +7,6 @@
 
 import SwiftUI
 
-enum Ego: CaseIterable, Identifiable {
-    var id: Self { self }
-    
-    case florzinha
-    case diabinho
-    case estrelinha
-    case coracaozinho
-    
-    func getImageName() -> String {
-        switch self {
-        case .florzinha:
-            return "Florzinha"
-        case .diabinho:
-            return "Diabinho"
-        case .estrelinha:
-            return "Estrelinha"
-        case .coracaozinho:
-            return "Coracaozinho"
-        }
-    }
-    
-    func getColor() -> Color {
-        switch self {
-        case .florzinha:
-            return .amarelo
-        case .diabinho:
-            return .azul
-        case .estrelinha:
-            return .roxo
-        case .coracaozinho:
-            return .verde
-        }
-    }
-    
-    func getColorBackground() -> Color {
-        switch self {
-        case .florzinha:
-            return .verde
-        case .diabinho:
-            return .laranja
-        case .estrelinha:
-            return .amarelo
-        case .coracaozinho:
-            return .rosa
-        }
-    }
-    
-    func getImageFace() -> String {
-        switch self {
-        case .florzinha:
-            return "RostoFlor"
-        case .diabinho:
-            return "RostoDiabinho"
-        case .estrelinha:
-            return "RostoEstrela"
-        case .coracaozinho:
-            return "RostoCoracao"
-        }
-    }
-}
-
-struct EgoCardView: View {
-    var ego: Ego
-    
-    var body: some View {
-        Image(ego.getImageName())
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 270, height: 350, alignment: .bottom)
-                .background(
-                    RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 240, height: 350, alignment: .center)
-                        .overlay(
-                            Image("TijoloPreto")
-                        )
-                        .cornerRadius(30)
-                        .clipped()
-                        .foregroundColor(ego.getColor())
-                )
-        }
-}
-
-struct EgoCard: Identifiable {
-    var id = UUID()
-    var imageName: String
-    var backgroundColor: Color
-}
-
 struct ChooseEgoView: View {
     
     @State var currentIndex: Int = 0
@@ -118,12 +30,8 @@ struct ChooseEgoView: View {
             
             SnapCarousel(spacing: 0, index: $currentIndex, items: egos) { ego in
                 
-                GeometryReader { proxy in
-                    
-                    let size = proxy.size
-                    
+                GeometryReader { _ in
                     EgoCardView(ego: ego)
-                    
                 }
                 
             }

@@ -19,7 +19,7 @@ struct Buildimage: View {
             .padding()
             .frame(width: 200, height: 250, alignment:.center)
           
-            Image(result.badge!.imageURL)
+            Image(result.badge!.iconImageURL)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding()
@@ -30,9 +30,25 @@ struct Buildimage: View {
 }
 struct Buildimage_preview: PreviewProvider {
     static var previews: some View {
-        Buildimage(result: Result(label: "dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: ""))
+        Buildimage(result:
+            Result(
+                label: "dominancia",
+                about: "textozin",
+                code: "",
+                badge:
+                    Badge(
+                        iconImageURL: "chapeu2",
+                        profileImagesURL: [
+                            .coracaozinho : "X",
+                            .diabinho : "Y",
+                            .estrelinha : "W",
+                            .florzinha : "Z"
+                        ]
+                    ),
+                colorName: ""
+            )
+        )
     }
-    
 }
 //ZStack{
 //    Image("bg")

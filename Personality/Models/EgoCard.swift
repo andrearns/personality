@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct EgoCard: Identifiable {
+    var id = UUID()
+    var imageName: String
+    var backgroundColor: Color
+}

@@ -146,8 +146,13 @@ struct QuizBank {
                     code: "d",
                     badge:
                         Badge(
-                            imageURL: "tenis3",
-                            label: ""
+                            iconImageURL: "tenis4",
+                            profileImagesURL: [
+                                .coracaozinho : "DISC_Dominante_Cora",
+                                .diabinho : "DISC_Dominante_Diab",
+                                .estrelinha : "DISC_Dominante_Estr",
+                                .florzinha : "DISC_Dominante_Flor"
+                            ]
                         ),
                     colorName: "Blue"
                 ),
@@ -157,8 +162,13 @@ struct QuizBank {
                     code: "i",
                     badge:
                         Badge(
-                            imageURL: "tenis2",
-                            label: ""
+                            iconImageURL: "tenis3",
+                            profileImagesURL: [
+                                .coracaozinho : "DISC_Influencer_Cora",
+                                .diabinho : "DISC_Influencer_Diab",
+                                .estrelinha : "DISC_Influencer_Estr",
+                                .florzinha : "DISC_Influencer_Flor"
+                            ]
                         ),
                     colorName: "Pink"
                 ),
@@ -168,8 +178,13 @@ struct QuizBank {
                     code: "c",
                     badge:
                         Badge(
-                            imageURL: "tenis4",
-                            label: ""
+                            iconImageURL: "tenis1",
+                            profileImagesURL: [
+                                .coracaozinho : "DISC_Equilibrado_Cora",
+                                .diabinho : "DISC_Equilibrado_Diab",
+                                .estrelinha : "DISC_Equilibrado_Estr",
+                                .florzinha : "DISC_Equilibrado_Flor"
+                            ]
                         ),
                     colorName: "Yellow"
                 ),
@@ -179,8 +194,13 @@ struct QuizBank {
                     code: "s",
                     badge:
                         Badge(
-                            imageURL: "tenis1",
-                            label: ""
+                            iconImageURL: "tenis2",
+                            profileImagesURL: [
+                                .coracaozinho : "DISC_Cauteloso_Cora",
+                                .diabinho : "DISC_Cauteloso_Diab",
+                                .estrelinha : "DISC_Cauteloso_Estr",
+                                .florzinha : "DISC_Cauteloso_Flor"
+                            ]
                         ),
                     colorName: "Green"
                 ),
@@ -308,8 +328,13 @@ struct QuizBank {
                     code: "adf",
                     badge:
                         Badge(
-                            imageURL: "chapeu1",
-                            label: ""
+                            iconImageURL: "chapeu6",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Artista_Cora",
+                                .diabinho : "Criatividade_Artista_Diab",
+                                .estrelinha : "Criatividade_Artista_Estr",
+                                .florzinha : "Criatividade_Artista_Flor"
+                            ]
                         ),
                     colorName: "Blue"
                 ),
@@ -319,8 +344,13 @@ struct QuizBank {
                     code: "ace",
                     badge:
                         Badge(
-                            imageURL: "chapeu2",
-                            label: ""
+                            iconImageURL: "chapeu1",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Pensador_Cora",
+                                .diabinho : "Criatividade_Pensador_Diab",
+                                .estrelinha : "Criatividade_Pensador_Estr",
+                                .florzinha : "Criatividade_Pensador_Flor"
+                            ]
                         ),
                     colorName: "Pink"
                 ),
@@ -330,8 +360,13 @@ struct QuizBank {
                     code: "bdf",
                     badge:
                         Badge(
-                            imageURL: "chapeu3",
-                            label: ""
+                            iconImageURL: "chapeu4",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Aventureiro_Cora",
+                                .diabinho : "Criatividade_Aventureiro_Diab",
+                                .estrelinha : "Criatividade_Aventureiro_Estr",
+                                .florzinha : "Criatividade_Aventureiro_Flor"
+                            ]
                         ),
                     colorName: "Yellow"
                 ),
@@ -341,8 +376,13 @@ struct QuizBank {
                     code: "acf",
                     badge:
                         Badge(
-                            imageURL: "chapeu4",
-                            label: ""
+                            iconImageURL: "chapeu5",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Criador_Cora",
+                                .diabinho : "Criatividade_Criador_Diab",
+                                .estrelinha : "Criatividade_Criador_Estr",
+                                .florzinha : "Criatividade_Criador_Flor"
+                            ]
                         ),
                     colorName: "Green"
                 ),
@@ -352,8 +392,13 @@ struct QuizBank {
                     code: "bcf",
                     badge:
                         Badge(
-                            imageURL: "chapeu5",
-                            label: ""
+                            iconImageURL: "chapeu2",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Maonamassa_Cora",
+                                .diabinho : "Criatividade_Maonamassa_Diab",
+                                .estrelinha : "Criatividade_Maonamassa_Estr",
+                                .florzinha : "Criatividade_Maonamassa_Flor"
+                            ]
                         ),
                     colorName: "Blue"
                 ),
@@ -363,8 +408,13 @@ struct QuizBank {
                     code: "ade",
                     badge:
                         Badge(
-                            imageURL: "chapeu6",
-                            label: ""
+                            iconImageURL: "chapeu7",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Sonhador_Cora",
+                                .diabinho : "Criatividade_Sonhador_Diab",
+                                .estrelinha : "Criatividade_Sonhador_Estr",
+                                .florzinha : "Criatividade_Sonhador_Flor"
+                            ]
                         ),
                     colorName: "Pink"
                 ),
@@ -374,8 +424,13 @@ struct QuizBank {
                     code: "bce",
                     badge:
                         Badge(
-                            imageURL: "chapeu7",
-                            label: ""
+                            iconImageURL: "chapeu8",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Inovador_Cora",
+                                .diabinho : "Criatividade_Inovador_Diab",
+                                .estrelinha : "Criatividade_Inovador_Estr",
+                                .florzinha : "Criatividade_Inovador_Flor"
+                            ]
                         ),
                     colorName: "Yellow"
                 ),
@@ -385,8 +440,13 @@ struct QuizBank {
                     code: "bde",
                     badge:
                         Badge(
-                            imageURL: "chapeu8",
-                            label: ""
+                            iconImageURL: "chapeu3",
+                            profileImagesURL: [
+                                .coracaozinho : "Criatividade_Visionario_Cora",
+                                .diabinho : "Criatividade_Visionario_Diab",
+                                .estrelinha : "Criatividade_Visionario_Estr",
+                                .florzinha : "Criatividade_Visionario_Flor"
+                            ]
                         ),
                     colorName: "Green"
                 ),

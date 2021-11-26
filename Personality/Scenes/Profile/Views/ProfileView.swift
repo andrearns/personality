@@ -44,19 +44,21 @@ struct ProfileView: View {
                             .padding(.horizontal)
                         }
                         ZStack {
-                            Image(userViewModel.user.baseAvatarURL)
+                            Image(userViewModel.user.baseAvatar.getProfileImageName())
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                             
                             ForEach(userViewModel.user.userResults) { userResult in
                                 if !userResult.isPrivate {
-                                    Image(userResult.result.badge!.imageURL)
+                                    Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
                                 }
                             }
                         }
                         .padding(.horizontal, 40)
-                        .padding(.top, 80)
-                        .padding(.bottom, 40)
+//                        .padding(.top, 80)
+//                        .padding(.bottom, 40)
                         
                         LeftTitle(text: "Traços da sua personalidade")
                         

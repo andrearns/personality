@@ -2,11 +2,13 @@ import Foundation
 
 final class Badge {
     var id = UUID()
-    var imageURL: String
-    var label: String
+    var iconImageURL: String
+    var profileImagesURL: [Ego : String]
+//    var label: String
     
-    init(imageURL: String, label: String) {
-        self.imageURL = imageURL
-        self.label = label
+    init(iconImageURL: String, profileImagesURL: [Ego : String]) {
+        self.iconImageURL = iconImageURL
+        self.profileImagesURL = profileImagesURL
+//        self.label = label
     }
 }

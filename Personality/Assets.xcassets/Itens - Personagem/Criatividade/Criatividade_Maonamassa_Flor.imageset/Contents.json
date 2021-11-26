@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Criatividade_Maonamassa_Flor.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Criatividade_Maonamassa_Flor-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Criatividade_Maonamassa_Flor-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

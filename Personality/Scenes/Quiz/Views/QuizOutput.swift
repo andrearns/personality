@@ -99,7 +99,23 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-            QuizOutput(result: Result(label: "Dominancia", about: "Você vive em um mundo de possibilidades infinitas, preferindo ver as coisas não como eles são, mas pelo o que elas podem ser. Você sabe que na vida existem limites, mas você busca, de alguma maneira, ultrapassar todos eles. É emocional, apaixonado e cheio de ideias. Sua natureza é introspectiva e intuitiva, é equilibrada por um grande interesse pelo mundo ao seu redor e desejo de contribuir para a sociedade. Carismático e expressivo, você adora compartilhar suas ideias malucas com outras pessoas.", code: "", badge: Badge (imageURL: "chapeu2", label: ""), colorName: "")
+            QuizOutput(result:
+                Result(
+                    label: "Dominancia",
+                    about: "Você vive em um mundo de possibilidades infinitas, preferindo ver as coisas não como eles são, mas pelo o que elas podem ser. Você sabe que na vida existem limites, mas você busca, de alguma maneira, ultrapassar todos eles. É emocional, apaixonado e cheio de ideias. Sua natureza é introspectiva e intuitiva, é equilibrada por um grande interesse pelo mundo ao seu redor e desejo de contribuir para a sociedade. Carismático e expressivo, você adora compartilhar suas ideias malucas com outras pessoas.",
+                    code: "",
+                    badge:
+                        Badge(
+                            iconImageURL: "chapeu2",
+                            profileImagesURL: [
+                                .coracaozinho : "X",
+                                .diabinho : "Y",
+                                .estrelinha : "W",
+                                .florzinha : "Z"
+                            ]
+                        ),
+                    colorName: ""
+                )
             )
         }
     }

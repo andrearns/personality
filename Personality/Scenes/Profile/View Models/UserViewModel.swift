@@ -9,7 +9,7 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     
-    @Published var user: User = User(name: "ronaldinho", baseAvatarURL: "Estrelinha", userResults: [
+    @Published var user: User = User(name: "ronaldinho", baseAvatar: .diabinho, userResults: [
         UserResult(result: QuizBank.shared.quizList[0].results[0], isPrivate: false),
         UserResult(result: QuizBank.shared.quizList[1].results[0], isPrivate: false)
     ])

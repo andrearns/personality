@@ -8,7 +8,7 @@ struct OutputCell: View {
             ZStack {
                 Color.cinzaClaro
                     .cornerRadius(16)
-                Image(result.badge!.imageURL)
+                Image(result.badge!.iconImageURL)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(5)
@@ -30,8 +30,13 @@ struct OutputCell_Previews: PreviewProvider {
                 code: "ACF",
                 badge:
                     Badge(
-                        imageURL: "tenis1",
-                        label: ""
+                        iconImageURL: "chapeu2",
+                        profileImagesURL: [
+                            .coracaozinho : "X",
+                            .diabinho : "Y",
+                            .estrelinha : "W",
+                            .florzinha : "Z"
+                        ]
                     ),
                 colorName: "Blue"
             )
