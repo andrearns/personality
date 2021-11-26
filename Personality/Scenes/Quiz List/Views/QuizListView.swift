@@ -24,9 +24,19 @@ struct QuizListView: View {
                     VStack {
                         HStack {
                             Text("Olá, \(userViewModel.user.name)!")
-                                .font(.system(size: 35, weight: .black, design: .default))
+                                .personalityFont(.largeTitle, textSize: 35)
                             Spacer()
-                        }.padding()
+                        }
+                        .padding(.horizontal)
+                        .padding(.top)
+                        
+                        HStack {
+                            Text("Faça testes e personalize o seu personagem!")
+                                .personalityFont(.title, textSize: 16)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom)
                         
                         LeftTitle(text: "Em alta")
                         
@@ -82,7 +92,6 @@ struct QuizListView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
-        .statusBar(hidden: true)
     }
 }
 

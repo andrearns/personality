@@ -67,73 +67,53 @@ struct QuizView: View {
                         ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
                             QuizCell(answer: answer, isSelected: currentAnswer == answer) {
                                 currentAnswer = answer
+                                
+                                answerList[currentQuestionIndex] = currentAnswer
+                                
+                                if currentQuestionIndex < quiz.questions.count - 1 {
+                                    self.currentQuestionIndex += 1
+                                    self.currentQuestion = quiz.questions[currentQuestionIndex]
+                                    
+                                    if answerList[currentQuestionIndex] != nil {
+                                        currentAnswer = answerList[currentQuestionIndex]
+                                    } else {
+                                        currentAnswer = nil
+                                    }
+                                    
+                                } else {
+                                    switch quiz.title {
+                                    case "DISK ME":
+                                        result = generateDISCResult(answers: answerList)
+                                    case "Creative \nTypes":
+                                        result = generateCreativeTypesResult(answers: answerList)
+                                    default:
+                                        print("There is no functions to generate a result for this quiz")
+                                    }
+                                    
+                                    guard let result = result else {
+                                        return
+                                    }
+                                    
+                                    let userResult = UserResult(result: result, isPrivate: false)
+                                    
+                                    userViewModel.addUserResult(userResult: userResult)
+                                    
+                                    isLoading = true
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        isResultTapped = true
+                                    }
+                                }
                             }
                         }
                     }
                     .padding()
                 }
             }
-            VStack {
-                Spacer()
-                Button(action: {
-                    if currentAnswer != nil {
-                        answerList[currentQuestionIndex] = currentAnswer
-                        
-                        if currentQuestionIndex < quiz.questions.count - 1 {
-                            self.currentQuestionIndex += 1
-                            self.currentQuestion = quiz.questions[currentQuestionIndex]
-                            
-                            if answerList[currentQuestionIndex] != nil {
-                                currentAnswer = answerList[currentQuestionIndex]
-                            } else {
-                                currentAnswer = nil
-                            }
-                            
-                        } else {
-                            switch quiz.title {
-                            case "DISK ME":
-                                result = generateDISCResult(answers: answerList)
-                            case "Creative \nTypes":
-                                result = generateCreativeTypesResult(answers: answerList)
-                            default:
-                                print("There is no functions to generate a result for this quiz")
-                            }
-                            
-                            guard let result = result else {
-                                return
-                            }
-                            
-                            let userResult = UserResult(result: result, isPrivate: false)
-                            
-                            userViewModel.addUserResult(userResult: userResult)
-                            
-                            isLoading = true
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                isResultTapped = true
-                            }
-                        }
-                    }
-                }) {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            Text(currentQuestionIndex == quiz.questions.count - 1 ? "Finalizar teste" : "Confirmar resposta")
-                                .bold()
-                            Spacer()
-                        }
-                    }
-                    if result != nil {
-                        NavigationLink("", destination: QuizOutput(result: self.result!), isActive: $isResultTapped)
-                    }
-                }
-                .padding()
-                .background(Color(uiColor: UIColor(named: quiz.colorName)!))
-                .cornerRadius(25)
-                .foregroundColor(.white)
-                
+            
+            if result != nil {
+                NavigationLink("", destination: QuizOutput(result: self.result!), isActive: $isResultTapped)
             }
-            .padding()
             
             if isLoading {
                 LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
@@ -141,6 +121,5 @@ struct QuizView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
-        .statusBar(hidden: true)
     }
 }

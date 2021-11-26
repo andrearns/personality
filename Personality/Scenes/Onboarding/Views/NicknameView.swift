@@ -12,7 +12,8 @@ struct NicknameView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var nickname: String = ""
-    @State var isNextButtonPressed: Bool = false
+    @State private var isNextButtonPressed: Bool = false
+    @State private var opacity = 0.0
     let ego: Ego
     
     var body: some View {
@@ -31,33 +32,62 @@ struct NicknameView: View {
                     .padding(.bottom)
                     .foregroundColor(Color.branco)
                 
-                TextField("", text: $nickname)
-                    .padding(10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.cinzaClaro)
-                        )
+                ZStack {
+                    TextField("", text: $nickname)
+                        .padding(10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.cinzaClaro)
+                            )
+                        .onChange(of: nickname) { newValue in
+                            withAnimation {
+                                if nickname == "" {
+                                    opacity = 0
+                                } else {
+                                    opacity = 1
+                                }
+                            }
+                        }
+                    HStack {
+                        Text(nickname == "" ? "Seu apelido" : "")
+                            .foregroundColor(Color.branco)
+                            .opacity(0.5)
+                            .padding(.leading, 8)
+                        Spacer()
+                    }
+                }
             }
             .padding(.horizontal, 50)
             
             Spacer()
             
             VStack {
-                Button(action: {
-                    isNextButtonPressed = true
-                    userViewModel.updateUsername(newName: nickname.lowercased())
-                }) {
-                    RightButtonStuff(title: "Let's go", systemImageName: "arrow.right", textColor: ego.getColorBackground())
-                    NavigationLink("", destination: MainView(), isActive: $isNextButtonPressed)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        if nickname != "" {
+                            isNextButtonPressed = true
+                        }
+                        userViewModel.updateUsername(newName: nickname.lowercased())
+                    }) {
+                        RightButtonStuff(title: "Let's go", systemImageName: "arrow.right", textColor: ego.getColorBackground())
+                            .opacity(opacity)
+                        NavigationLink("", destination: MainView(), isActive: $isNextButtonPressed)
+                    }
                 }
+                .padding(.bottom)
                 
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    LeftButtonStuff(title: "Voltar", systemImageName: "arrow.left")
+                HStack {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        LeftButtonStuff(title: "Voltar", systemImageName: "arrow.left")
+                    }
+                    Spacer()
                 }
             }
             .padding(.horizontal, 50)
+            .padding(.top, 40)
             
             Image("LogoEgo")
                 .padding(40)
@@ -65,7 +95,6 @@ struct NicknameView: View {
         }
         .background(ego.getColorBackground().edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
-        .statusBar(hidden: true)
     }
 }
 

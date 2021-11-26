@@ -28,7 +28,7 @@ struct LoadingAnimationView: View {
             }
             Spacer()
         }
-        .background(Color.black)
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
         .onAppear {
             degrees = 360
         }

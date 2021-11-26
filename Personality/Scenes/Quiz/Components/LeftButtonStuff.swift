@@ -23,7 +23,6 @@ struct LeftButtonStuff: View {
         .padding(.horizontal, 28)
         .padding(.vertical, 16)
         .overlay(Capsule().stroke(Color.branco,lineWidth: 2))
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

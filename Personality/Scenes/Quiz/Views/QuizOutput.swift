@@ -25,13 +25,20 @@ struct QuizOutput: View {
                     // To do
                     print("Share result")
                 }) {
-                    RightButtonStuff(title: "Compartilhar", systemImageName: "arrow.right", textColor: Color.preto)
+                    HStack {
+                        Spacer()
+                        RightButtonStuff(title: "Compartilhar", systemImageName: "arrow.right", textColor: Color.preto)
+                    }
                 }
+                .padding(.bottom)
         
-                Button(action: {
-                    navigationHelper.selectedView = nil
-                }) {
-                    LeftButtonStuff(title: "Quizzos", systemImageName: "arrow.left")
+                HStack {
+                    Button(action: {
+                        navigationHelper.selectedView = nil
+                    }) {
+                        LeftButtonStuff(title: "Quizzos", systemImageName: "arrow.left")
+                    }
+                    Spacer()
                 }
             }
             .padding(.horizontal)
@@ -47,7 +54,6 @@ struct QuizOutput: View {
             }
         )
         .navigationBarBackButtonHidden(true)
-        .statusBar(hidden: true)
     }
     
     struct QuizOutput_Previews: PreviewProvider {

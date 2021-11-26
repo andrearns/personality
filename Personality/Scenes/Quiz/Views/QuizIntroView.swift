@@ -37,29 +37,23 @@ struct QuizIntroView: View {
             VStack {
                 Spacer()
                 
-                NavigationLink(
-                    destination:
-                        QuizView(
-                            quiz: quiz,
-                            currentQuestionIndex: 0)
-                        )
-                {
+                HStack {
                     Spacer()
-                    Text("Iniciar teste")
-                        .bold()
-                    Spacer()
+                    NavigationLink(
+                        destination:
+                            QuizView(
+                                quiz: quiz,
+                                currentQuestionIndex: 0)
+                            )
+                    {
+                        RightButtonStuff(title: "Iniciar      ", systemImageName: "arrow.right", textColor: Color.preto)
+                    }
                 }
-                .isDetailLink(false)
-                .padding()
-                .background(Color(uiColor: UIColor(named: quiz.colorName)!))
-                .cornerRadius(25)
-                .foregroundColor(.white)
             }
             .padding()
         }
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)
-        .statusBar(hidden: true)
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarItems(trailing: Button(action: {
             print("Share quiz")
