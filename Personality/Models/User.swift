@@ -1,6 +1,6 @@
 import Foundation
 
-final class User {
+struct User {
     var id = UUID()
     var name: String
     var baseAvatar: Ego

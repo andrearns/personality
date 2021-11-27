@@ -1,6 +1,6 @@
 import Foundation
 
-final class Result: Identifiable {
+struct Result: Identifiable {
     var id = UUID()
     var label: String
     var about: String

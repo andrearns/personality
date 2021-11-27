@@ -1,6 +1,6 @@
 import Foundation
 
-final class Badge {
+struct Badge {
     var id = UUID()
     var iconImageURL: String
     var profileImagesURL: [Ego : String]

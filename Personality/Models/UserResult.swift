@@ -1,6 +1,6 @@
 import Foundation
 
-final class UserResult: Identifiable, Equatable {
+struct UserResult: Identifiable, Equatable {
     static func == (lhs: UserResult, rhs: UserResult) -> Bool {
         lhs.id == rhs.id
     }
