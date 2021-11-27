@@ -61,7 +61,7 @@ class QuizViewModel: ObservableObject {
         currentAnswer = nil
     }
     
-    func generateResult() -> UserResult {
+    func generateResult() {
         switch quiz.title {
         case "DISK ME":
             result = generateDISCResult(answers: answerDict)
@@ -70,7 +70,10 @@ class QuizViewModel: ObservableObject {
         default:
             print("There is no functions to generate a result for this quiz")
         }
-        
+    }
+    
+    func getUserResult() -> UserResult? {
+        guard let result = self.result else { return nil }
         return UserResult(result: result, isPrivate: false)
     }
 }

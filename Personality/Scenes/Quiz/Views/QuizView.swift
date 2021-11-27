@@ -70,9 +70,7 @@ struct QuizView: View {
                                 if !quizViewModel.isLastQuestion() {
                                     quizViewModel.nextQuestion()
                                 } else {
-                                    let userResult = quizViewModel.generateResult()
-                                    
-//                                    userViewModel.addUserResult(userResult: userResult)
+                                    quizViewModel.generateResult()
                                     
                                     isLoading = true
                                     
@@ -89,6 +87,7 @@ struct QuizView: View {
                 }
             }
             
+            
             if isLoading {
                 LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
             }
@@ -96,14 +95,17 @@ struct QuizView: View {
             if showResultView {
                 NavigationLink(
                     "",
-                    destination: QuizOutput(result: quizViewModel.result),
+                    destination: QuizOutput(result: quizViewModel.result) {
+                        guard let userResult = quizViewModel.getUserResult() else { return }
+                        userViewModel.addUserResult(userResult: userResult)
+                    },
                     isActive: $showResultView
                 )
-//                QuizOutput(result: quizViewModel.result)
-//                    .transition(.move(edge: .trailing))
             }
         }
-        .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .background(
+            Color.preto.edgesIgnoringSafeArea(.all)
+        )
         .navigationBarHidden(true)
     }
 }

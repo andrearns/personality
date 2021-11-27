@@ -4,6 +4,7 @@ struct QuizOutput: View {
     
     @EnvironmentObject var navigationHelper: NavigationHelper
     var result: Result
+    var onDisappear: () -> Void = {}
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -54,6 +55,9 @@ struct QuizOutput: View {
             }
         )
         .navigationBarBackButtonHidden(true)
+        .onDisappear {
+            onDisappear()
+        }
     }
     
     struct QuizOutput_Previews: PreviewProvider {
