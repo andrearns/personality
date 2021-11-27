@@ -96,7 +96,6 @@ struct ProfileView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
-        .statusBar(hidden: true)
         .edgesIgnoringSafeArea(.top)
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
     }

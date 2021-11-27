@@ -26,8 +26,8 @@ struct ChooseEgoView: View {
                     VStack(alignment: .leading) {
                         Text("BORA \nCOMEÇAR")
                             .personalityFont(.largeTitle, textSize: 40)
-                            .padding(.bottom, 2)
                             .foregroundColor(Color.branco)
+                            .padding(.bottom, 2)
                         
                         Text("Escolha seu personagem")
                             .personalityFont(.title, textSize: 18)
@@ -49,12 +49,15 @@ struct ChooseEgoView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    userViewModel.updateUserAvatar(ego: selectedEgo)
-                    isNextButtonPressed = true
-                }) {
-                    RightButtonStuff(title: "Próximo", systemImageName: "arrow.right", textColor: Color.preto)
-                    NavigationLink("", destination: NicknameView(ego: selectedEgo), isActive: $isNextButtonPressed)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        userViewModel.updateUserAvatar(ego: selectedEgo)
+                        isNextButtonPressed = true
+                    }) {
+                        RightButtonStuff(title: "Selecionar", systemImageName: "arrow.right", textColor: Color.preto)
+                        NavigationLink("", destination: NicknameView(ego: selectedEgo), isActive: $isNextButtonPressed)
+                    }
                 }
                 .padding(.vertical)
                 .padding(.trailing)
@@ -69,7 +72,6 @@ struct ChooseEgoView: View {
             .background(Color.preto.edgesIgnoringSafeArea(.all))
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .statusBar(hidden: true)
     }
 }
 

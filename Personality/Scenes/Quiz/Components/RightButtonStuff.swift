@@ -25,8 +25,6 @@ struct RightButtonStuff: View {
         .padding(.vertical, 16)
         .background(Color.branco)
         .clipShape(Capsule ())
-        .padding(.bottom)
-        .frame(minWidth: 300, maxWidth: .infinity, alignment: .trailing)
     }
 }
 
