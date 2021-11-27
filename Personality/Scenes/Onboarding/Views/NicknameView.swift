@@ -33,12 +33,23 @@ struct NicknameView: View {
                     .foregroundColor(Color.branco)
                 
                 ZStack {
+                    HStack {
+                        Text(nickname == "" ? "Seu apelido" : "")
+                            .foregroundColor(Color.branco)
+                            .opacity(0.5)
+                            .padding(.leading, 8)
+                            .padding(10)
+                        Spacer()
+                    }
+                    .frame(height: 40)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.cinzaClaro)
+                        )
+                    
                     TextField("", text: $nickname)
+                        .padding(.leading, 8)
                         .padding(10)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.cinzaClaro)
-                            )
                         .onChange(of: nickname) { newValue in
                             withAnimation {
                                 if nickname == "" {
@@ -48,13 +59,6 @@ struct NicknameView: View {
                                 }
                             }
                         }
-                    HStack {
-                        Text(nickname == "" ? "Seu apelido" : "")
-                            .foregroundColor(Color.branco)
-                            .opacity(0.5)
-                            .padding(.leading, 8)
-                        Spacer()
-                    }
                 }
             }
             .padding(.horizontal, 50)

@@ -29,6 +29,7 @@ struct QuizListView: View {
                         }
                         .padding(.horizontal)
                         .padding(.top)
+                        .padding(.bottom, 5)
                         
                         HStack {
                             Text("Faça testes e personalize o seu personagem!")
