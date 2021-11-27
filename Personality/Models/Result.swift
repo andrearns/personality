@@ -1,6 +1,6 @@
 import Foundation
 
-final class Result: Identifiable {
+struct Result: Identifiable, Equatable {
     var id = UUID()
     var label: String
     var about: String
@@ -15,5 +15,9 @@ final class Result: Identifiable {
         self.code = code
         self.badge = badge
         self.colorName = colorName
+    }
+    
+    static func == (lhs: Result, rhs: Result) -> Bool {
+        lhs.id == rhs.id
     }
 }

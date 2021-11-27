@@ -1,6 +1,6 @@
 import Foundation
 
-final class Quiz: Identifiable {
+struct Quiz: Identifiable {
     var id = UUID()
     var imageName: String?
     var title: String

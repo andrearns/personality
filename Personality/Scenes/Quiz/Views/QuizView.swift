@@ -5,16 +5,21 @@ struct QuizView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel : UserViewModel
-    
-    var quiz: Quiz!
-    
-    @State var isResultTapped = false
+    @ObservedObject var quizViewModel: QuizViewModel
+    @State var showResultView = false
     @State var isLoading = false
-    @State var currentQuestion: Question?
-    @State var currentQuestionIndex = 0
-    @State var answerList: [Int : Answer] = [:]
-    @State var currentAnswer: Answer? = nil
-    @State var result: Result?
+    
+    init(quiz: Quiz) {
+        self.quizViewModel = QuizViewModel(quiz: quiz)
+    }
+    
+    func returnAction() {
+        if !quizViewModel.isFirstQuestion() && !quizViewModel.isLastQuestion() {
+            quizViewModel.previousQuestion()
+        } else {
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -23,13 +28,7 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Button(action: {
-                                if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
-                                    currentQuestionIndex = currentQuestionIndex - 1
-                                    currentQuestion = quiz.questions[currentQuestionIndex]
-                                    currentAnswer = answerList[currentQuestionIndex]
-                                } else {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
+                                returnAction()
                             }) {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 24, weight: .bold, design: .default))
@@ -38,7 +37,7 @@ struct QuizView: View {
                             
                             Spacer()
                             
-                            Text(quiz.title)
+                            Text(quizViewModel.quiz.title)
                                 .personalityFont(.title, textSize: 18)
                                 .multilineTextAlignment(.center)
                             
@@ -54,54 +53,31 @@ struct QuizView: View {
                         }
                         .padding()
                         
-                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questions.count)
+                        ProgressBar(currentValue: $quizViewModel.currentQuestionIndex, numberOfQuestions: quizViewModel.questionsCount())
                     }
                     VStack {
                         HStack {
-                            Text("\(currentQuestionIndex + 1). \(quiz.questions[currentQuestionIndex].label)")
+                            Text(quizViewModel.currentQuestionTitle())
                                 .font(.system(size: 24, weight: .bold, design: .default))
                             Spacer()
                         }
                         .padding(.vertical, 40)
                             
-                        ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
-                            QuizCell(answer: answer, isSelected: currentAnswer == answer) {
-                                currentAnswer = answer
+                        ForEach(quizViewModel.getQuestionAnswers()) { answer in
+                            QuizCell(answer: answer, isSelected: quizViewModel.isCurrentAnswer(answer)) {
+                                quizViewModel.selectAnswer(answer)
                                 
-                                answerList[currentQuestionIndex] = currentAnswer
-                                
-                                if currentQuestionIndex < quiz.questions.count - 1 {
-                                    self.currentQuestionIndex += 1
-                                    self.currentQuestion = quiz.questions[currentQuestionIndex]
-                                    
-                                    if answerList[currentQuestionIndex] != nil {
-                                        currentAnswer = answerList[currentQuestionIndex]
-                                    } else {
-                                        currentAnswer = nil
-                                    }
-                                    
+                                if !quizViewModel.isLastQuestion() {
+                                    quizViewModel.nextQuestion()
                                 } else {
-                                    switch quiz.title {
-                                    case "DISK ME":
-                                        result = generateDISCResult(answers: answerList)
-                                    case "Creative \nTypes":
-                                        result = generateCreativeTypesResult(answers: answerList)
-                                    default:
-                                        print("There is no functions to generate a result for this quiz")
-                                    }
-                                    
-                                    guard let result = result else {
-                                        return
-                                    }
-                                    
-                                    let userResult = UserResult(result: result, isPrivate: false)
-                                    
-                                    userViewModel.addUserResult(userResult: userResult)
+                                    quizViewModel.generateResult()
                                     
                                     isLoading = true
                                     
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                        isResultTapped = true
+                                        withAnimation {
+                                            showResultView = true
+                                        }
                                     }
                                 }
                             }
@@ -111,15 +87,25 @@ struct QuizView: View {
                 }
             }
             
-            if result != nil {
-                NavigationLink("", destination: QuizOutput(result: self.result!), isActive: $isResultTapped)
-            }
             
             if isLoading {
                 LoadingAnimationView(labelText: "Calculando a resposta do seu quiz...")
             }
+            
+            if showResultView {
+                NavigationLink(
+                    "",
+                    destination: QuizOutput(result: quizViewModel.result) {
+                        guard let userResult = quizViewModel.getUserResult() else { return }
+                        userViewModel.addUserResult(userResult: userResult)
+                    },
+                    isActive: $showResultView
+                )
+            }
         }
-        .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .background(
+            Color.preto.edgesIgnoringSafeArea(.all)
+        )
         .navigationBarHidden(true)
     }
 }

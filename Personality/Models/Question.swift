@@ -1,6 +1,6 @@
 import Foundation
 
-final class Question: Identifiable {
+struct Question: Identifiable {
     var id = UUID()
     var label: String
     var answers: [Answer]
