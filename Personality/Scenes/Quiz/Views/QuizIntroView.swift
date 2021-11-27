@@ -39,12 +39,7 @@ struct QuizIntroView: View {
                 
                 HStack {
                     Spacer()
-                    NavigationLink(
-                        destination:
-                            QuizView(
-                                quiz: quiz,
-                                currentQuestionIndex: 0)
-                            )
+                    NavigationLink(destination: QuizView(quiz: quiz))
                     {
                         RightButtonStuff(title: "Iniciar      ", systemImageName: "arrow.right", textColor: Color.preto)
                     }

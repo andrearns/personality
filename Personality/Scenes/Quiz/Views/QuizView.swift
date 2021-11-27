@@ -5,16 +5,21 @@ struct QuizView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel : UserViewModel
-    
-    var quiz: Quiz!
-    
+    @ObservedObject var quizViewModel: QuizViewModel
     @State var isResultTapped = false
     @State var isLoading = false
-    @State var currentQuestion: Question?
-    @State var currentQuestionIndex = 0
-    @State var answerList: [Int : Answer] = [:]
-    @State var currentAnswer: Answer? = nil
-    @State var result: Result?
+    
+    init(quiz: Quiz) {
+        self.quizViewModel = QuizViewModel(quiz: quiz)
+    }
+    
+    func returnAction() {
+        if !quizViewModel.isFirstQuestion() && !quizViewModel.isLastQuestion() {
+            quizViewModel.previousQuestion()
+        } else {
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -23,13 +28,7 @@ struct QuizView: View {
                     VStack {
                         HStack {
                             Button(action: {
-                                if currentQuestionIndex <= quiz.questions.count - 1 && currentQuestionIndex != 0 {
-                                    currentQuestionIndex = currentQuestionIndex - 1
-                                    currentQuestion = quiz.questions[currentQuestionIndex]
-                                    currentAnswer = answerList[currentQuestionIndex]
-                                } else {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
+                                returnAction()
                             }) {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 24, weight: .bold, design: .default))
@@ -38,7 +37,7 @@ struct QuizView: View {
                             
                             Spacer()
                             
-                            Text(quiz.title)
+                            Text(quizViewModel.quiz.title)
                                 .personalityFont(.title, textSize: 18)
                                 .multilineTextAlignment(.center)
                             
@@ -54,17 +53,17 @@ struct QuizView: View {
                         }
                         .padding()
                         
-                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quiz.questions.count)
+                        ProgressBar(currentValue: $currentQuestionIndex, numberOfQuestions: quizViewModel.quiz.questions.count)
                     }
                     VStack {
                         HStack {
-                            Text("\(currentQuestionIndex + 1). \(quiz.questions[currentQuestionIndex].label)")
+                            Text("\(currentQuestionIndex + 1). \(quizViewModel.quiz.questions[currentQuestionIndex].label)")
                                 .font(.system(size: 24, weight: .bold, design: .default))
                             Spacer()
                         }
                         .padding(.vertical, 40)
                             
-                        ForEach(quiz.questions[currentQuestionIndex].answers) { answer in
+                        ForEach(quizViewModel.getQuestionAnswer()) { answer in
                             QuizCell(answer: answer, isSelected: currentAnswer == answer) {
                                 currentAnswer = answer
                                 
