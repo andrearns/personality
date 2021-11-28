@@ -24,6 +24,8 @@
 		5B23A69527509001002084B3 /* ResultTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A69427509001002084B3 /* ResultTitle.swift */; };
 		5B23A697275096F4002084B3 /* EgoFaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A696275096F4002084B3 /* EgoFaceImage.swift */; };
 		5B23A69E2752BD50002084B3 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B23A69D2752BD50002084B3 /* QuizViewModel.swift */; };
+		5B36F68B2753E30700273F1E /* InstagramSharingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36F68A2753E30700273F1E /* InstagramSharingUtils.swift */; };
+		5B36F68D2753E37200273F1E /* InstagramShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36F68C2753E37200273F1E /* InstagramShareView.swift */; };
 		5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */; };
 		5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC2581273F2C2D00D51D9C /* QuizListView.swift */; };
 		5BDC2584273F2C3100D51D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDC2583273F2C3100D51D9C /* Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		5B23A69427509001002084B3 /* ResultTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTitle.swift; sourceTree = "<group>"; };
 		5B23A696275096F4002084B3 /* EgoFaceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgoFaceImage.swift; sourceTree = "<group>"; };
 		5B23A69D2752BD50002084B3 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		5B36F68A2753E30700273F1E /* InstagramSharingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramSharingUtils.swift; sourceTree = "<group>"; };
+		5B36F68C2753E37200273F1E /* InstagramShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramShareView.swift; sourceTree = "<group>"; };
 		5BDC257C273F2C2D00D51D9C /* Personality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDC257F273F2C2D00D51D9C /* PersonalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityApp.swift; sourceTree = "<group>"; };
 		5BDC2581273F2C2D00D51D9C /* QuizListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListView.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 			children = (
 				5BDC259B274007E300D51D9C /* ProfileView.swift */,
 				C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */,
+				5B36F68C2753E37200273F1E /* InstagramShareView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				5BDC25CE2744B53200D51D9C /* Color.swift */,
 				56423978274C030700424227 /* Font .swift */,
 				5B23A67D275003E1002084B3 /* NavigationHelper.swift */,
+				5B36F68A2753E30700273F1E /* InstagramSharingUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
 				5B23A67E275003E1002084B3 /* NavigationHelper.swift in Sources */,
 				5BDC25C62744B06000D51D9C /* VerticalCard.swift in Sources */,
+				5B36F68D2753E37200273F1E /* InstagramShareView.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* Result.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
 				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
@@ -491,6 +498,7 @@
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
 				C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */,
+				5B36F68B2753E30700273F1E /* InstagramSharingUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

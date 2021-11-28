@@ -4,6 +4,7 @@ struct ProfileView: View {
     
     @EnvironmentObject var userViewModel: UserViewModel
     @State var showModal = false
+    @State var showInstagramShare = false
     
     let columns = [
         GridItem(.flexible()),
@@ -33,10 +34,12 @@ struct ProfileView: View {
                             Spacer()
                             Button(action: {
                                 print("Share profile")
+                                showInstagramShare = true
                             }) {
                                 Image(systemName: "square.and.arrow.up")
                                     .font(.system(size: 24, weight: .semibold, design: .default))
                                     .foregroundColor(.white)
+                                NavigationLink("", destination: InstagramShareView(), isActive: $showInstagramShare)
                             }
                         }
                         .padding()
