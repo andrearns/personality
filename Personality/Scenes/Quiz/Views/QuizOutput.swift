@@ -22,25 +22,25 @@ struct QuizOutput: View {
                     
                     Spacer()
                 }
-                Button(action: {
-                    // To do
-                    print("Share result")
-                }) {
-                    HStack {
-                        Spacer()
-                        RightButtonStuff(title: "Compartilhar", systemImageName: "arrow.right", textColor: Color.preto)
-                    }
-                }
-                .padding(.bottom)
-        
-                HStack {
-                    Button(action: {
-                        navigationHelper.selectedView = nil
-                    }) {
-                        LeftButtonStuff(title: "Quizzos", systemImageName: "arrow.left")
-                    }
-                    Spacer()
-                }
+//                Button(action: {
+//                    // To do
+//                    print("Share result")
+//                }) {
+//                    HStack {
+//                        Spacer()
+//                        RightButtonStuff(title: "Compartilhar", systemImageName: "arrow.right", textColor: Color.preto)
+//                    }
+//                }
+//                .padding(.bottom)
+//        
+//                HStack {
+//                    Button(action: {
+//                        navigationHelper.selectedView = nil
+//                    }) {
+//                        LeftButtonStuff(title: "Quizzos", systemImageName: "arrow.left")
+//                    }
+//                    Spacer()
+//                }
             }
             .padding(.horizontal)
         }
