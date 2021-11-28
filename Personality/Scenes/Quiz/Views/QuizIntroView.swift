@@ -50,12 +50,12 @@ struct QuizIntroView: View {
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)
         .background(Color.preto.edgesIgnoringSafeArea(.all))
-        .navigationBarItems(trailing: Button(action: {
-            print("Share quiz")
-        }, label: {
-            Image(systemName: "square.and.arrow.up")
-                .font(.system(size: 18, weight: .semibold, design: .default))
-        }))
+//        .navigationBarItems(trailing: Button(action: {
+//            print("Share quiz")
+//        }, label: {
+//            Image(systemName: "square.and.arrow.up")
+//                .font(.system(size: 18, weight: .semibold, design: .default))
+//        }))
     }
 }
 
