@@ -39,7 +39,6 @@ struct ProfileView: View {
                                 Image(systemName: "square.and.arrow.up")
                                     .font(.system(size: 24, weight: .semibold, design: .default))
                                     .foregroundColor(.white)
-                                NavigationLink("", destination: InstagramShareView(), isActive: $showInstagramShare)
                             }
                         }
                         .padding()
@@ -95,11 +94,15 @@ struct ProfileView: View {
                         .padding(.horizontal)
                     }
                 }
+//                if showInstagramShare {
+//                    InstagramShareView()
+//                }
             }
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.top)
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
+        .sheet(isPresented: $showInstagramShare) { InstagramShareView() }
     }
 }
