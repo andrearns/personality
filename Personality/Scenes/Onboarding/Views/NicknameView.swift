@@ -23,9 +23,15 @@ struct NicknameView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text("EAE MERMÃO")
+                Text("INHAI")
                     .personalityFont(.largeTitle, textSize: 40)
                     .foregroundColor(Color.branco)
+                    .padding(.bottom, -40)
+                
+                Text("MERMÃO")
+                    .personalityFont(.largeTitle, textSize: 40)
+                    .foregroundColor(Color.branco)
+                    .padding(.bottom, 2)
                 
                 Text("Como podemos te chamar?")
                     .personalityFont(.title, textSize: 21)

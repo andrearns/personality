@@ -32,7 +32,7 @@ struct QuizListView: View {
                         .padding(.bottom, 5)
                         
                         HStack {
-                            Text("Faça testes e personalize o seu personagem!")
+                            Text("Faça testes e personalize seu EGOzito!")
                                 .personalityFont(.title, textSize: 16)
                             Spacer()
                         }

@@ -24,12 +24,18 @@ struct ChooseEgoView: View {
                 HStack {
                     Spacer()
                     VStack(alignment: .leading) {
-                        Text("BORA \nCOMEÇAR")
-                            .personalityFont(.largeTitle, textSize: 40)
+                        Text("BORA")
+                            .personalityFont(.largeTitle, textSize: 45)
+                            .foregroundColor(Color.branco)
+                            .padding(.bottom, -40)
+                        
+                        Text("COMEÇAR")
+                            .personalityFont(.largeTitle, textSize: 45)
                             .foregroundColor(Color.branco)
                             .padding(.bottom, 2)
                         
-                        Text("Escolha seu personagem")
+                        
+                        Text("Escolha seu EGOzito")
                             .personalityFont(.title, textSize: 18)
                             .foregroundColor(Color.branco)
                         
@@ -37,6 +43,7 @@ struct ChooseEgoView: View {
                     .padding(.bottom, 30)
                     Spacer()
                 }
+                
                 
                 SnapCarousel(spacing: 0, index: $currentIndex, items: egos) { ego in
                     GeometryReader { _ in

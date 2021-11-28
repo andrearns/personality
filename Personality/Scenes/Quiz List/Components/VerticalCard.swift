@@ -35,6 +35,7 @@ struct VerticalCard: View {
                 HStack {
                     Text(quiz.shortDescription!)
                         .personalityFont(.subheadline, textSize: 12)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.branco)
                         .padding(.trailing, 40)
                         .multilineTextAlignment(.leading)
