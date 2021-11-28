@@ -260,7 +260,7 @@ struct QuizBank {
                 Question(
                     label: "Prefere falar:",
                     answers: [
-                        Answer(label: "Com alguém que mal conheço mas considera pakas", score: "b"),
+                        Answer(label: "Com alguém que mal conheço, mas considera pakas", score: "b"),
                         Answer(label: "Com as vozes da sua cabeça", score: "a"),
                     ]
                 ),
@@ -272,10 +272,10 @@ struct QuizBank {
                     ]
                 ),
                 Question(
-                    label: "I’d rather be in",
+                    label: "Você prefere...",
                     answers: [
-                        Answer(label: "A cocoon", score: "a"),
-                        Answer(label: "A beehive", score: "b"),
+                        Answer(label: "Cama & Netflix", score: "a"),
+                        Answer(label: "Acampamento com os amigos", score: "b"),
                     ]
                 ),
                 Question(
@@ -302,8 +302,8 @@ struct QuizBank {
                 Question(
                     label: "Prefere:",
                     answers: [
-                        Answer(label: "Cama & Netflix", score: "e"),
-                        Answer(label: "Acampamento com os amigos", score: "f"),
+                        Answer(label: "Pirar nas ideias e possibilidades", score: "e"),
+                        Answer(label: "Colocar a mão na massa", score: "f"),
                     ]
                 ),
                 Question(
@@ -454,7 +454,7 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Sabotage",
+            title: "sabotagem",
             imageName: "IlustraSabotagem",
             shortDescription: "Quais são seus sabotadores",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",

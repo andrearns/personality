@@ -23,7 +23,7 @@ struct NicknameView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text("INHAI")
+                Text("EAII")
                     .personalityFont(.largeTitle, textSize: 40)
                     .foregroundColor(Color.branco)
                     .padding(.bottom, -40)
