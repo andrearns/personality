@@ -7,8 +7,8 @@ struct QuizBank {
         Quiz(
             title: "DISK ME",
             imageName: "IlustraDISK",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            shortDescription: "Dominância, influência, conformidade ou estabilidade?",
+            longDescription: "Com o teste DISC você consegue entender melhor suas habilidades e limitações, pontos fortes e fracos. Vamo lá?",
             durationInMinutes: 5,
             colorName: "Blue",
             questions: [
@@ -35,8 +35,8 @@ struct QuizBank {
                     answers: [
                         Answer(label: "Ficar de boa", score: "s"),
                         Answer(label: "Me arriscar", score: "d"),
-                        Answer(label: "Mudanças", score: "i"),
-                        Answer(label: "Ficar na zona de conforto", score: "c"),
+                        Answer(label: "Ser uma metamorfose ambulante", score: "i"),
+                        Answer(label: "Segurança", score: "c"),
                     ]
                 ),
                 Question(
@@ -45,7 +45,7 @@ struct QuizBank {
                         Answer(label: "Curiosa", score: "i"),
                         Answer(label: "Parceirassa", score: "s"),
                         Answer(label: "Conservadora", score: "c"),
-                        Answer(label: "Que faz o que tem que fazer", score: "d"),
+                        Answer(label: "Prática!", score: "d"),
                     ]
                 ),
                 Question(
@@ -69,28 +69,28 @@ struct QuizBank {
                 Question(
                     label: "Eu gosto de...",
                     answers: [
-                        Answer(label: "Delegar", score: "i"),
+                        Answer(label: "Dar ordens", score: "i"),
                         Answer(label: "Controlar tudo e todos", score: "c"),
                         Answer(label: "Coletividade, tudo é de todo mundo", score: "s"),
-                        Answer(label: "Agir sozinha, sem tempo pra outros", score: "d"),
+                        Answer(label: "Agir sozinha, sem tempo irmão", score: "d"),
                     ]
                 ),
                 Question(
                     label: "Eu prefiro...",
                     answers: [
                         Answer(label: "Fazer o que precisa ser feito", score: "i"),
-                        Answer(label: "Trabalhar em grupo porque sou muito preguiçosa pra fazer sozinha", score: "s"),
+                        Answer(label: "Trabalhar em grupo", score: "s"),
                         Answer(label: "Fazer do meu jeito", score: "d"),
-                        Answer(label: "Meter o loko", score: "c"),
+                        Answer(label: "Que tudo fique perfeito", score: "c"),
                     ]
                 ),
                 Question(
                     label: "Quando tenho uma ideia...",
                     answers: [
                         Answer(label: "Enxergo problema até onde não tem", score: "c"),
-                        Answer(label: "Sonho alto, céu é o limite", score: "i"),
-                        Answer(label: "Sou a impulsividade em pessoa", score: "d"),
-                        Answer(label: "Planejo os próximos passos", score: "s"),
+                        Answer(label: "O céu é o limite", score: "i"),
+                        Answer(label: "Meto o loko", score: "d"),
+                        Answer(label: "Planejo tudo", score: "s"),
                     ]
                 ),
                 Question(
@@ -98,8 +98,8 @@ struct QuizBank {
                     answers: [
                         Answer(label: "Feito é melhor que perfeito", score: "d"),
                         Answer(label: "Se não for pra ser um arraso, melhor nem começar", score: "c"),
-                        Answer(label: "Está tudo bem fazer mudanças no processo", score: "i"),
-                        Answer(label: "Paciência e um ambiente tranquilo são a chave para o sucesso", score: "s"),
+                        Answer(label: "As coisas mudam e tá tudo bem", score: "i"),
+                        Answer(label: "Paciência é TUDO", score: "s"),
                     ]
                 ),
                 Question(
@@ -115,18 +115,18 @@ struct QuizBank {
                     label: "Para conseguir obter bons resultados é preciso...",
                     answers: [
                         Answer(label: "Fazer acontecer", score: "d"),
-                        Answer(label: "Networking sincero", score: "i"),
+                        Answer(label: "Ter contatinhos", score: "i"),
                         Answer(label: "Ser famoso no instagram", score: "s"),
-                        Answer(label: "Fazer rolar de uma forma ou de outra", score: "c"),
+                        Answer(label: "Conquistar pela qualidade", score: "c"),
                     ]
                 ),
                 Question(
                     label: "Eu penso que...",
                     answers: [
-                        Answer(label: "É melhor do que arrependimento", score: "c"),
+                        Answer(label: "É melhor cuidado do que arrependimento", score: "c"),
                         Answer(label: "Duas cabeças pensam melhor do que uma", score: "s"),
-                        Answer(label: "Se não sabe brincar, nao desce pro play", score: "d"),
-                        Answer(label: "Não é fácil ser um homem simples", score: "i"),
+                        Answer(label: "Se não sabe brincar, não desce pro play", score: "d"),
+                        Answer(label: "Não é fácil socializar", score: "i"),
                     ]
                 ),
                 Question(
@@ -142,7 +142,7 @@ struct QuizBank {
             results: [
                 Result(
                     label: "Dominância",
-                    about: "Ousado, Questionador & Autosuficiente. \n Quem tem alto perfil de dominância, tende a tomar decisões mais rapidamente, é motivado por assumir riscos, busca objetivos com senso de urgência e prefere fazer as coisas da sua maneira. \n Seu lema é \"fazer rápido\". Tome cuidado para não se precipitar e buscar o caminho mais fácil. Além disso, fique atento para manter o bom relacionamento com o seu time.",
+                    about: "Ousado, Questionador & Autosuficiente \n Quem tem o perfil de dominância, tende a meter o loko, e é motivado pelo perigo, quer tudo pra ontem e prefere fazer as coisas do seu jeito. \n Seu lema é \"sem tempo irmão\". Mas toma cuidado com as ações precipitadas e tenta cuidar pra não prejudicar os coleguinhas ao redor.",
                     code: "d",
                     badge:
                         Badge(
@@ -158,7 +158,7 @@ struct QuizBank {
                 ),
                 Result(
                     label: "Influência",
-                    about: "Quem tem alto perfil de influência, tende a inspirar ideias, ser muito sonhador e provocar grandes mudanças. Seu lema é \"fazer a diferença\". Tome cuidado para não se distrair muito, a falta de comunicação é muito comum em pessoas influentes. Além disso, busque ser uma pessoa mais paciente e relaxada.",
+                    about: "Criativo, Sociável & Distraído \n Quem tem o perfil de influência, tende a viver no mundo da lua, ter ideias boas e transformadoras. \n Seu lema é \"fazer a diferença\". Toma cuidado para não se distrair DEMAIS e tenta ser uma pessoa um tiquinho mais paciente e relaxada.",
                     code: "i",
                     badge:
                         Badge(
@@ -174,7 +174,7 @@ struct QuizBank {
                 ),
                 Result(
                     label: "Conformidade",
-                    about: "Quem tem alto perfil de conformidade, tende a ser motivado pela qualidade do trabalho. Geralmente, lida bem com planilhas, desenvolvimento de software e tem facilidade de concentração. Seu lema é \"fazer certo\". Tome cuidado com o detalhismo excessivo para não impedir o progresso. Além disso, trabalhe a sua adaptação a mudanças.",
+                    about: "Perfeccionista, Organizado & Focado \n Quem tem o perfil de conformidade, tende a querer as coisas bem feitas. Na maioria das vezes é quem organiza os rolês e lida bem com planilhas. \n Seu lema é \"fazer o meu melhor\". Tenta não se prejudicar pelo seu detalhismo e vai trabalhando a adaptação a mudanças pra não surtar.",
                     code: "c",
                     badge:
                         Badge(
@@ -190,7 +190,7 @@ struct QuizBank {
                 ),
                 Result(
                     label: "Estabilidade",
-                    about: "Quem tem alto perfil de influência, tende a buscar uma comunicação aberta, constrói o consenso do grupo e trabalha bem em equipe. Seu lema é \"fazer junto\". Tome cuidado para não esquecer os resultados e se manipular com os sentimentos. Além disso, trabalhe a sua habilidade de dar Feedbacks e se atente a não esconder conflitos.",
+                    about: "Paciente, Acolhedor & Docinho \n Quem tem o perfil de estabilidade, tende a se comunicar bem com as pessoas e ser o pacificador do rolê. Seu lema é \"fazer junto\". \n Cuida pra não se deixar levar demais pelos sentimentos pra não se machucar e lembra que às vezes um conflitinho faz bem.",
                     code: "s",
                     badge:
                         Badge(
@@ -208,67 +208,67 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Creative \nTypes",
+            title: "tipos de criatividade",
             imageName: "IlustraCriatividade",
-            shortDescription: "Descrição curta",
-            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+            shortDescription: "Encontre seu chapéu ideal",
+            longDescription: "Todos nós somos criativos! A criatividade só se manifesta de formas diferentes em cada um. Nesse teste você vai descobrir qual dos 8 tipos de criatividade é a sua. Let's go!!!",
             durationInMinutes: 5,
             colorName: "Green",
             questions: [
                 Question(
-                    label: "Are you a ruler or a scribble?",
+                    label: "Você normalmente:",
                     answers: [
-                        Answer(label: "Ruler", score: "c"),
-                        Answer(label: "Scribble", score: "d"),
+                        Answer(label: "Segue as regras", score: "c"),
+                        Answer(label: "Taca o foda-se", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "When travelling, you always need a...",
+                    label: "Malas prontas, agora você precisa de: ",
                     answers: [
-                        Answer(label: "Destination", score: "c"),
-                        Answer(label: "Direction", score: "d"),
+                        Answer(label: "Destino", score: "c"),
+                        Answer(label: "Direção", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "My creativity is more",
+                    label: "Suas ideias surgem pelo:",
                     answers: [
-                        Answer(label: "Method", score: "c"),
-                        Answer(label: "Madness", score: "d"),
+                        Answer(label: "Método", score: "c"),
+                        Answer(label: "Caos", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "Everything is connected",
+                    label: "Tudo está conectado?",
                     answers: [
-                        Answer(label: "True", score: "d"),
-                        Answer(label: "False", score: "c"),
+                        Answer(label: "SIM!!!!", score: "d"),
+                        Answer(label: "Que?", score: "c"),
                     ]
                 ),
                 Question(
-                    label: "I tend to see life through the lens of",
+                    label: "#Reflita - A vida é composta por:",
                     answers: [
-                        Answer(label: "Systems", score: "c"),
-                        Answer(label: "Stories", score: "d"),
+                        Answer(label: "Sistemas", score: "c"),
+                        Answer(label: "Histórias", score: "d"),
                     ]
                 ),
                 Question(
-                    label: "My door is...",
+                    label: "Sua porta está:",
                     answers: [
-                        Answer(label: "Wide open", score: "b"),
-                        Answer(label: "Usually closed", score: "a"),
+                        Answer(label: "Sempre aberta #sóvem", score: "b"),
+                        Answer(label: "Com uma senha secreta pros chegados", score: "a"),
                     ]
                 ),
                 Question(
-                    label: "I’d rather talk to",
+                    label: "Prefere falar:",
                     answers: [
-                        Answer(label: "Someone I just met", score: "b"),
-                        Answer(label: "Myself", score: "a"),
+                        Answer(label: "Com alguém que mal conheço mas considera pakas", score: "b"),
+                        Answer(label: "Com as vozes da sua cabeça", score: "a"),
                     ]
                 ),
                 Question(
-                    label: "Are you a fortune cookie or a birthday cake?",
+                    label: "Você é mais:",
                     answers: [
-                        Answer(label: "Fortune cookie", score: "a"),
-                        Answer(label: "Birthday cake", score: "b"),
+                        Answer(label: "Biscoito da sorte", score: "a"),
+                        Answer(label: "Bolo de aniversário", score: "b"),
                     ]
                 ),
                 Question(
@@ -279,45 +279,45 @@ struct QuizBank {
                     ]
                 ),
                 Question(
-                    label: "I tend to go",
+                    label: "Normalmente você vai:",
                     answers: [
-                        Answer(label: "Over the top", score: "b"),
-                        Answer(label: "Under the radar", score: "a"),
+                        Answer(label: "Voando", score: "b"),
+                        Answer(label: "Engatinhando", score: "a"),
                     ]
                 ),
                 Question(
-                    label: "Updates are ready to install",
+                    label: "Atualizações estão prontas para serem intaladas",
                     answers: [
-                        Answer(label: "Restart now", score: "f"),
-                        Answer(label: "Remind me tomorrow", score: "e"),
+                        Answer(label: "Instalar agora", score: "f"),
+                        Answer(label: "Me lembre amanhã", score: "e"),
                     ]
                 ),
                 Question(
-                    label: "My brain spends more time",
+                    label: "Sua mente passa mais tempo:",
                     answers: [
-                        Answer(label: "In the zone", score: "f"),
-                        Answer(label: "Zoning out", score: "e"),
+                        Answer(label: "Focada!!!", score: "f"),
+                        Answer(label: "Viajando na maionese", score: "e"),
                     ]
                 ),
                 Question(
-                    label: "Secret weapon?",
+                    label: "Prefere:",
                     answers: [
-                        Answer(label: "Curiosity", score: "e"),
-                        Answer(label: "Endurance", score: "f"),
+                        Answer(label: "Cama & Netflix", score: "e"),
+                        Answer(label: "Acampamento com os amigos", score: "f"),
                     ]
                 ),
                 Question(
-                    label: "Dip your toes or dive in head first?",
+                    label: "Na hora de entrar na piscina:",
                     answers: [
-                        Answer(label: "Dip", score: "e"),
-                        Answer(label: "Dive", score: "f"),
+                        Answer(label: "Calminha, começando pelo dedinho do pé", score: "e"),
+                        Answer(label: "Mergulho de cabeça, roupa e tudo", score: "f"),
                     ]
                 ),
                 Question(
-                    label: "My first question is always",
+                    label: "Sua primeira pergunta é sempre:",
                     answers: [
-                        Answer(label: "Why", score: "e"),
-                        Answer(label: "How", score: "f"),
+                        Answer(label: "Pq diabos?", score: "e"),
+                        Answer(label: "Como é possível?", score: "f"),
                     ]
                 )
             ],
@@ -371,7 +371,7 @@ struct QuizBank {
                     colorName: "Yellow"
                 ),
                 Result(
-                    label: "Maker",
+                    label: "Criador",
                     about: "Direcionado, focado e dedicado ao processo criativo, o CRIADOR dominou a arte de manifestar idéias e visões de forma tridimensional. A sociedade agradece ao trabalho de um CRIADOR, que desenvolve sistemas, estruturas e inovações em que todos nós confiamos. Um dos trabalhadores mais dedicados de todos os tipos, o CRIADOR está quase sempre ocupado resolvendo pepinos, dobrando metas e concluindo projetos. Existem poucas coisas que trazem mais a você satisfação do que criar coisas e fazer progressos em qualquer forma.",
                     code: "acf",
                     badge:
@@ -387,8 +387,8 @@ struct QuizBank {
                     colorName: "Green"
                 ),
                 Result(
-                    label: "Producer",
-                    about: "O PRODUTOR é o cara que “fala e faz”. Orientado para as pessoas, analítico, pragmático, e dinâmico, você tem uma natureza altamente criativa, que é equilibrada por um realismo fundamentado e uma atitude de \"fazer com que seja feito\". Em seus olhos, uma ideia tem valor real apenas quando se transforma em algo que outros podem desfrutar. Foca nos objetivos e em ter resultados desejados.",
+                    label: "Mão na massa",
+                    about: "O MÃO NA MASSA é o cara que “fala e faz”. Orientado para as pessoas, analítico, pragmático, e dinâmico, você tem uma natureza altamente criativa, que é equilibrada por um realismo fundamentado e uma atitude de \"fazer com que seja feito\". Em seus olhos, uma ideia tem valor real apenas quando se transforma em algo que outros podem desfrutar. Foca nos objetivos e em ter resultados desejados.",
                     code: "bcf",
                     badge:
                         Badge(
@@ -403,7 +403,7 @@ struct QuizBank {
                     colorName: "Blue"
                 ),
                 Result(
-                    label: "Dreamer",
+                    label: "Sonhador",
                     about: "O mundo é um lugar mágico aos olhos de um SONHADOR. Onde os outros veja fatos e números, você vê sinais do universo, metáforas e significados ocultos. Você é profundamente emocional e intuitivo, com uma imaginação vívida - é idealista e romântico por natureza. O mundo interior é sempre onde você se sente mais em casa. Você fica feliz em vagar por horas a fio em sua paisagem mental de pensamentos, emoções e fantasias. Você está naturalmente desenhado para expressar seu mundo interior por meio de atividades literárias, música e artes visuais. Pense em você como o \"mágico da vida real\" dos tipos criativos.",
                     code: "ade",
                     badge:
@@ -419,7 +419,7 @@ struct QuizBank {
                     colorName: "Pink"
                 ),
                 Result(
-                    label: "Innovator",
+                    label: "Inovador",
                     about: "O INOVADOR  vê tudo através das lentes de possibilidades e progressos, problemas e soluções. Você se sente muito intelectual e criativo quando resolve problemas. Sonhar com maneiras novas e aprimoradas de fazer as coisas é o seu role. Sua atenção está amplamente voltada para o mundo ao seu redor, e você está constantemente pensando em inovar sistemas que já existem para impulsionar as coisas para o próximo nível.  Mudar pode ser assustador para a maioria das pessoas, mas para você, é o combustível para seu fogo criativo. Um pioneiro, você está aqui neste planeta para iluminar o caminho para o futuro, talvez seja fã de Elon Musk. Você é um tomador de riscos natural, com um insaciável desejo de testar limites e expandir fronteiras para explorar territórios desconhecidos.",
                     code: "bce",
                     badge:
@@ -435,7 +435,7 @@ struct QuizBank {
                     colorName: "Yellow"
                 ),
                 Result(
-                    label: "Visionary",
+                    label: "Visionário",
                     about: "Você vive em um mundo de possibilidades infinitas, preferindo ver as coisas não como eles são, mas pelo o que elas podem ser. Você sabe que na vida existem limites, mas você busca, de alguma maneira, ultrapassar todos eles. É emocional, apaixonado e cheio de ideias. Sua natureza é introspectiva e intuitiva, é equilibrada por um grande interesse pelo mundo ao seu redor e desejo de contribuir para a sociedade. Carismático e expressivo, você adora compartilhar suas ideias malucas com outras pessoas.",
                     code: "bde",
                     badge:
@@ -456,7 +456,7 @@ struct QuizBank {
         Quiz(
             title: "Sabotage",
             imageName: "IlustraSabotagem",
-            shortDescription: "Descrição curta",
+            shortDescription: "Quais são seus sabotadores",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
             colorName: "Purple",
@@ -467,7 +467,7 @@ struct QuizBank {
         Quiz(
             title: "Só love\nSó love",
             imageName: "IlustraSoLove",
-            shortDescription: "Descrição curta",
+            shortDescription: "Qual a sua linguagem do amor?",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
             colorName: "Blue",
@@ -476,8 +476,9 @@ struct QuizBank {
         ),
         
         Quiz(
-            title: "Teste 5",
-            shortDescription: "Descrição curta",
+            title: "só love",
+            imageName: "IlustraSoLove",
+            shortDescription: "5 linguagens do amor",
             longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
             durationInMinutes: 5,
             colorName: "Pink",

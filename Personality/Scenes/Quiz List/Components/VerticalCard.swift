@@ -37,6 +37,8 @@ struct VerticalCard: View {
                         .personalityFont(.subheadline, textSize: 12)
                         .foregroundColor(.branco)
                         .padding(.trailing, 40)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
                 }
                 Spacer()
             }

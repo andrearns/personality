@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chapeu5.png",
+      "filename" : "Criador-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chapeu5-1.png",
+      "filename" : "Criador-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chapeu5-2.png",
+      "filename" : "Criador.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

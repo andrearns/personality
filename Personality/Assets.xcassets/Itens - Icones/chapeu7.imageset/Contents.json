@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chapeu7.png",
+      "filename" : "Sonhador-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chapeu7-1.png",
+      "filename" : "Sonhador-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chapeu7-2.png",
+      "filename" : "Sonhador.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

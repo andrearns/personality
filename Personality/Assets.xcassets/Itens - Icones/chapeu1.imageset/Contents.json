@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chapeu1.png",
+      "filename" : "Pensador-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chapeu1-1.png",
+      "filename" : "Pensador-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chapeu1-2.png",
+      "filename" : "Pensador.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

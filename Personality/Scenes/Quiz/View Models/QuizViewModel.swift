@@ -65,7 +65,7 @@ class QuizViewModel: ObservableObject {
         switch quiz.title {
         case "DISK ME":
             result = generateDISCResult(answers: answerDict)
-        case "Creative \nTypes":
+        case "tipos de criatividade":
             result = generateCreativeTypesResult(answers: answerDict)
         default:
             print("There is no functions to generate a result for this quiz")
