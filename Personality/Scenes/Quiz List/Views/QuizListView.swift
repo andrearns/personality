@@ -14,7 +14,7 @@ var secondQuizList: [Quiz] = [
 struct QuizListView: View {
     @State var isActive: Bool = false
     @State var quizzes: [Quiz] = secondQuizList
-    let quizzesRepository = QuizzesRepository()
+    let quizzesRepository = QuizzesService()
     
     var body: some View {
         NavigationView {
