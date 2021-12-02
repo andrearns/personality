@@ -62,6 +62,8 @@
 		90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD6D01274809A200FE5072 /* ChooseEgoView.swift */; };
 		AF13D89D274DBC170090F35E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13D89C274DBC170090F35E /* APIService.swift */; };
 		AF13D89F274DC5F20090F35E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13D89E274DC5F20090F35E /* Auth.swift */; };
+		AF25E196275949A700576CEE /* QuizListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E195275949A700576CEE /* QuizListViewModel.swift */; };
+		AF25E19827594AAF00576CEE /* Quizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E19727594AAF00576CEE /* Quizzes.swift */; };
 		AF67E08D27500AC10091C5ED /* QuizzesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67E08C27500AC10091C5ED /* QuizzesService.swift */; };
 		AF73404D2757FDB000215421 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404C2757FDB000215421 /* Endpoint.swift */; };
 		AF73404F2757FE7B00215421 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404E2757FE7B00215421 /* Networker.swift */; };
@@ -128,6 +130,8 @@
 		90CD6D01274809A200FE5072 /* ChooseEgoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEgoView.swift; sourceTree = "<group>"; };
 		AF13D89C274DBC170090F35E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AF13D89E274DC5F20090F35E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		AF25E195275949A700576CEE /* QuizListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewModel.swift; sourceTree = "<group>"; };
+		AF25E19727594AAF00576CEE /* Quizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes.swift; sourceTree = "<group>"; };
 		AF67E08C27500AC10091C5ED /* QuizzesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesService.swift; sourceTree = "<group>"; };
 		AF73404C2757FDB000215421 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AF73404E2757FE7B00215421 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5BDC2595273F719A00D51D9C /* Quiz.swift */,
+				AF25E19727594AAF00576CEE /* Quizzes.swift */,
 				5BDC25A12740904F00D51D9C /* Answer.swift */,
 				5BDC259D274061AC00D51D9C /* Question.swift */,
 				5BDC25BF2744A97500D51D9C /* Result.swift */,
@@ -283,6 +288,7 @@
 		5BDC25B02742E06400D51D9C /* Quiz List */ = {
 			isa = PBXGroup;
 			children = (
+				AF25E1942759499800576CEE /* ViewModel */,
 				5BDC25B22742E07D00D51D9C /* Views */,
 				5BDC25B12742E07500D51D9C /* Components */,
 			);
@@ -406,6 +412,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		AF25E1942759499800576CEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF25E195275949A700576CEE /* QuizListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AF734055275815F200215421 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +504,7 @@
 			files = (
 				5BDC25E027484B8800D51D9C /* DISC.swift in Sources */,
 				5B23A69E2752BD50002084B3 /* QuizViewModel.swift in Sources */,
+				AF25E19827594AAF00576CEE /* Quizzes.swift in Sources */,
 				5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */,
 				5BDC259E274061AC00D51D9C /* Question.swift in Sources */,
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
@@ -539,6 +554,7 @@
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
 				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
 				90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */,
+				AF25E196275949A700576CEE /* QuizListViewModel.swift in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
 				C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */,

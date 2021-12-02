@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserResult: Identifiable, Decodable, Equatable {
+struct UserResult: Identifiable, Codable, Equatable {
     var id = UUID()
     var user_id: UUID
     var result_id: UUID

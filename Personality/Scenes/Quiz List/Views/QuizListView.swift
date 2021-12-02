@@ -16,6 +16,8 @@ struct QuizListView: View {
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel: UserViewModel
     
+    @ObservedObject var viewModel = QuizListViewModel()
+    
     var body: some View {
         ZStack {
             NavigationView {
@@ -92,6 +94,10 @@ struct QuizListView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
+        .onAppear {
+            viewModel.onAppear()
+            print(viewModel.quizzes.quizzes)
+        }
     }
 }
 

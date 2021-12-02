@@ -1,6 +1,6 @@
 import Foundation
 
-struct User: Decodable {
+struct User: Codable {
     var id = UUID()
     var name: String
     var baseAvatar: Ego

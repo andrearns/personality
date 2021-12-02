@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quiz: Identifiable, Decodable {
+struct Quiz: Identifiable, Codable {
     var id = UUID()
     var image: String?
     var title: String

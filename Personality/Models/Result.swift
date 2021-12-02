@@ -1,6 +1,6 @@
 import Foundation
 
-struct Result: Identifiable, Decodable, Equatable {
+struct Result: Identifiable, Codable, Equatable {
     var id = UUID()
     var label: String
     var about: String

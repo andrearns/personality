@@ -8,15 +8,10 @@
 import Foundation
 import Combine
 
-struct ListQuizzesResponse: Decodable {
-    let quizzes: [Quiz]
-    let count: Int
-}
-
 protocol QuizzesServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
-    func listQuizzes() -> AnyPublisher<ListQuizzesResponse, Error>
+    func listQuizzes() -> AnyPublisher<Quizzes, Error>
 }
 
 class QuizzesService: QuizzesServiceProtocol {
@@ -26,10 +21,10 @@ class QuizzesService: QuizzesServiceProtocol {
         self.networker = networker
     }
     
-    func listQuizzes() -> AnyPublisher<ListQuizzesResponse, Error> {
-        let endpoint = Endpoint.quizzesList(take: 10, skip: 10)
+    func listQuizzes() -> AnyPublisher<Quizzes, Error> {
+        let endpoint = Endpoint.quizzesList(take: 10, skip: 0)
         
-        return networker.get(type: ListQuizzesResponse.self,
+        return networker.get(type: Quizzes.self,
                              url: endpoint.url,
                              hearders: endpoint.headers)
     }
