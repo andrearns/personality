@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Ego: CaseIterable, Identifiable {
+enum Ego: CaseIterable, Identifiable, Decodable {
     var id: Self { self }
     
     case florzinha

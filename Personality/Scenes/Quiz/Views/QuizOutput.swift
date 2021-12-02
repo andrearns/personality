@@ -32,7 +32,7 @@ struct QuizOutput: View {
 //                    }
 //                }
 //                .padding(.bottom)
-//        
+//
 //                HStack {
 //                    Button(action: {
 //                        navigationHelper.selectedView = nil
@@ -62,13 +62,7 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-<<<<<<< HEAD
-            QuizOutput(result: QuizBank.shared.quizList[0].results[0])
-=======
-            QuizOutput(result: Result(label: "Dominancia", about: "textozin", code: "", badge: Badge (imageURL: "chapeu2", label: ""), color: "")
-            )
->>>>>>> abee6af (feat: QuizzesRepository)
+            QuizOutput(result: QuizBank.shared.quizList[0].results![0])
         }
     }
 }
-

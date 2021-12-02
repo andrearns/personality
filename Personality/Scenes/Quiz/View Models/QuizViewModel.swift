@@ -25,25 +25,25 @@ class QuizViewModel: ObservableObject {
     }
     
     func isLastQuestion() -> Bool {
-        currentQuestionIndex == quiz.questions.count - 1
+        currentQuestionIndex == quiz.questions!.count - 1
     }
     
     func previousQuestion() {
         currentQuestionIndex = currentQuestionIndex - 1
-        currentQuestion = quiz.questions[currentQuestionIndex]
+        currentQuestion = quiz.questions![currentQuestionIndex]
         currentAnswer = answerDict[currentQuestionIndex]
     }
     
     func questionsCount() -> Int {
-        quiz.questions.count
+        quiz.questions!.count
     }
     
     func getQuestionAnswers() -> [Answer] {
-        quiz.questions[currentQuestionIndex].answers
+        quiz.questions![currentQuestionIndex].answers
     }
     
     func currentQuestionTitle() -> String {
-        "\(currentQuestionIndex + 1). \(quiz.questions[currentQuestionIndex].label)"
+        "\(currentQuestionIndex + 1). \(quiz.questions![currentQuestionIndex].label)"
     }
     
     func isCurrentAnswer(_ answer: Answer) -> Bool {
@@ -57,7 +57,7 @@ class QuizViewModel: ObservableObject {
     
     func nextQuestion() {
         currentQuestionIndex += 1
-        currentQuestion = quiz.questions[currentQuestionIndex]
+        currentQuestion = quiz.questions![currentQuestionIndex]
         currentAnswer = nil
     }
     

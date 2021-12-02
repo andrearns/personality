@@ -1,10 +1,6 @@
 import Foundation
 
-<<<<<<< HEAD
-struct Result: Identifiable, Equatable {
-=======
-final class Result: Identifiable, Decodable {
->>>>>>> abee6af (feat: QuizzesRepository)
+struct Result: Identifiable, Decodable, Equatable {
     var id = UUID()
     var label: String
     var about: String

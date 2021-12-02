@@ -38,6 +38,6 @@ struct BadgeComponentView: View {
 
 struct BadgeComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        BadgeComponentView(result: QuizBank.shared.quizList[1].results[0])
+        BadgeComponentView(result: QuizBank.shared.quizList[1].results![0])
     }
 }

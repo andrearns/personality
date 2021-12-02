@@ -13,14 +13,6 @@ struct ProfileView: View {
         GridItem(.flexible()),
     ]
     
-<<<<<<< HEAD
-=======
-    var results: [Result] = [
-//        QuizBank.shared.quizList[0].results[0],
-//        QuizBank.shared.quizList[1].results[0],
-    ]
-    
->>>>>>> abee6af (feat: QuizzesRepository)
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             ZStack {

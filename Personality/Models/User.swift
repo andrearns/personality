@@ -1,10 +1,6 @@
 import Foundation
 
-<<<<<<< HEAD
-struct User {
-=======
-final class User: Decodable {
->>>>>>> 313fbdf (feat: Base API Service)
+struct User: Decodable {
     var id = UUID()
     var name: String
     var baseAvatar: Ego

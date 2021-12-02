@@ -1,10 +1,6 @@
 import Foundation
 
-<<<<<<< HEAD
-struct Quiz: Identifiable {
-=======
-final class Quiz: Identifiable, Decodable {
->>>>>>> abee6af (feat: QuizzesRepository)
+struct Quiz: Identifiable, Decodable {
     var id = UUID()
     var image: String?
     var title: String
