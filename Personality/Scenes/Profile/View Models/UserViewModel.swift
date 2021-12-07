@@ -9,7 +9,7 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     
-    @Published var user: User = User(name: "", baseAvatar: .diabinho, userResults: [])
+    @Published var user: User = User(name: "", baseAvatar: .diabinho, userResults: [], apple_id: "")
     
     @Published var selectedUserResult: UserResult?
     

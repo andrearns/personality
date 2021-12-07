@@ -1,5 +1,4 @@
 import SwiftUI
-import CoreData
 
 var firstQuizList: [Quiz] = [
     QuizBank.shared.quizList[0],
@@ -16,6 +15,8 @@ struct QuizListView: View {
     @State private var showPopUp: Bool = false
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel: UserViewModel
+    
+    @ObservedObject var viewModel = QuizListViewModel()
     
     var body: some View {
         ZStack {
@@ -44,7 +45,7 @@ struct QuizListView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(firstQuizList) { quiz in
-                                    if quiz.questions.count != 0 {
+                                    if quiz.questions!.count != 0 {
                                         NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
                                             VerticalCard(quiz: quiz)
                                         }
@@ -67,7 +68,7 @@ struct QuizListView: View {
                         
                         VStack {
                             ForEach(secondQuizList) { quiz in
-                                if quiz.questions.count != 0 {
+                                if quiz.questions!.count != 0 {
                                     NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
                                         HorizontalCard(quiz: quiz)
                                     }
@@ -93,6 +94,10 @@ struct QuizListView: View {
         }
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .accentColor(.white)
+        .onAppear {
+            viewModel.onAppear()
+            print(viewModel.quizzes.quizzes)
+        }
     }
 }
 

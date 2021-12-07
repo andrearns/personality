@@ -9,6 +9,8 @@ import SwiftUI
 import AuthenticationServices
 
 struct LoginView: View {
+    @ObservedObject var authViewModel: AuthenticationViewModel = AuthenticationViewModel()
+//    @AppStorage("token") var token: String // Usar isso para checar se o usuário está logado
     
     let columns = [
         GridItem(.flexible()),
@@ -43,9 +45,16 @@ struct LoginView: View {
             
             Spacer()
             
-            SignInWithAppleButton(onRequest: {_ in }, onCompletion: {_ in })
-                .frame(width: 280, height: 60, alignment: .center)
-                .cornerRadius(60)
+            SignInWithAppleButton(
+                onRequest: { request in
+                    request.requestedScopes = [.fullName, .email]
+                },
+                onCompletion: { result in
+                    authViewModel.finishAuthentication(using: result)
+                }
+            )
+            .frame(width: 280, height: 60, alignment: .center)
+            .cornerRadius(60)
             
             
             Text("Ao continuar, você confirma que concorda com nossos Termos e Condições e nossa Política de Privacidade")

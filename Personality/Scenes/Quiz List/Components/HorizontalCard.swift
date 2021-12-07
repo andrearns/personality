@@ -5,9 +5,9 @@ struct HorizontalCard: View {
     
     var body: some View {
         ZStack {
-            if quiz.imageName != nil {
+            if let image = quiz.image {
                 HStack {
-                    Image(quiz.imageName!)
+                    Image(image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.leading, 80)
@@ -21,7 +21,7 @@ struct HorizontalCard: View {
                         .padding(.bottom, 1)
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.leading)
-                    Text(quiz.shortDescription!)
+                    Text(quiz.subtitle!)
                         .personalityFont(.subheadline, textSize: 12)
                         .foregroundColor(.white)
                 }
@@ -38,7 +38,7 @@ struct HorizontalCard: View {
             }
         }
         .frame(height: 95, alignment: .center)
-        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+        .background(Color(uiColor: UIColor(named: quiz.color)!))
         .cornerRadius(16)
         .padding(.horizontal)
     }
@@ -49,11 +49,11 @@ struct HorizontalCard_Previews: PreviewProvider {
         HorizontalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "IlustraSoLove",
-                            shortDescription: "Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Green",
+                            image: "IlustraSoLove",
+                            subtitle: "Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Green",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -93,7 +93,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                 )
                             ],
                             results: [
-                                Result(
+                                QuizResult(
                                     label: "Sábia",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -107,9 +107,9 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Legal",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -123,9 +123,9 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Guru",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -139,9 +139,9 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Raivosa",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -155,7 +155,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )

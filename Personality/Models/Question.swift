@@ -1,6 +1,6 @@
 import Foundation
 
-struct Question: Identifiable {
+struct Question: Identifiable, Codable {
     var id = UUID()
     var label: String
     var answers: [Answer]

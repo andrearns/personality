@@ -18,7 +18,7 @@ struct QuizIntroView: View {
                     IntroHeader(quiz: quiz)
                         
                     HStack {
-                        Text(quiz.longDescription!)
+                        Text(quiz.about!)
                         Spacer()
                     }
                     .padding()
@@ -27,7 +27,7 @@ struct QuizIntroView: View {
                         .padding(.top)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(quiz.results) { result in
+                        ForEach(quiz.results!) { result in
                             OutputCell(result: result)
                         }
                     }.padding()

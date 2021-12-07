@@ -1,6 +1,6 @@
 import Foundation
 
-struct Badge {
+struct Badge: Codable {
     var id = UUID()
     var iconImageURL: String
     var profileImagesURL: [Ego : String]

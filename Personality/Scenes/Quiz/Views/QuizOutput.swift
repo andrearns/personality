@@ -3,7 +3,7 @@ import SwiftUI
 struct QuizOutput: View {
     
     @EnvironmentObject var navigationHelper: NavigationHelper
-    var result: Result
+    var result: QuizResult
     var onDisappear: () -> Void = {}
     
     var body: some View {
@@ -32,7 +32,7 @@ struct QuizOutput: View {
 //                    }
 //                }
 //                .padding(.bottom)
-//        
+//
 //                HStack {
 //                    Button(action: {
 //                        navigationHelper.selectedView = nil
@@ -62,8 +62,7 @@ struct QuizOutput: View {
     
     struct QuizOutput_Previews: PreviewProvider {
         static var previews: some View {
-            QuizOutput(result: QuizBank.shared.quizList[0].results[0])
+            QuizOutput(result: QuizBank.shared.quizList[0].results![0])
         }
     }
 }
-

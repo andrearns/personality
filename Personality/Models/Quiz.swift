@@ -1,23 +1,23 @@
 import Foundation
 
-struct Quiz: Identifiable {
+struct Quiz: Identifiable, Codable {
     var id = UUID()
-    var imageName: String?
+    var image: String?
     var title: String
-    var shortDescription: String?
-    var longDescription: String?
-    var durationInMinutes: Int
-    var colorName: String
-    var questions: [Question]
-    var results: [Result]
+    var subtitle: String?
+    var about: String?
+    var estimatedTimeInMinutes: Int
+    var color: String
+    var questions: [Question]?
+    var results: [QuizResult]?
     
-    init(title: String, imageName: String? = nil, shortDescription: String, longDescription: String, durationInMinutes: Int, colorName: String, questions: [Question], results: [Result]) {
+    init(title: String, image: String? = nil, subtitle: String, about: String, estimatedTimeInMinutes: Int, color: String, questions: [Question], results: [QuizResult]) {
         self.title = title
-        self.imageName = imageName
-        self.shortDescription = shortDescription
-        self.longDescription = longDescription
-        self.durationInMinutes = durationInMinutes
-        self.colorName = colorName
+        self.image = image
+        self.subtitle = subtitle
+        self.about = about
+        self.estimatedTimeInMinutes = estimatedTimeInMinutes
+        self.color = color
         self.questions = questions
         self.results = results
     }

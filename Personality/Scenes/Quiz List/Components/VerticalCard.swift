@@ -7,12 +7,12 @@ struct VerticalCard: View {
         ZStack {
             Image("backgroundTest")
                 .resizable()
-            if quiz.imageName != nil {
+            if let image = quiz.image {
                 VStack {
                     Spacer()
                     HStack {
                         Spacer()
-                        Image(quiz.imageName!)
+                        Image(image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(8)
@@ -33,7 +33,7 @@ struct VerticalCard: View {
                     Spacer()
                 }
                 HStack {
-                    Text(quiz.shortDescription!)
+                    Text(quiz.subtitle!)
                         .personalityFont(.subheadline, textSize: 12)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.branco)
@@ -46,7 +46,7 @@ struct VerticalCard: View {
             .padding()
         }
         .frame(width: 200, height: 250, alignment: .leading)
-        .background(Color(uiColor: UIColor(named: quiz.colorName)!))
+        .background(Color(uiColor: UIColor(named: quiz.color)!))
         .cornerRadius(16)
     }
 }
@@ -56,11 +56,11 @@ struct VerticalCard_Previews: PreviewProvider {
         VerticalCard(quiz:
                         Quiz(
                             title: "Teste 5",
-                            imageName: "IlustraDISK",
-                            shortDescription: "Descrição curta Descrição curta Descrição curta",
-                            longDescription: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
-                            durationInMinutes: 5,
-                            colorName: "Blue",
+                            image: "IlustraDISK",
+                            subtitle: "Descrição curta Descrição curta Descrição curta",
+                            about: "Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa Descrição longa",
+                            estimatedTimeInMinutes: 5,
+                            color: "Blue",
                             questions: [
                                 Question(
                                     label: "Qual cor você prefere?",
@@ -100,7 +100,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                 )
                             ],
                             results: [
-                                Result(
+                                QuizResult(
                                     label: "Sábia",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -114,9 +114,9 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Blue"
+                                    color: "Blue"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Legal",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -130,9 +130,9 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Pink"
+                                    color: "Pink"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Guru",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -146,9 +146,9 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Yellow"
+                                    color: "Yellow"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Raivosa",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -162,7 +162,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                                 .florzinha : "Z"
                                             ]
                                         ),
-                                    colorName: "Green"
+                                    color: "Green"
                                 ),
                             ]
                         )
