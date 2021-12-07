@@ -9,6 +9,8 @@ import SwiftUI
 import AuthenticationServices
 
 struct LoginView: View {
+    @ObservedObject var authViewModel: AuthenticationViewModel = AuthenticationViewModel()
+//    @AppStorage("token") var token: String // Usar isso para checar se o usuário está logado
     
     let columns = [
         GridItem(.flexible()),
@@ -48,37 +50,11 @@ struct LoginView: View {
                     request.requestedScopes = [.fullName, .email]
                 },
                 onCompletion: { result in
-                    switch result {
-                    case .success(let authResults):
-                        print("Authorization successful")
-                        guard let credentials = authResults.credential as? ASAuthorizationAppleIDCredential,
-                              let identityToken = credentials.identityToken,
-                              let identityTokenString = String(data: identityToken, encoding: .utf8),
-                              let email = credentials.email
-                        else { return }
-                        
-                        let givenName = credentials.fullName?.givenName
-
-                        let body = [
-                            "id_token ": identityTokenString,
-                            "name": givenName,
-                            "email": email
-                        ]
-                        
-                        guard let jsonData = try? JSONEncoder().encode(body) else { return }
-                        
-                        APIService.shared.postRequest(route: "/auth", body: body) { data in
-                            print(data)
-                        }
-                        
-                        // Send jsonData to API
-                    case .failure(let error):
-                        print("Authorization failed: \(error.localizedDescription)")
-                    }
+                    authViewModel.finishAuthentication(using: result)
                 }
             )
-                .frame(width: 280, height: 60, alignment: .center)
-                .cornerRadius(60)
+            .frame(width: 280, height: 60, alignment: .center)
+            .cornerRadius(60)
             
             
             Text("Ao continuar, você confirma que concorda com nossos Termos e Condições e nossa Política de Privacidade")

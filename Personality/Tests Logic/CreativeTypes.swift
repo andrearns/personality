@@ -1,6 +1,6 @@
 import Foundation
 
-func generateCreativeTypesResult(answers: [Int : Answer]) -> Result {
+func generateCreativeTypesResult(answers: [Int : Answer]) -> QuizResult {
     
     var scores: [String : Int] = [
         "a" : 0,

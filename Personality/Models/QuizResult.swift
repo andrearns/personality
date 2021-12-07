@@ -1,6 +1,6 @@
 import Foundation
 
-struct Result: Identifiable, Codable, Equatable {
+struct QuizResult: Identifiable, Codable, Equatable {
     var id = UUID()
     var label: String
     var about: String
@@ -17,7 +17,7 @@ struct Result: Identifiable, Codable, Equatable {
         self.color = color
     }
     
-    static func == (lhs: Result, rhs: Result) -> Bool {
+    static func == (lhs: QuizResult, rhs: QuizResult) -> Bool {
         lhs.id == rhs.id
     }
 }

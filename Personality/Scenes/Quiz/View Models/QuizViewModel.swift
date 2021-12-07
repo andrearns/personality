@@ -14,7 +14,7 @@ class QuizViewModel: ObservableObject {
     @Published var currentQuestionIndex = 0
     @Published var answerDict: [Int : Answer] = [:]
     @Published var currentAnswer: Answer? = nil
-    @Published var result: Result!
+    @Published var result: QuizResult!
     
     init(quiz: Quiz) {
         self.quiz = quiz

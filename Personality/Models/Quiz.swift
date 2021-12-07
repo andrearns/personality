@@ -9,9 +9,9 @@ struct Quiz: Identifiable, Codable {
     var estimatedTimeInMinutes: Int
     var color: String
     var questions: [Question]?
-    var results: [Result]?
+    var results: [QuizResult]?
     
-    init(title: String, image: String? = nil, subtitle: String, about: String, estimatedTimeInMinutes: Int, color: String, questions: [Question], results: [Result]) {
+    init(title: String, image: String? = nil, subtitle: String, about: String, estimatedTimeInMinutes: Int, color: String, questions: [Question], results: [QuizResult]) {
         self.title = title
         self.image = image
         self.subtitle = subtitle

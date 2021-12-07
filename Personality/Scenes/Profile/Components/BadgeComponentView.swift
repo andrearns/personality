@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BadgeComponentView: View {
-    var result: Result
+    var result: QuizResult
     
     var body: some View {
         HStack {

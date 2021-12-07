@@ -26,6 +26,6 @@ class QuizzesService: QuizzesServiceProtocol {
         
         return networker.get(type: Quizzes.self,
                              url: endpoint.url,
-                             hearders: endpoint.headers)
+                             headers: endpoint.headers)
     }
 }

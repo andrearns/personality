@@ -1,6 +1,6 @@
 import Foundation
 
-func generateDISCResult(answers: [Int : Answer]) -> Result {
+func generateDISCResult(answers: [Int : Answer]) -> QuizResult {
     
     var scores: [String : Int] = [
         "d" : 0,

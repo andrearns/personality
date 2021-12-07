@@ -93,7 +93,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                 )
                             ],
                             results: [
-                                Result(
+                                QuizResult(
                                     label: "Sábia",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -109,7 +109,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                         ),
                                     color: "Blue"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Legal",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -125,7 +125,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                         ),
                                     color: "Pink"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Guru",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",
@@ -141,7 +141,7 @@ struct IntroHeader_Previews: PreviewProvider {
                                         ),
                                     color: "Yellow"
                                 ),
-                                Result(
+                                QuizResult(
                                     label: "Raivosa",
                                     about: "kkkkkkkkkk",
                                     code: "ACF",

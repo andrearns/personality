@@ -3,7 +3,7 @@ import SwiftUI
 struct QuizOutput: View {
     
     @EnvironmentObject var navigationHelper: NavigationHelper
-    var result: Result
+    var result: QuizResult
     var onDisappear: () -> Void = {}
     
     var body: some View {

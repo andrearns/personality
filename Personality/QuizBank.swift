@@ -140,7 +140,7 @@ struct QuizBank {
                 )
             ],
             results: [
-                Result(
+                QuizResult(
                     label: "Dominância",
                     about: "Ousado, Questionador & Autosuficiente \n Quem tem o perfil de dominância, tende a meter o loko, e é motivado pelo perigo, quer tudo pra ontem e prefere fazer as coisas do seu jeito. \n Seu lema é \"sem tempo irmão\". Mas toma cuidado com as ações precipitadas e tenta cuidar pra não prejudicar os coleguinhas ao redor.",
                     code: "d",
@@ -156,7 +156,7 @@ struct QuizBank {
                         ),
                     color: "Blue"
                 ),
-                Result(
+                QuizResult(
                     label: "Influência",
                     about: "Criativo, Sociável & Distraído \n Quem tem o perfil de influência, tende a viver no mundo da lua, ter ideias boas e transformadoras. \n Seu lema é \"fazer a diferença\". Toma cuidado para não se distrair DEMAIS e tenta ser uma pessoa um tiquinho mais paciente e relaxada.",
                     code: "i",
@@ -172,7 +172,7 @@ struct QuizBank {
                         ),
                     color: "Pink"
                 ),
-                Result(
+                QuizResult(
                     label: "Conformidade",
                     about: "Perfeccionista, Organizado & Focado \n Quem tem o perfil de conformidade, tende a querer as coisas bem feitas. Na maioria das vezes é quem organiza os rolês e lida bem com planilhas. \n Seu lema é \"fazer o meu melhor\". Tenta não se prejudicar pelo seu detalhismo e vai trabalhando a adaptação a mudanças pra não surtar.",
                     code: "c",
@@ -188,7 +188,7 @@ struct QuizBank {
                         ),
                     color: "Yellow"
                 ),
-                Result(
+                QuizResult(
                     label: "Estabilidade",
                     about: "Paciente, Acolhedor & Docinho \n Quem tem o perfil de estabilidade, tende a se comunicar bem com as pessoas e ser o pacificador do rolê. Seu lema é \"fazer junto\". \n Cuida pra não se deixar levar demais pelos sentimentos pra não se machucar e lembra que às vezes um conflitinho faz bem.",
                     code: "s",
@@ -322,7 +322,7 @@ struct QuizBank {
                 )
             ],
             results: [
-                Result(
+                QuizResult(
                     label: "Artista",
                     about: "Como um ARTISTA, você precisa criar para se sentir verdadeiramente vivo. \n Você chega passando visão para as pessoas, é movido pelo desejo de se expressar e transformar o mundo ao seu redor. O tipo ARTISTA vive no espaço entre os mundos interno e externo, e seu dom é a capacidade de manifestar poderosamente o que está dentro de você. \n Você é todo conceitual e tem uma forte orientação estética. Você tende a trabalhar melhor sozinho, sem ninguém atrapalhando suas ideias. Anseia pela independência que o deixe livre para seguir seus impulsos criativos.",
                     code: "adf",
@@ -338,7 +338,7 @@ struct QuizBank {
                         ),
                     color: "Blue"
                 ),
-                Result(
+                QuizResult(
                     label: "Pensadora",
                     about: " Para o Pensador, a vida é verdadeiramente única, você experimenta o mundo como uma oportunidade infinita de aprendizado, descoberta e busca da verdade. Impulsionado por uma vontade insaciável de ser um filósofo no século XXI, o PENSADOR faz a busca pelo conhecimento e a verdade, uma busca para toda a vida. Poucas coisas satisfazem sua mente curiosa mais do que resolver um probléma que ninguém mais consegue, você se contenta em passar muito do seu tempo sozinho, prefere ficar longe de toda essa onda de tiktok e stories do Instagram.",
                     code: "ace",
@@ -354,7 +354,7 @@ struct QuizBank {
                         ),
                     color: "Pink"
                 ),
-                Result(
+                QuizResult(
                     label: "Aventureira",
                     about: "Não há como dizer onde a curiosidade infinita do AVENTURADOR pode nos levar. Mas ele come criatividade e entusiasmo no café da manhã, você se inspira facilmente, as vezes mais do que deveria. Já que acaba deixando se levar pelos pensamentos e vontades. Os tipos de AVENTURADOR são apaixonados, expressivos , espíritos criativos. Como um AVENTUREIRO, você nunca fica satisfeito em apenas ter ideias. Em vez disso, você tem uma necessidade quase compulsiva de fazer elas acontecerem.",
                     code: "bdf",
@@ -370,7 +370,7 @@ struct QuizBank {
                         ),
                     color: "Yellow"
                 ),
-                Result(
+                QuizResult(
                     label: "Criador",
                     about: "Direcionado, focado e dedicado ao processo criativo, o CRIADOR dominou a arte de manifestar idéias e visões de forma tridimensional. A sociedade agradece ao trabalho de um CRIADOR, que desenvolve sistemas, estruturas e inovações em que todos nós confiamos. Um dos trabalhadores mais dedicados de todos os tipos, o CRIADOR está quase sempre ocupado resolvendo pepinos, dobrando metas e concluindo projetos. Existem poucas coisas que trazem mais a você satisfação do que criar coisas e fazer progressos em qualquer forma.",
                     code: "acf",
@@ -386,7 +386,7 @@ struct QuizBank {
                         ),
                     color: "Green"
                 ),
-                Result(
+                QuizResult(
                     label: "Mão na massa",
                     about: "O MÃO NA MASSA é o cara que “fala e faz”. Orientado para as pessoas, analítico, pragmático, e dinâmico, você tem uma natureza altamente criativa, que é equilibrada por um realismo fundamentado e uma atitude de \"fazer com que seja feito\". Em seus olhos, uma ideia tem valor real apenas quando se transforma em algo que outros podem desfrutar. Foca nos objetivos e em ter resultados desejados.",
                     code: "bcf",
@@ -402,7 +402,7 @@ struct QuizBank {
                         ),
                     color: "Blue"
                 ),
-                Result(
+                QuizResult(
                     label: "Sonhador",
                     about: "O mundo é um lugar mágico aos olhos de um SONHADOR. Onde os outros veja fatos e números, você vê sinais do universo, metáforas e significados ocultos. Você é profundamente emocional e intuitivo, com uma imaginação vívida - é idealista e romântico por natureza. O mundo interior é sempre onde você se sente mais em casa. Você fica feliz em vagar por horas a fio em sua paisagem mental de pensamentos, emoções e fantasias. Você está naturalmente desenhado para expressar seu mundo interior por meio de atividades literárias, música e artes visuais. Pense em você como o \"mágico da vida real\" dos tipos criativos.",
                     code: "ade",
@@ -418,7 +418,7 @@ struct QuizBank {
                         ),
                     color: "Pink"
                 ),
-                Result(
+                QuizResult(
                     label: "Inovador",
                     about: "O INOVADOR  vê tudo através das lentes de possibilidades e progressos, problemas e soluções. Você se sente muito intelectual e criativo quando resolve problemas. Sonhar com maneiras novas e aprimoradas de fazer as coisas é o seu role. Sua atenção está amplamente voltada para o mundo ao seu redor, e você está constantemente pensando em inovar sistemas que já existem para impulsionar as coisas para o próximo nível.  Mudar pode ser assustador para a maioria das pessoas, mas para você, é o combustível para seu fogo criativo. Um pioneiro, você está aqui neste planeta para iluminar o caminho para o futuro, talvez seja fã de Elon Musk. Você é um tomador de riscos natural, com um insaciável desejo de testar limites e expandir fronteiras para explorar territórios desconhecidos.",
                     code: "bce",
@@ -434,7 +434,7 @@ struct QuizBank {
                         ),
                     color: "Yellow"
                 ),
-                Result(
+                QuizResult(
                     label: "Visionário",
                     about: "Você vive em um mundo de possibilidades infinitas, preferindo ver as coisas não como eles são, mas pelo o que elas podem ser. Você sabe que na vida existem limites, mas você busca, de alguma maneira, ultrapassar todos eles. É emocional, apaixonado e cheio de ideias. Sua natureza é introspectiva e intuitiva, é equilibrada por um grande interesse pelo mundo ao seu redor e desejo de contribuir para a sociedade. Carismático e expressivo, você adora compartilhar suas ideias malucas com outras pessoas.",
                     code: "bde",

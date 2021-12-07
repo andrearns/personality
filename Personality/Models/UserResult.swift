@@ -6,7 +6,7 @@ struct UserResult: Identifiable, Codable, Equatable {
     var result_id: UUID
     var isSelected: Bool
     var isPrivate: Bool
-    var result: Result
+    var result: QuizResult
     //    var user: User
 
     init(user_id: UUID, result_id: UUID, isSelected: Bool, isPrivate: Bool) {
@@ -14,7 +14,7 @@ struct UserResult: Identifiable, Codable, Equatable {
         self.result_id = result_id
         self.isSelected = isSelected
         self.isPrivate = isPrivate
-        self.result = Result(
+        self.result = QuizResult(
             label: "teste",
             about: "teste teste",
             code: "bdf",
@@ -33,7 +33,7 @@ struct UserResult: Identifiable, Codable, Equatable {
         //        self.user = user
     }
     
-    init(result: Result, isPrivate: Bool) {
+    init(result: QuizResult, isPrivate: Bool) {
         self.result = result
         self.user_id = UUID()
         self.result_id = result.id
