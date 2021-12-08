@@ -1,6 +1,6 @@
 import Foundation
 
-func generateCreativeTypesResult(answers: [Int : Answer]) -> QuizResult {
+func generateCreativeTypesResult(results: [QuizResult], answers: [Int : Answer]) -> QuizResult {
     
     var scores: [String : Int] = [
         "a" : 0,
@@ -32,7 +32,7 @@ func generateCreativeTypesResult(answers: [Int : Answer]) -> QuizResult {
     
     let resultCode = (scores["a"]! > scores["b"]! ? "a": "b") + (scores["c"]! > scores["d"]! ? "c": "d") + (scores["e"]! > scores["f"]! ? "e": "f")
     
-    let quizResult = QuizBank.shared.quizList[1].results!.first { result in
+    let quizResult = results.first { result in
         result.code == resultCode
     }
     

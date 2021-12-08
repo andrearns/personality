@@ -5,12 +5,16 @@ struct HorizontalCard: View {
     
     var body: some View {
         ZStack {
-            if let image = quiz.image {
+            if let image_url = quiz.image_url, let url = URL(string: image_url) {
                 HStack {
-                    Image(image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.leading, 80)
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .padding(.leading, 80)
                 }
             }
             HStack {
@@ -99,7 +103,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -115,7 +119,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -131,7 +135,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -147,7 +151,7 @@ struct HorizontalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",

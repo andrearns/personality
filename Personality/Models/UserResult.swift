@@ -20,7 +20,7 @@ struct UserResult: Identifiable, Codable, Equatable {
             code: "bdf",
             badge:
                 Badge(
-                    iconImageURL: "chapeu4",
+                    image_url: "chapeu4",
                     profileImagesURL: [
                         .coracaozinho : "Criatividade_Aventureiro_Cora",
                         .diabinho : "Criatividade_Aventureiro_Diab",

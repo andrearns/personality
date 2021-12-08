@@ -2,7 +2,13 @@ import Foundation
 import SwiftUI
 
 struct QuizIntroView: View {
-    var quiz: Quiz!
+    private var quiz: Quiz
+    @ObservedObject var viewModel: QuizIntroViewModel
+    
+    init(quiz: Quiz) {
+        self.quiz = quiz
+        self.viewModel = QuizIntroViewModel(quiz_id: quiz.id)
+    }
     
     let columns = [
         GridItem(.flexible()),
@@ -27,7 +33,7 @@ struct QuizIntroView: View {
                         .padding(.top)
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(quiz.results!) { result in
+                        ForEach(viewModel.results) { result in
                             OutputCell(result: result)
                         }
                     }.padding()
@@ -39,8 +45,7 @@ struct QuizIntroView: View {
                 
                 HStack {
                     Spacer()
-                    NavigationLink(destination: QuizView(quiz: quiz))
-                    {
+                    NavigationLink(destination: QuizView(quiz: quiz, questions: viewModel.questions.questions, results: viewModel.results)) {
                         RightButtonStuff(title: "Iniciar      ", systemImageName: "arrow.right", textColor: Color.preto)
                     }
                 }
@@ -50,6 +55,9 @@ struct QuizIntroView: View {
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)
         .background(Color.preto.edgesIgnoringSafeArea(.all))
+        .onAppear {
+            viewModel.onAppear()
+        }
 //        .navigationBarItems(trailing: Button(action: {
 //            print("Share quiz")
 //        }, label: {

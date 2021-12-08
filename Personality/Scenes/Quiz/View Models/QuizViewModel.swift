@@ -10,14 +10,18 @@ import Foundation
 class QuizViewModel: ObservableObject {
     
     @Published var quiz: Quiz
+    @Published var questions: [Question]
+    @Published var results: [QuizResult]
     @Published var currentQuestion: Question?
     @Published var currentQuestionIndex = 0
     @Published var answerDict: [Int : Answer] = [:]
     @Published var currentAnswer: Answer? = nil
     @Published var result: QuizResult!
     
-    init(quiz: Quiz) {
+    init(quiz: Quiz, questions: [Question], results: [QuizResult]) {
         self.quiz = quiz
+        self.questions = questions
+        self.results = results
     }
     
     func isFirstQuestion() -> Bool {
@@ -25,25 +29,25 @@ class QuizViewModel: ObservableObject {
     }
     
     func isLastQuestion() -> Bool {
-        currentQuestionIndex == quiz.questions!.count - 1
+        currentQuestionIndex == questions.count - 1
     }
     
     func previousQuestion() {
         currentQuestionIndex = currentQuestionIndex - 1
-        currentQuestion = quiz.questions![currentQuestionIndex]
+        currentQuestion = questions[currentQuestionIndex]
         currentAnswer = answerDict[currentQuestionIndex]
     }
     
     func questionsCount() -> Int {
-        quiz.questions!.count
+        questions.count
     }
     
     func getQuestionAnswers() -> [Answer] {
-        quiz.questions![currentQuestionIndex].answers
+        questions[currentQuestionIndex].answers
     }
     
     func currentQuestionTitle() -> String {
-        "\(currentQuestionIndex + 1). \(quiz.questions![currentQuestionIndex].label)"
+        "\(currentQuestionIndex + 1). \(questions[currentQuestionIndex].label)"
     }
     
     func isCurrentAnswer(_ answer: Answer) -> Bool {
@@ -57,16 +61,16 @@ class QuizViewModel: ObservableObject {
     
     func nextQuestion() {
         currentQuestionIndex += 1
-        currentQuestion = quiz.questions![currentQuestionIndex]
+        currentQuestion = questions[currentQuestionIndex]
         currentAnswer = nil
     }
     
     func generateResult() {
         switch quiz.title {
         case "DISK ME":
-            result = generateDISCResult(answers: answerDict)
-        case "tipos de criatividade":
-            result = generateCreativeTypesResult(answers: answerDict)
+            result = generateDISCResult(results: results, answers: answerDict)
+        case "Tipos de criatividade":
+            result = generateCreativeTypesResult(results: results, answers: answerDict)
         default:
             print("There is no functions to generate a result for this quiz")
         }

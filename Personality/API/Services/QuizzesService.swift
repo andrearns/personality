@@ -11,7 +11,7 @@ import Combine
 protocol QuizzesServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
-    func listQuizzes() -> AnyPublisher<Quizzes, Error>
+    func listQuizzes() -> AnyPublisher<QuizzesDTO, Error>
 }
 
 class QuizzesService: QuizzesServiceProtocol {
@@ -21,10 +21,10 @@ class QuizzesService: QuizzesServiceProtocol {
         self.networker = networker
     }
     
-    func listQuizzes() -> AnyPublisher<Quizzes, Error> {
+    func listQuizzes() -> AnyPublisher<QuizzesDTO, Error> {
         let endpoint = Endpoint.quizzesList(take: 10, skip: 0)
         
-        return networker.get(type: Quizzes.self,
+        return networker.get(type: QuizzesDTO.self,
                              url: endpoint.url,
                              headers: endpoint.headers)
     }

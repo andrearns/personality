@@ -75,7 +75,7 @@ extension Endpoint {
     }
     
     static func results(quiz_id: String) -> Self {
-        return Endpoint(path: "/results/\(quiz_id)")
+        return Endpoint(path: "/results/quiz/\(quiz_id)")
     }
     
     static var usersResults: Self {

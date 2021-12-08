@@ -2,13 +2,13 @@ import Foundation
 
 struct Badge: Codable {
     var id = UUID()
-    var iconImageURL: String
-    var profileImagesURL: [Ego : String]
+    var image_url: String
+//    var profileImagesURL: [Ego : String]
 //    var label: String
     
-    init(iconImageURL: String, profileImagesURL: [Ego : String]) {
-        self.iconImageURL = iconImageURL
-        self.profileImagesURL = profileImagesURL
+    init(image_url: String, profileImagesURL: [Ego : String]) {
+        self.image_url = image_url
+//        self.profileImagesURL = profileImagesURL
 //        self.label = label
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-func generateDISCResult(answers: [Int : Answer]) -> QuizResult {
+func generateDISCResult(results: [QuizResult], answers: [Int : Answer]) -> QuizResult {
     
     var scores: [String : Int] = [
         "d" : 0,
@@ -26,7 +26,7 @@ func generateDISCResult(answers: [Int : Answer]) -> QuizResult {
     
     let biggestScore = scores.max { a, b in a.value < b.value }
     
-    let quizResult = QuizBank.shared.quizList[0].results!.first { result in
+    let quizResult = results.first { result in
         result.code == biggestScore?.key
     }
     

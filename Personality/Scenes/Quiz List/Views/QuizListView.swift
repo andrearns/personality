@@ -16,6 +16,8 @@ struct QuizListView: View {
     @EnvironmentObject var navigationHelper: NavigationHelper
     @EnvironmentObject var userViewModel: UserViewModel
     
+    @State private var quizzes: [Quiz] = secondQuizList
+    
     @ObservedObject var viewModel = QuizListViewModel()
     
     var body: some View {
@@ -67,20 +69,25 @@ struct QuizListView: View {
                         LeftTitle(text: "Encontre seu teste ideal")
                         
                         VStack {
-                            ForEach(secondQuizList) { quiz in
-                                if quiz.questions!.count != 0 {
-                                    NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
-                                        HorizontalCard(quiz: quiz)
-                                    }
-                                } else {
-                                    Button(action: {
-                                        withAnimation(.linear(duration: 0.2)) {
-                                            showPopUp.toggle()
-                                        }
-                                    }) {
-                                        HorizontalCard(quiz: quiz)
-                                    }
+                            ForEach(viewModel.quizzes.quizzes) { quiz in
+                                NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
+                                    HorizontalCard(quiz: quiz)
                                 }
+                                /*if let questions = quiz.questions {
+                                    if questions.count != 0 {
+                                        NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
+                                            HorizontalCard(quiz: quiz)
+                                        }
+                                    } else {
+                                        Button(action: {
+                                            withAnimation(.linear(duration: 0.2)) {
+                                                showPopUp.toggle()
+                                            }
+                                        }) {
+                                            HorizontalCard(quiz: quiz)
+                                        }
+                                    }
+                                }*/
                             }
                         }
                     }
@@ -96,6 +103,7 @@ struct QuizListView: View {
         .accentColor(.white)
         .onAppear {
             viewModel.onAppear()
+            quizzes.append(contentsOf: viewModel.quizzes.quizzes)
             print(viewModel.quizzes.quizzes)
         }
     }

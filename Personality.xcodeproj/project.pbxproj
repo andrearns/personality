@@ -62,15 +62,19 @@
 		90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD6D01274809A200FE5072 /* ChooseEgoView.swift */; };
 		AF13D89F274DC5F20090F35E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13D89E274DC5F20090F35E /* Auth.swift */; };
 		AF25E196275949A700576CEE /* QuizListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E195275949A700576CEE /* QuizListViewModel.swift */; };
-		AF25E19827594AAF00576CEE /* Quizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E19727594AAF00576CEE /* Quizzes.swift */; };
-		AF67E08D27500AC10091C5ED /* QuizzesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67E08C27500AC10091C5ED /* QuizzesService.swift */; };
+		AF25E19827594AAF00576CEE /* QuizzesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E19727594AAF00576CEE /* QuizzesDTO.swift */; };
 		AF73404D2757FDB000215421 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404C2757FDB000215421 /* Endpoint.swift */; };
 		AF73404F2757FE7B00215421 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404E2757FE7B00215421 /* Networker.swift */; };
 		AF7340542758029900215421 /* Endpoint+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7340532758029900215421 /* Endpoint+API.swift */; };
+		AFB7E4DB27613B7500BE5E18 /* QuizIntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7E4DA27613B7500BE5E18 /* QuizIntroViewModel.swift */; };
+		AFB7E4DD276152B300BE5E18 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7E4DC276152B300BE5E18 /* ResultsService.swift */; };
 		AFD3F73B275E994E0089C7FA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73A275E994E0089C7FA /* AuthService.swift */; };
 		AFD3F73E275E9CC50089C7FA /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73D275E9CC50089C7FA /* AuthenticationViewModel.swift */; };
 		AFD3F740275EF80B0089C7FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73F275EF80B0089C7FA /* APIError.swift */; };
-		C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */; };
+		AFF140BF275FE0A800B3F983 /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF140BE275FE0A800B3F983 /* QuestionsService.swift */; };
+		AFF140C2275FE2A100B3F983 /* QuestionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF140C1275FE2A100B3F983 /* QuestionsDTO.swift */; };
+		AFF140C3275FF1CC00B3F983 /* BadgeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */; };
+		AFF140C4275FF1D100B3F983 /* QuizzesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67E08C27500AC10091C5ED /* QuizzesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,14 +136,18 @@
 		90CD6D01274809A200FE5072 /* ChooseEgoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEgoView.swift; sourceTree = "<group>"; };
 		AF13D89E274DC5F20090F35E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		AF25E195275949A700576CEE /* QuizListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewModel.swift; sourceTree = "<group>"; };
-		AF25E19727594AAF00576CEE /* Quizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes.swift; sourceTree = "<group>"; };
+		AF25E19727594AAF00576CEE /* QuizzesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesDTO.swift; sourceTree = "<group>"; };
 		AF67E08C27500AC10091C5ED /* QuizzesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesService.swift; sourceTree = "<group>"; };
 		AF73404C2757FDB000215421 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AF73404E2757FE7B00215421 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		AF7340532758029900215421 /* Endpoint+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+API.swift"; sourceTree = "<group>"; };
+		AFB7E4DA27613B7500BE5E18 /* QuizIntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizIntroViewModel.swift; sourceTree = "<group>"; };
+		AFB7E4DC276152B300BE5E18 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
 		AFD3F73A275E994E0089C7FA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AFD3F73D275E9CC50089C7FA /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		AFD3F73F275EF80B0089C7FA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AFF140BE275FE0A800B3F983 /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
+		AFF140C1275FE2A100B3F983 /* QuestionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsDTO.swift; sourceTree = "<group>"; };
 		C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				5B23A69D2752BD50002084B3 /* QuizViewModel.swift */,
+				AFB7E4DA27613B7500BE5E18 /* QuizIntroViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -261,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				5BDC2595273F719A00D51D9C /* Quiz.swift */,
-				AF25E19727594AAF00576CEE /* Quizzes.swift */,
 				5BDC25A12740904F00D51D9C /* Answer.swift */,
 				5BDC259D274061AC00D51D9C /* Question.swift */,
 				5BDC25BF2744A97500D51D9C /* QuizResult.swift */,
@@ -410,6 +418,7 @@
 		AF13D89B274DBC050090F35E /* API */ = {
 			isa = PBXGroup;
 			children = (
+				AFF140C0275FE26600B3F983 /* DTOs */,
 				AFD3F741275F03DC0089C7FA /* Services */,
 				AF734055275815F200215421 /* Networking */,
 			);
@@ -447,9 +456,20 @@
 			isa = PBXGroup;
 			children = (
 				AF67E08C27500AC10091C5ED /* QuizzesService.swift */,
+				AFF140BE275FE0A800B3F983 /* QuestionsService.swift */,
+				AFB7E4DC276152B300BE5E18 /* ResultsService.swift */,
 				AFD3F73A275E994E0089C7FA /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AFF140C0275FE26600B3F983 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				AF25E19727594AAF00576CEE /* QuizzesDTO.swift */,
+				AFF140C1275FE2A100B3F983 /* QuestionsDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,9 +544,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF140C4275FF1D100B3F983 /* QuizzesService.swift in Sources */,
+				AFF140C3275FF1CC00B3F983 /* BadgeModalView.swift in Sources */,
 				5BDC25E027484B8800D51D9C /* DISC.swift in Sources */,
 				5B23A69E2752BD50002084B3 /* QuizViewModel.swift in Sources */,
-				AF25E19827594AAF00576CEE /* Quizzes.swift in Sources */,
+				AF25E19827594AAF00576CEE /* QuizzesDTO.swift in Sources */,
 				5BDC25C42744AD2900D51D9C /* IntroHeader.swift in Sources */,
 				5BDC259E274061AC00D51D9C /* Question.swift in Sources */,
 				5BDC25CC2744B34D00D51D9C /* LeftTitle.swift in Sources */,
@@ -534,6 +556,7 @@
 				5BDC259C274007E300D51D9C /* ProfileView.swift in Sources */,
 				56423979274C030700424227 /* Font .swift in Sources */,
 				5B23A678274F3AFB002084B3 /* BadgeComponentView.swift in Sources */,
+				AFB7E4DD276152B300BE5E18 /* ResultsService.swift in Sources */,
 				5B23A67C274F3D9C002084B3 /* StarView.swift in Sources */,
 				5BDC25A82742DC2300D51D9C /* QuizCell.swift in Sources */,
 				90CD6D00274807BF00FE5072 /* LoginView.swift in Sources */,
@@ -567,23 +590,22 @@
 				AFD3F740275EF80B0089C7FA /* APIError.swift in Sources */,
 				AF7340542758029900215421 /* Endpoint+API.swift in Sources */,
 				5BDC25E227484B9D00D51D9C /* CreativeTypes.swift in Sources */,
+				AFF140BF275FE0A800B3F983 /* QuestionsService.swift in Sources */,
 				5BDC2582273F2C2D00D51D9C /* QuizListView.swift in Sources */,
+				AFF140C2275FE2A100B3F983 /* QuestionsDTO.swift in Sources */,
+				AFB7E4DB27613B7500BE5E18 /* QuizIntroViewModel.swift in Sources */,
 				5B23A67E275003E1002084B3 /* NavigationHelper.swift in Sources */,
 				5BDC25C62744B06000D51D9C /* VerticalCard.swift in Sources */,
 				5B36F68D2753E37200273F1E /* InstagramShareView.swift in Sources */,
 				5BDC25C02744A97500D51D9C /* QuizResult.swift in Sources */,
 				5B36F68F2754186700273F1E /* Snapshot.swift in Sources */,
-				AF67E08D27500AC10091C5ED /* QuizzesService.swift in Sources */,
-				AF67E08D27500AC10091C5ED /* QuizzesService.swift in Sources */,
 				5BDC2596273F719A00D51D9C /* Quiz.swift in Sources */,
 				5BDC25C22744AC6B00D51D9C /* OutputCell.swift in Sources */,
 				90CD6D02274809A200FE5072 /* ChooseEgoView.swift in Sources */,
 				AF25E196275949A700576CEE /* QuizListViewModel.swift in Sources */,
 				5BDC2580273F2C2D00D51D9C /* PersonalityApp.swift in Sources */,
 				5BDC25BD27449EC200D51D9C /* QuizOutput.swift in Sources */,
-				C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */,
 				5B36F68B2753E30700273F1E /* InstagramSharingUtils.swift in Sources */,
-				C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */,
 				AF13D89F274DC5F20090F35E /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
