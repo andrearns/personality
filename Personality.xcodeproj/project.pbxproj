@@ -75,6 +75,7 @@
 		AFD3F73B275E994E0089C7FA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73A275E994E0089C7FA /* AuthService.swift */; };
 		AFD3F73E275E9CC50089C7FA /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73D275E9CC50089C7FA /* AuthenticationViewModel.swift */; };
 		AFD3F740275EF80B0089C7FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD3F73F275EF80B0089C7FA /* APIError.swift */; };
+		C723272B2763CF2E00EFEFF7 /* NoFriendsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723272A2763CF2E00EFEFF7 /* NoFriendsScreen.swift */; };
 		C7AA344E274D5DEF00687B88 /* BadgeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,7 @@
 		AFD3F73A275E994E0089C7FA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AFD3F73D275E9CC50089C7FA /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		AFD3F73F275EF80B0089C7FA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		C723272A2763CF2E00EFEFF7 /* NoFriendsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendsScreen.swift; sourceTree = "<group>"; };
 		C7AA344D274D5DEF00687B88 /* BadgeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -401,6 +403,7 @@
 			children = (
 				905D05AA2760DE3C00DE1C91 /* FriendsView.swift */,
 				9023A35D27613AD500B0756F /* CompatibilityView.swift */,
+				C723272A2763CF2E00EFEFF7 /* NoFriendsScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				AFD3F73B275E994E0089C7FA /* AuthService.swift in Sources */,
 				5BDC25D62745FAAD00D51D9C /* User.swift in Sources */,
 				5BDC25BB274487AB00D51D9C /* ProgressBar.swift in Sources */,
+				C723272B2763CF2E00EFEFF7 /* NoFriendsScreen.swift in Sources */,
 				5B23A68127501FDE002084B3 /* UserViewModel.swift in Sources */,
 				5BDC25E7274940CD00D51D9C /* LoadingAnimationView.swift in Sources */,
 				5B23A67A274F3D4E002084B3 /* EyeView.swift in Sources */,
