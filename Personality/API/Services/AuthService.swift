@@ -14,7 +14,8 @@ protocol AuthServiceProtocol: AnyObject {
     
     func saveUserData(user: User, token: String)
     func deleteUserData()
-    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<Auth, Error>
+    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthDTO, Error>
+    func getSavedToken() -> String?
 }
 
 class AuthService: AuthServiceProtocol {
@@ -34,7 +35,7 @@ class AuthService: AuthServiceProtocol {
         UserDefaults.standard.setValue(nil, forKey: "token")
     }
     
-    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<Auth, Error> {
+    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthDTO, Error> {
         let endpoint = Endpoint.auth
         
         let body = [
@@ -43,10 +44,19 @@ class AuthService: AuthServiceProtocol {
             "email": email
         ]
         
-        return networker.post(type: Auth.self,
+        return networker.post(type: AuthDTO.self,
                               url: endpoint.url,
                               headers: endpoint.headers,
                               body: body)
     }
     
+    func getSavedToken() -> String? {
+        guard let token = UserDefaults.standard.string(forKey: "token") else { return nil }
+        
+        if token.isEmpty {
+            return nil
+        }
+        
+        return token
+    }
 }

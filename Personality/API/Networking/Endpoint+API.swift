@@ -21,10 +21,6 @@ extension Endpoint {
         
         return url
     }
-    
-    var headers: [String: Any] {
-        return [:]
-    }
 }
 
 extension Endpoint {
@@ -36,8 +32,11 @@ extension Endpoint {
         return Endpoint(path: "/users")
     }
     
-    static var userAvatar: Self {
-        return Endpoint(path: "/users/avatar")
+    static func userAvatar(token: String) -> Self {
+        var endpoint = Endpoint(path: "/users/avatar")
+        endpoint.headers = ["Authorization": "Bearer \(token)"]
+        
+        return endpoint
     }
     
     static var quizzes: Self {
@@ -78,17 +77,23 @@ extension Endpoint {
         return Endpoint(path: "/results/quiz/\(quiz_id)")
     }
     
-    static var usersResults: Self {
-        return Endpoint(path: "/usersResults")
+    static func usersResults(token: String) -> Self {
+        var endpoint = Endpoint(path: "/usersResults")
+        endpoint.headers = ["Authorization": "Bearer \(token)"]
+        
+        return endpoint
     }
     
-    static func usersResultsList(result_id: String?) -> Self {
-        guard let result_id = result_id else {
-            return Endpoint(path: "/usersResults")
+    static func usersResultsList(token: String, result_id: String? = nil) -> Self {
+        var endpoint = Endpoint(path: "/usersResults")
+        endpoint.headers = ["Authorization": "Bearer \(token)"]
+        
+        if let result_id = result_id {
+            endpoint.queryItems = [
+                URLQueryItem(name: "result_id", value: "\(result_id)"),
+            ]
         }
-
-        return Endpoint(path: "/usersResults", queryItems: [
-            URLQueryItem(name: "result_id", value: "\(result_id)"),
-        ])
+        
+        return endpoint
     }
 }

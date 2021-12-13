@@ -6,21 +6,43 @@
 //
 
 import Foundation
+import Combine
 
 class UserViewModel: ObservableObject {
     
     @Published var user: User = User(name: "", baseAvatar: .diabinho, userResults: [], apple_id: "")
+    @Published var userResults: [UserResult] = []
     
     @Published var selectedUserResult: UserResult?
     
+    init(usersService: UsersServiceProtocol = UsersService())  {
+        self.usersService = usersService
+    }
+    private var usersService: UsersServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
+    
     func updateUserResultVisibility(isPrivate: Bool) {
-        let index = user.userResults.firstIndex { result in
+        let index = userResults.firstIndex { result in
             result == selectedUserResult
         }
         
         guard let index = index else { return }
         
-        user.userResults[index].isPrivate = isPrivate
+        userResults[index].isPrivate = isPrivate
+        let userResult = userResults[index]
+        
+        usersService.updateUserResult(with: userResult)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished: break
+                }
+            } receiveValue: { userResult in
+                print("Successfully updated userResult \(userResult.id.uuidString)")
+            }
+            .store(in: &cancellables)
     }
     
     func splitAboutTextInParagraphs() -> [String] {
@@ -35,7 +57,43 @@ class UserViewModel: ObservableObject {
         user.name = newName
     }
     
-    func addUserResult(userResult: UserResult) {
-        user.userResults.append(userResult)
+    func updateUserData(ego: Ego, newName: String) {
+        usersService.updateUserData(baseAvatar: ego.rawValue, name: newName)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished: break
+                }
+            } receiveValue: { [weak self] user in
+                self?.user = user
+            }
+            .store(in: &cancellables)
+    }
+    
+    public func onAppear() {
+        self.getUserResults()
+    }
+    
+    private func getUser() {
+        guard let user = usersService.getUserData() else { return }
+        self.user = user
+    }
+    
+    private func getUserResults() {
+        usersService.getUserResults()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished: break
+                }
+            } receiveValue: { [weak self] userResults in
+                print(userResults)
+                self?.userResults = userResults
+            }
+            .store(in: &cancellables)
     }
 }

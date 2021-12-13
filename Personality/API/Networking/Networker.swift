@@ -17,6 +17,9 @@ protocol NetworkerProtocol: AnyObject {
     
     func post<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable
     func postData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError>
+    
+    func patch<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable
+    func patchData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError>
 }
 
 final class Networker: NetworkerProtocol {
@@ -108,6 +111,81 @@ final class Networker: NetworkerProtocol {
                 var urlRequest = URLRequest(url: url)
                 
                 urlRequest.httpMethod = "POST"
+                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                urlRequest.httpBody = data
+                
+                headers.forEach { key, value in
+                    if let value = value as? String {
+                        urlRequest.setValue(value, forHTTPHeaderField: key)
+                    }
+                }
+                
+                return urlRequest
+            }
+            .flatMap {
+                URLSession.shared.dataTaskPublisher(for: $0)
+                    .mapError(APIError.request)
+                    .map(\.data)
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    
+    func patch<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable {
+        Just(body)
+            .encode(encoder: JSONEncoder())
+            .mapError { error -> APIError in
+                if let encodingError = error as? EncodingError {
+                    return .encode(encodingError)
+                } else {
+                    return .unknown
+                }
+            }
+            .map { data -> URLRequest in
+                var urlRequest = URLRequest(url: url)
+                
+                urlRequest.httpMethod = "PATCH"
+                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                urlRequest.httpBody = data
+                
+                headers.forEach { key, value in
+                    if let value = value as? String {
+                        urlRequest.setValue(value, forHTTPHeaderField: key)
+                    }
+                }
+                
+                return urlRequest
+            }
+            .flatMap {
+                URLSession.shared.dataTaskPublisher(for: $0)
+                    .mapError(APIError.request)
+                    .map(\.data)
+                    .decode(type: T.self, decoder: JSONDecoder())
+                    .mapError { error -> APIError in
+                        if let decodingError = error as? DecodingError {
+                            return .decode(decodingError)
+                        } else {
+                            return .unknown
+                        }
+                    }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func patchData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError> {
+        return Just(body)
+            .encode(encoder: JSONEncoder())
+            .mapError { error -> APIError in
+                if let encodingError = error as? EncodingError {
+                    return .encode(encodingError)
+                } else {
+                    return .unknown
+                }
+            }
+            .map { data -> URLRequest in
+                var urlRequest = URLRequest(url: url)
+                
+                urlRequest.httpMethod = "PATCH"
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 urlRequest.httpBody = data
                 

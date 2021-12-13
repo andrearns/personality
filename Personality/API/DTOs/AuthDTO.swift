@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Auth: Decodable {
+struct AuthDTO: Codable {
     let user: User
     let token: String
 }

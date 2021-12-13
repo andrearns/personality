@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class QuizViewModel: ObservableObject {
     
@@ -18,10 +19,14 @@ class QuizViewModel: ObservableObject {
     @Published var currentAnswer: Answer? = nil
     @Published var result: QuizResult!
     
-    init(quiz: Quiz, questions: [Question], results: [QuizResult]) {
+    private var usersService: UsersServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(quiz: Quiz, questions: [Question], results: [QuizResult], usersService: UsersServiceProtocol = UsersService()) {
         self.quiz = quiz
         self.questions = questions
         self.results = results
+        self.usersService = usersService
     }
     
     func isFirstQuestion() -> Bool {
@@ -79,5 +84,26 @@ class QuizViewModel: ObservableObject {
     func getUserResult() -> UserResult? {
         guard let result = self.result else { return nil }
         return UserResult(result: result, isPrivate: false)
+    }
+    
+    func onDisappear() {
+        createUserResult()
+    }
+    
+    private func createUserResult() {
+        guard let userResult = self.getUserResult() else { return }
+        usersService.createUserResult(with: userResult)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished: break
+                }
+            } receiveValue: { result in
+                print(result)
+            }
+            .store(in: &cancellables)
+            
     }
 }

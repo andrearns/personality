@@ -96,8 +96,7 @@ struct QuizView: View {
                 NavigationLink(
                     "",
                     destination: QuizOutput(result: quizViewModel.result) {
-                        guard let userResult = quizViewModel.getUserResult() else { return }
-                        userViewModel.addUserResult(userResult: userResult)
+                        quizViewModel.onDisappear()
                     },
                     isActive: $showResultView
                 )
