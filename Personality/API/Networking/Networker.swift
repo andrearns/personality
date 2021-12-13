@@ -10,9 +10,7 @@ import Combine
 
 protocol NetworkerProtocol: AnyObject {
     typealias Headers = [String: Any]
-    typealias Body = [String: Any]?
-    
-    func requestBodyFrom(params: [String: Any]?) -> Data?
+    typealias Body = [String: String?]
     
     func get<T>(type: T.Type, url: URL, headers: Headers) -> AnyPublisher<T, Error> where T: Decodable
     func getData(url: URL, headers: Headers) -> AnyPublisher<Data, APIError>
@@ -25,13 +23,6 @@ protocol NetworkerProtocol: AnyObject {
 }
 
 final class Networker: NetworkerProtocol {
-    internal func requestBodyFrom(params: [String: Any]?) -> Data? {
-        guard let params = params else { return nil }
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
-            return nil
-        }
-        return httpBody
-    }
     
     func get<T>(type: T.Type, url: URL, headers: Headers) -> AnyPublisher<T, Error> where T: Decodable {
         var urlRequest = URLRequest(url: url)
@@ -66,7 +57,7 @@ final class Networker: NetworkerProtocol {
     }
     
     func post<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable {
-        Just(requestBodyFrom(params: body))
+        Just(body)
             .encode(encoder: JSONEncoder())
             .mapError { error -> APIError in
                 if let encodingError = error as? EncodingError {
@@ -107,7 +98,7 @@ final class Networker: NetworkerProtocol {
     }
     
     func postData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError> {
-        return Just(requestBodyFrom(params: body))
+        return Just(body)
             .encode(encoder: JSONEncoder())
             .mapError { error -> APIError in
                 if let encodingError = error as? EncodingError {
@@ -141,7 +132,7 @@ final class Networker: NetworkerProtocol {
     
     
     func patch<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable {
-        Just(requestBodyFrom(params: body))
+        Just(body)
             .encode(encoder: JSONEncoder())
             .mapError { error -> APIError in
                 if let encodingError = error as? EncodingError {
@@ -182,7 +173,7 @@ final class Networker: NetworkerProtocol {
     }
     
     func patchData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError> {
-        return Just(requestBodyFrom(params: body))
+        return Just(body)
             .encode(encoder: JSONEncoder())
             .mapError { error -> APIError in
                 if let encodingError = error as? EncodingError {
