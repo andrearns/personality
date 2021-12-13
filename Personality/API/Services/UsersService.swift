@@ -72,9 +72,9 @@ class UsersService: UsersServiceProtocol {
         
         let body = [
             "result_id": userResult.result_id.uuidString,
-            "isSelected": userResult.isSelected.description,
-            "isPrivate": userResult.isPrivate.description
-        ]
+            "isSelected": userResult.isSelected,
+            "isPrivate": userResult.isPrivate
+        ] as [String : Any]
         
         return networker.post(type: UserResult.self,
                               url: endpoint.url,
