@@ -49,8 +49,8 @@ struct LoginView: View {
                 onRequest: { request in
                     request.requestedScopes = [.fullName, .email]
                 },
-                onCompletion: { result in
-                    authViewModel.finishAuthentication(using: result)
+                onCompletion: { authResult in
+                    authViewModel.finishAuthentication(using: authResult)
                 }
             )
             .frame(width: 280, height: 60, alignment: .center)
