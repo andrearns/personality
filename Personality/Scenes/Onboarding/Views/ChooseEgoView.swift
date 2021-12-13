@@ -17,68 +17,65 @@ struct ChooseEgoView: View {
     let egos: [Ego] = Ego.allCases
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .center) {
+        VStack(alignment: .center) {
+            Spacer()
+            
+            HStack {
                 Spacer()
-                
-                HStack {
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text("BORA")
-                            .personalityFont(.largeTitle, textSize: 45)
-                            .foregroundColor(Color.branco)
-                            .padding(.bottom, -40)
-                        
-                        Text("COMEÇAR")
-                            .personalityFont(.largeTitle, textSize: 45)
-                            .foregroundColor(Color.branco)
-                            .padding(.bottom, 2)
-                        
-                        
-                        Text("Escolha seu EGOzito")
-                            .personalityFont(.title, textSize: 18)
-                            .foregroundColor(Color.branco)
-                        
-                    }
-                    .padding(.bottom, 30)
-                    Spacer()
+                VStack(alignment: .leading) {
+                    Text("BORA")
+                        .personalityFont(.largeTitle, textSize: 45)
+                        .foregroundColor(Color.branco)
+                        .padding(.bottom, -40)
+                    
+                    Text("COMEÇAR")
+                        .personalityFont(.largeTitle, textSize: 45)
+                        .foregroundColor(Color.branco)
+                        .padding(.bottom, 2)
+                    
+                    
+                    Text("Escolha seu EGOzito")
+                        .personalityFont(.title, textSize: 18)
+                        .foregroundColor(Color.branco)
+                    
                 }
-                
-                
-                SnapCarousel(spacing: 0, index: $currentIndex, items: egos) { ego in
-                    GeometryReader { _ in
-                        EgoCardView(ego: ego)
-                    }
-                }
-                .onChange(of: currentIndex) { value in
-                    selectedEgo = egos[value]
-                }
-                
-                Spacer()
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        userViewModel.updateUserAvatar(ego: selectedEgo)
-                        isNextButtonPressed = true
-                    }) {
-                        RightButtonStuff(title: "Selecionar", systemImageName: "arrow.right", textColor: Color.preto)
-                        NavigationLink("", destination: NicknameView(ego: selectedEgo), isActive: $isNextButtonPressed)
-                    }
-                }
-                .padding(.vertical)
-                .padding(.trailing)
-                
-                Spacer()
-                Image("LogoEgo")
-                    .padding(20)
+                .padding(.bottom, 30)
                 Spacer()
             }
-            .navigationBarHidden(true)
-            .navigationTitle("")
-            .background(Color.preto.edgesIgnoringSafeArea(.all))
+            
+            
+            SnapCarousel(spacing: 0, index: $currentIndex, items: egos) { ego in
+                GeometryReader { _ in
+                    EgoCardView(ego: ego)
+                }
+            }
+            .onChange(of: currentIndex) { value in
+                selectedEgo = egos[value]
+            }
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
+                Button(action: {
+                    userViewModel.updateUserAvatar(ego: selectedEgo)
+                    isNextButtonPressed = true
+                }) {
+                    RightButtonStuff(title: "Selecionar", systemImageName: "arrow.right", textColor: Color.preto)
+                    NavigationLink("", destination: NicknameView(ego: selectedEgo), isActive: $isNextButtonPressed)
+                }
+            }
+            .padding(.vertical)
+            .padding(.trailing)
+            
+            Spacer()
+            Image("LogoEgo")
+                .padding(20)
+            Spacer()
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)
+        .navigationTitle("")
+        .background(Color.preto.edgesIgnoringSafeArea(.all))
     }
 }
 

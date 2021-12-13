@@ -8,7 +8,7 @@ struct PersonalityApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ChooseEgoView()
+            LoginView()
                 .preferredColorScheme(.dark)
                 .background(Color.preto.edgesIgnoringSafeArea(.all))
                 .environmentObject(navigationHelper)

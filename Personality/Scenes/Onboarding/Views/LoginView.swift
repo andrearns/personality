@@ -12,6 +12,8 @@ struct LoginView: View {
     @ObservedObject var authViewModel: AuthenticationViewModel = AuthenticationViewModel()
 //    @AppStorage("token") var token: String // Usar isso para checar se o usuário está logado
     
+    @State var isActive: Bool = false
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -34,44 +36,50 @@ struct LoginView: View {
     ]
     
     var body: some View {
-        
-        VStack {
-            LazyVGrid(columns: columns, alignment: .center, spacing: 20){
-                ForEach(eyesView.indices) { i in
-                    eyesView[i]
+        NavigationView {
+            VStack {
+                LazyVGrid(columns: columns, alignment: .center, spacing: 20){
+                    ForEach(eyesView.indices) { i in
+                        eyesView[i]
+                    }
                 }
-            }
 
-            
-            Spacer()
-            
-            SignInWithAppleButton(
-                onRequest: { request in
-                    request.requestedScopes = [.fullName, .email]
-                },
-                onCompletion: { authResult in
-                    authViewModel.finishAuthentication(using: authResult)
-                }
+                
+                Spacer()
+                
+                SignInWithAppleButton(
+                    onRequest: { request in
+                        request.requestedScopes = [.fullName, .email]
+                    },
+                    onCompletion: { authResult in
+                        authViewModel.finishAuthentication(using: authResult)
+                        isActive = true
+                    }
+                )
+                .frame(width: 280, height: 60, alignment: .center)
+                .cornerRadius(60)
+                
+                NavigationLink("", destination: ChooseEgoView(), isActive: $isActive)
+                
+                Text("Ao continuar, você confirma que concorda com nossos Termos e Condições e nossa Política de Privacidade")
+                    .font(.caption)
+                    .bold()
+                    .foregroundColor(.branco)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
+                
+                Spacer()
+            }
+            .background(
+                Image("FundoLogin")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
             )
-            .frame(width: 280, height: 60, alignment: .center)
-            .cornerRadius(60)
-            
-            
-            Text("Ao continuar, você confirma que concorda com nossos Termos e Condições e nossa Política de Privacidade")
-                .font(.caption)
-                .bold()
-                .foregroundColor(.branco)
-                .padding(.leading, 30)
-                .padding(.trailing, 30)
-            
-            Spacer()
+            .navigationBarHidden(true)
+            .navigationTitle("")
         }
-        .background(
-            Image("FundoLogin")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
-        )
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
