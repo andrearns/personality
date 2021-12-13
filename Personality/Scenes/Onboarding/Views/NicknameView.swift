@@ -79,6 +79,7 @@ struct NicknameView: View {
                             isNextButtonPressed = true
                         }
                         userViewModel.updateUsername(newName: nickname.lowercased())
+                        userViewModel.updateUserData(ego: ego, newName: nickname)
                     }) {
                         RightButtonStuff(title: "Let's go", systemImageName: "arrow.right", textColor: ego.getColorBackground())
                             .opacity(opacity)
