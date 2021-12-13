@@ -26,7 +26,8 @@ class AuthService: AuthServiceProtocol {
     }
     
     func saveUserData(user: User, token: String) {
-        UserDefaults.standard.setValue(user, forKey: "user")
+        let userData = try? JSONEncoder().encode(user)
+        UserDefaults.standard.setValue(userData, forKey: "user")
         UserDefaults.standard.setValue(token, forKey: "token")
     }
     
