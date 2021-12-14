@@ -15,11 +15,14 @@ class UserViewModel: ObservableObject {
     
     @Published var selectedUserResult: UserResult?
     
-    init(usersService: UsersServiceProtocol = UsersService())  {
-        self.usersService = usersService
-    }
     private var usersService: UsersServiceProtocol
+    private var userResultsService: UserResultsServiceProtocol
     private var cancellables = Set<AnyCancellable>()
+    
+    init(usersService: UsersServiceProtocol = UsersService(), userResultsService: UserResultsServiceProtocol = UserResultsService())  {
+        self.usersService = usersService
+        self.userResultsService = userResultsService
+    }
     
     func updateUserResultVisibility(isPrivate: Bool) {
         let index = userResults.firstIndex { result in
@@ -31,7 +34,7 @@ class UserViewModel: ObservableObject {
         userResults[index].isPrivate = isPrivate
         let userResult = userResults[index]
         
-        usersService.updateUserResult(with: userResult)
+        userResultsService.updateUserResult(with: userResult)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
@@ -82,12 +85,15 @@ class UserViewModel: ObservableObject {
     }
     
     private func getUserResults() {
-        usersService.getUserResults()
+        userResultsService.getUserResults()
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    if let jsonPayload = error.jsonPayload {
+                        print(jsonPayload)
+                    }
                 case .finished: break
                 }
             } receiveValue: { [weak self] userResults in

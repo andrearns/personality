@@ -10,19 +10,19 @@ import Combine
 import AuthenticationServices
 
 protocol AuthServiceProtocol: AnyObject {
-    var networker: NetworkerProtocol { get }
+    var apiClient: APIClient { get }
     
     func saveUserData(user: User, token: String)
     func deleteUserData()
-    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthDTO, Error>
+    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthenticateUser.ReturnType, NetworkRequestError>
     func getSavedToken() -> String?
 }
 
 class AuthService: AuthServiceProtocol {
-    let networker: NetworkerProtocol
+    let apiClient: APIClient
     
-    init(networker: NetworkerProtocol = Networker()) {
-        self.networker = networker
+    init(apiClient: APIClient = APIClient()) {
+        self.apiClient = apiClient
     }
     
     func saveUserData(user: User, token: String) {
@@ -36,19 +36,10 @@ class AuthService: AuthServiceProtocol {
         UserDefaults.standard.setValue(nil, forKey: "token")
     }
     
-    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthDTO, Error> {
-        let endpoint = Endpoint.auth
+    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthenticateUser.ReturnType, NetworkRequestError> {
+        let requestBody = AuthenticateUserRequestDTO(apple_id: apple_id, name: name, email: email)
         
-        let body = [
-            "apple_id": apple_id,
-            "name": name,
-            "email": email
-        ]
-        
-        return networker.post(type: AuthDTO.self,
-                              url: endpoint.url,
-                              headers: endpoint.headers,
-                              body: body)
+        return apiClient.dispatch(AuthenticateUser(body: requestBody.asDictionary))
     }
     
     func getSavedToken() -> String? {

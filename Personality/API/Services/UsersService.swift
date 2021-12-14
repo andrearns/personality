@@ -9,20 +9,17 @@ import Foundation
 import Combine
 
 protocol UsersServiceProtocol: AnyObject {
-    var networker: NetworkerProtocol { get }
+    var apiClient: APIClient { get }
     
     func getUserData() -> User?
-    func updateUserData(baseAvatar: String, name: String) -> AnyPublisher<User, Error>
-    func getUserResults() -> AnyPublisher<[UserResult], Error>
-    func createUserResult(with userResult: UserResult) -> AnyPublisher<UserResult, Error>
-    func updateUserResult(with userResult: UserResult) -> AnyPublisher<UserResult, Error>
+    func updateUserData(baseAvatar: String, name: String) -> AnyPublisher<UpdateUser.ReturnType, NetworkRequestError>
 }
 
 class UsersService: UsersServiceProtocol {
-    let networker: NetworkerProtocol
+    let apiClient: APIClient
     
-    init(networker: NetworkerProtocol = Networker()) {
-        self.networker = networker
+    init(apiClient: APIClient = APIClient()) {
+        self.apiClient = apiClient
     }
     
     func getUserData() -> User? {
@@ -34,84 +31,16 @@ class UsersService: UsersServiceProtocol {
         return user
     }
     
-    func updateUserData(baseAvatar: String, name: String) -> AnyPublisher<User, Error> {
+    func updateUserData(baseAvatar: String, name: String) -> AnyPublisher<UpdateUser.ReturnType, NetworkRequestError> {
         guard let token = UserDefaults.standard.string(forKey: "token") else {
             fatalError("No token provided")
         }
-        let endpoint = Endpoint.userAvatar(token: token)
         
         let body = [
             "baseAvatar": baseAvatar,
             "name": name
         ]
         
-        return networker.post(type: User.self,
-                              url: endpoint.url,
-                              headers: endpoint.headers,
-                              body: body)
-    }
-    
-    func getUserResults() -> AnyPublisher<[UserResult], Error> {
-        guard let token = UserDefaults.standard.string(forKey: "token") else {
-            fatalError("No token provided")
-        }
-        let endpoint = Endpoint.usersResultsList(token: token)
-        
-        return networker.get(
-            type: [UserResult].self,
-            url: endpoint.url,
-            headers: endpoint.headers
-        )
-    }
-    
-    func createUserResult(with userResult: UserResult) -> AnyPublisher<UserResult, Error> {
-        guard let token = UserDefaults.standard.string(forKey: "token") else {
-            fatalError("No token provided")
-        }
-        let endpoint = Endpoint.usersResults(token: token)
-        
-        let body = [
-            "result_id": userResult.result_id.uuidString,
-            "isSelected": userResult.isSelected.description,
-            "isPrivate": userResult.isPrivate.description
-        ]
-        
-        return networker.post(type: UserResult.self,
-                              url: endpoint.url,
-                              headers: endpoint.headers,
-                              body: body)
-    }
-    
-    func updateUserResult(with userResult: UserResult) -> AnyPublisher<UserResult, Error> {
-        guard let token = UserDefaults.standard.string(forKey: "token") else {
-            fatalError("No token provided")
-        }
-        let endpoint = Endpoint.usersResults(token: token)
-        
-        let body = [
-            "id": userResult.id.uuidString,
-            "isSelected": userResult.isSelected.description,
-            "isPrivate": userResult.isPrivate.description
-        ]
-        
-        return networker.patch(type: UserResult.self,
-                              url: endpoint.url,
-                              headers: endpoint.headers,
-                              body: body)
-    }
-    
-    func generateToken(name: String?, email: String?, apple_id: String?) -> AnyPublisher<AuthDTO, Error> {
-        let endpoint = Endpoint.auth
-        
-        let body = [
-            "apple_id": apple_id,
-            "name": name,
-            "email": email
-        ]
-        
-        return networker.post(type: AuthDTO.self,
-                              url: endpoint.url,
-                              headers: endpoint.headers,
-                              body: body)
+        return apiClient.dispatch(UpdateUser(token: token, body: body))
     }
 }

@@ -9,23 +9,19 @@ import Foundation
 import Combine
 
 protocol QuestionsServiceProtocol: AnyObject {
-    var networker: NetworkerProtocol { get }
+    var apiClient: APIClient { get }
     
-    func listQuestions(quiz_id: String) -> AnyPublisher<QuestionsDTO, Error>
+    func listQuestions(quiz_id: String) -> AnyPublisher<ListQuizQuestions.ReturnType, NetworkRequestError>
 }
 
 class QuestionsService: QuestionsServiceProtocol {
-    let networker: NetworkerProtocol
+    let apiClient: APIClient
     
-    init(networker: NetworkerProtocol = Networker()) {
-        self.networker = networker
+    init(apiClient: APIClient = APIClient()) {
+        self.apiClient = apiClient
     }
     
-    func listQuestions(quiz_id: String) -> AnyPublisher<QuestionsDTO, Error> {
-        let endpoint = Endpoint.questionsWithAnswers(id: quiz_id)
-        
-        return networker.get(type: QuestionsDTO.self,
-                             url: endpoint.url,
-                             headers: endpoint.headers)
+    func listQuestions(quiz_id: String) -> AnyPublisher<ListQuizQuestions.ReturnType, NetworkRequestError> {
+        return apiClient.dispatch(ListQuizQuestions(quiz_id: quiz_id))
     }
 }

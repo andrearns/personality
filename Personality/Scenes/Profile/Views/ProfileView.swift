@@ -102,6 +102,9 @@ struct ProfileView: View {
         .background(Color.preto.edgesIgnoringSafeArea(.all))
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            userViewModel.onAppear()
+        }
         .sheet(isPresented: $showModal) { BadgeModalView(userViewModel: userViewModel, user: $userViewModel.user)}
         .sheet(isPresented: $showInstagramShare) { InstagramShareView() }
     }

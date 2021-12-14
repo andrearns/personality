@@ -19,14 +19,14 @@ class QuizViewModel: ObservableObject {
     @Published var currentAnswer: Answer? = nil
     @Published var result: QuizResult!
     
-    private var usersService: UsersServiceProtocol
+    private var userResultsService: UserResultsServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(quiz: Quiz, questions: [Question], results: [QuizResult], usersService: UsersServiceProtocol = UsersService()) {
+    init(quiz: Quiz, questions: [Question], results: [QuizResult], userResultsService: UserResultsServiceProtocol = UserResultsService()) {
         self.quiz = quiz
         self.questions = questions
         self.results = results
-        self.usersService = usersService
+        self.userResultsService = userResultsService
     }
     
     func isFirstQuestion() -> Bool {
@@ -92,7 +92,7 @@ class QuizViewModel: ObservableObject {
     
     private func createUserResult() {
         guard let userResult = self.getUserResult() else { return }
-        usersService.createUserResult(with: userResult)
+        userResultsService.createUserResult(with: userResult)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
