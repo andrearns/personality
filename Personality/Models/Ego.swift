@@ -80,4 +80,17 @@ enum Ego: String, CaseIterable, Identifiable, Codable {
             return "RostoCoracao"
         }
     }
+    
+    func getEye() -> String {
+        switch self {
+        case .florzinha:
+            return "OlhoFlorzinha"
+        case .diabinho:
+            return "OlhoDiabinho"
+        case .estrelinha:
+            return "OlhoEstrelinha"
+        case .coracaozinho:
+            return "OlhoCoracaozinho"
+        }
+    }
 }
