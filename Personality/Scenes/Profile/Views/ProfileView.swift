@@ -50,22 +50,28 @@ struct ProfileView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         
-//                        ForEach(userViewModel.user.userResults) { userResult in
-//                            if !userResult.isPrivate {
-//                                Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fit)
-//                            }
-//                        }
+                        ForEach(userViewModel.userResults) { userResult in
+                            if !userResult.isPrivate {
+                                if let image_url = userResult.result.badge?.profileImagesURL[userViewModel.user.baseAvatar], let url = URL(string: image_url) {
+                                    AsyncImage(url: url) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                }
+                            }
+                        }
                     }
                     .padding(.horizontal, 40)
                     .frame(height: 400)
                     
                     LeftTitle(text: "Traços da sua personalidade")
                     
-                    if userViewModel.user.userResults.count != 0 {
+                    if userViewModel.userResults.count != 0 {
                         LazyVGrid(columns: columns) {
-                            ForEach(userViewModel.user.userResults) { userResult in
+                            ForEach(userViewModel.userResults) { userResult in
                                 Button(action: {
                                     userViewModel.selectedUserResult = userResult
                                     showModal = true
