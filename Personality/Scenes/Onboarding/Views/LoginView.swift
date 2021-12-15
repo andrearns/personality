@@ -10,7 +10,6 @@ import AuthenticationServices
 
 struct LoginView: View {
     @ObservedObject var authViewModel: AuthenticationViewModel = AuthenticationViewModel()
-//    @AppStorage("token") var token: String // Usar isso para checar se o usuário está logado
     
     @State var isActive: Bool = false
     
