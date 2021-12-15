@@ -47,13 +47,13 @@ struct InstagramShareView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     
-                    ForEach(userViewModel.user.userResults) { userResult in
-                        if !userResult.isPrivate {
-                            Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                    }
+//                    ForEach(userViewModel.user.userResults) { userResult in
+//                        if !userResult.isPrivate {
+//                            Image(userResult.result.badge!.profileImagesURL[userViewModel.user.baseAvatar]!)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                        }
+//                    }
                 }
                 .padding(.horizontal, 20)
                 .frame(height: 400)

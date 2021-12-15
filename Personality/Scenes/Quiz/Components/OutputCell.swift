@@ -8,10 +8,16 @@ struct OutputCell: View {
             ZStack {
                 Color.cinzaClaro
                     .cornerRadius(16)
-                Image(result.badge!.iconImageURL)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                if let image_url = result.badge?.image_url, let url = URL(string: image_url) {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
                     .padding(5)
+                }
             }
             .frame(width: 75, height: 75)
             Text(result.label)
@@ -30,7 +36,7 @@ struct OutputCell_Previews: PreviewProvider {
                 code: "ACF",
                 badge:
                     Badge(
-                        iconImageURL: "chapeu2",
+                        image_url: "chapeu2",
                         profileImagesURL: [
                             .coracaozinho : "X",
                             .diabinho : "Y",

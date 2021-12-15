@@ -19,13 +19,20 @@ struct BadgeComponentView: View {
                     .frame(width: 160, height: 160, alignment: .center)
                     .padding(20)
                     .padding(.top, 10)
+                
+                if let image_url = result.badge?.image_url, let url = URL(string: image_url) {
                     
-                Image(result.badge!.iconImageURL)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(25)
-                .frame(width: 170, height: 170, alignment: .center)
-                .padding(.top, 30)
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .padding(25)
+                    .frame(width: 170, height: 170, alignment: .center)
+                    .padding(.top, 30)
+                }
             
                 StarView(sideWidth: 52.0)
                     .padding(.leading, 130)

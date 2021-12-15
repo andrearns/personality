@@ -6,18 +6,27 @@
 //
 
 import Foundation
+import Combine
 
 class QuizViewModel: ObservableObject {
     
     @Published var quiz: Quiz
+    @Published var questions: [Question]
+    @Published var results: [QuizResult]
     @Published var currentQuestion: Question?
     @Published var currentQuestionIndex = 0
     @Published var answerDict: [Int : Answer] = [:]
     @Published var currentAnswer: Answer? = nil
     @Published var result: QuizResult!
     
-    init(quiz: Quiz) {
+    private var userResultsService: UserResultsServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(quiz: Quiz, questions: [Question], results: [QuizResult], userResultsService: UserResultsServiceProtocol = UserResultsService()) {
         self.quiz = quiz
+        self.questions = questions
+        self.results = results
+        self.userResultsService = userResultsService
     }
     
     func isFirstQuestion() -> Bool {
@@ -25,25 +34,25 @@ class QuizViewModel: ObservableObject {
     }
     
     func isLastQuestion() -> Bool {
-        currentQuestionIndex == quiz.questions!.count - 1
+        currentQuestionIndex == questions.count - 1
     }
     
     func previousQuestion() {
         currentQuestionIndex = currentQuestionIndex - 1
-        currentQuestion = quiz.questions![currentQuestionIndex]
+        currentQuestion = questions[currentQuestionIndex]
         currentAnswer = answerDict[currentQuestionIndex]
     }
     
     func questionsCount() -> Int {
-        quiz.questions!.count
+        questions.count
     }
     
     func getQuestionAnswers() -> [Answer] {
-        quiz.questions![currentQuestionIndex].answers
+        questions[currentQuestionIndex].answers
     }
     
     func currentQuestionTitle() -> String {
-        "\(currentQuestionIndex + 1). \(quiz.questions![currentQuestionIndex].label)"
+        "\(currentQuestionIndex + 1). \(questions[currentQuestionIndex].label)"
     }
     
     func isCurrentAnswer(_ answer: Answer) -> Bool {
@@ -57,16 +66,16 @@ class QuizViewModel: ObservableObject {
     
     func nextQuestion() {
         currentQuestionIndex += 1
-        currentQuestion = quiz.questions![currentQuestionIndex]
+        currentQuestion = questions[currentQuestionIndex]
         currentAnswer = nil
     }
     
     func generateResult() {
         switch quiz.title {
         case "DISK ME":
-            result = generateDISCResult(answers: answerDict)
-        case "tipos de criatividade":
-            result = generateCreativeTypesResult(answers: answerDict)
+            result = generateDISCResult(results: results, answers: answerDict)
+        case "Tipos de criatividade":
+            result = generateCreativeTypesResult(results: results, answers: answerDict)
         default:
             print("There is no functions to generate a result for this quiz")
         }
@@ -75,5 +84,26 @@ class QuizViewModel: ObservableObject {
     func getUserResult() -> UserResult? {
         guard let result = self.result else { return nil }
         return UserResult(result: result, isPrivate: false)
+    }
+    
+    func onDisappear() {
+        createUserResult()
+    }
+    
+    private func createUserResult() {
+        guard let userResult = self.getUserResult() else { return }
+        userResultsService.createUserResult(with: userResult)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished: break
+                }
+            } receiveValue: { result in
+                print(result)
+            }
+            .store(in: &cancellables)
+            
     }
 }

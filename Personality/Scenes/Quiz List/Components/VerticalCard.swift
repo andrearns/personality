@@ -106,7 +106,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -122,7 +122,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -138,7 +138,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",
@@ -154,7 +154,7 @@ struct VerticalCard_Previews: PreviewProvider {
                                     code: "ACF",
                                     badge:
                                         Badge(
-                                            iconImageURL: "chapeu2",
+                                            image_url: "chapeu2",
                                             profileImagesURL: [
                                                 .coracaozinho : "X",
                                                 .diabinho : "Y",

@@ -8,122 +8,59 @@
 import Foundation
 import Combine
 
-protocol NetworkerProtocol: AnyObject {
-    typealias Headers = [String: Any]
-    typealias Body = [String: String?]
+struct Networker {
+    let urlSession: URLSession!
+    public init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
     
-    func get<T>(type: T.Type, url: URL, headers: Headers) -> AnyPublisher<T, Error> where T: Decodable
-    func getData(url: URL, headers: Headers) -> AnyPublisher<Data, APIError>
-    
-    func post<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable
-    func postData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError>
+    func dispatch<ReturnType: Codable>(request: URLRequest) -> AnyPublisher<ReturnType, NetworkRequestError> {
+        return urlSession
+            .dataTaskPublisher(for: request)
+            .tryMap({ data, response in
+                if let response = response as? HTTPURLResponse,
+                   !(200...299).contains(response.statusCode) {
+                    var error = httpError(response.statusCode)
+                    if let json = try? JSONDecoder().decode(NetworkRequestError.ErrorRequestDTO.self, from: data) {
+                        error.jsonPayload = json
+                    }
+                    throw error
+                }
+                
+                return data
+            })
+            .decode(type: ReturnType.self, decoder: JSONDecoder())
+            .mapError { error in
+                handleError(error)
+            }
+            .eraseToAnyPublisher()
+    }
 }
 
-final class Networker: NetworkerProtocol {
-    
-    func get<T>(type: T.Type, url: URL, headers: Headers) -> AnyPublisher<T, Error> where T: Decodable {
-        var urlRequest = URLRequest(url: url)
-        
-        headers.forEach { key, value in
-            if let value = value as? String {
-                urlRequest.setValue(value, forHTTPHeaderField: key)
-            }
+extension Networker {
+    private func httpError(_ statusCode: Int) -> NetworkRequestError {
+        switch statusCode {
+        case 400: return NetworkRequestError(status: .badRequest)
+        case 401: return NetworkRequestError(status: .unauthorized)
+        case 403: return NetworkRequestError(status: .forbidden)
+        case 404: return NetworkRequestError(status: .notFound)
+        case 402, 405...499: return NetworkRequestError(status: .error4xx(statusCode))
+        case 500: return NetworkRequestError(status: .serverError)
+        case 501...599: return NetworkRequestError(status: .error5xx(statusCode))
+        default: return NetworkRequestError(status: .unknownError)
         }
-        
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .map(\.data)
-            .decode(type: T.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
     }
     
-    func getData(url: URL, headers: Headers) -> AnyPublisher<Data, APIError> {
-        var urlRequest = URLRequest(url: url)
-        
-        headers.forEach { key, value in
-            if let value = value as? String {
-                urlRequest.setValue(value, forHTTPHeaderField: key)
-            }
+    private func handleError(_ error: Error) -> NetworkRequestError {
+        switch error {
+        case is Swift.DecodingError:
+            return NetworkRequestError(status: .decodingError)
+        case let urlError as URLError:
+            return NetworkRequestError(status: .urlSessionFailed(urlError))
+        case let error as NetworkRequestError:
+            return error
+        default:
+            return NetworkRequestError(status: .unknownError)
         }
-        
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .map(\.data)
-            .mapError { error -> APIError in
-                return .request(error)
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    func post<T>(type: T.Type, url: URL, headers: Headers, body: Body) -> AnyPublisher<T, Error> where T: Decodable {
-        Just(body)
-            .encode(encoder: JSONEncoder())
-            .mapError { error -> APIError in
-                if let encodingError = error as? EncodingError {
-                    return .encode(encodingError)
-                } else {
-                    return .unknown
-                }
-            }
-            .map { data -> URLRequest in
-                var urlRequest = URLRequest(url: url)
-                
-                urlRequest.httpMethod = "POST"
-                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                urlRequest.httpBody = data
-                
-                headers.forEach { key, value in
-                    if let value = value as? String {
-                        urlRequest.setValue(value, forHTTPHeaderField: key)
-                    }
-                }
-                
-                return urlRequest
-            }
-            .flatMap {
-                URLSession.shared.dataTaskPublisher(for: $0)
-                    .mapError(APIError.request)
-                    .map(\.data)
-                    .decode(type: T.self, decoder: JSONDecoder())
-                    .mapError { error -> APIError in
-                        if let decodingError = error as? DecodingError {
-                            return .decode(decodingError)
-                        } else {
-                            return .unknown
-                        }
-                    }
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    func postData(url: URL, headers: Headers, body: Body) -> AnyPublisher<Data, APIError> {
-        return Just(body)
-            .encode(encoder: JSONEncoder())
-            .mapError { error -> APIError in
-                if let encodingError = error as? EncodingError {
-                    return .encode(encodingError)
-                } else {
-                    return .unknown
-                }
-            }
-            .map { data -> URLRequest in
-                var urlRequest = URLRequest(url: url)
-                
-                urlRequest.httpMethod = "POST"
-                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                urlRequest.httpBody = data
-                
-                headers.forEach { key, value in
-                    if let value = value as? String {
-                        urlRequest.setValue(value, forHTTPHeaderField: key)
-                    }
-                }
-                
-                return urlRequest
-            }
-            .flatMap {
-                URLSession.shared.dataTaskPublisher(for: $0)
-                    .mapError(APIError.request)
-                    .map(\.data)
-            }
-            .eraseToAnyPublisher()
     }
 }

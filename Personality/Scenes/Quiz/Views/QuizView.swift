@@ -9,8 +9,8 @@ struct QuizView: View {
     @State var showResultView = false
     @State var isLoading = false
     
-    init(quiz: Quiz) {
-        self.quizViewModel = QuizViewModel(quiz: quiz)
+    init(quiz: Quiz, questions: [Question], results: [QuizResult]) {
+        self.quizViewModel = QuizViewModel(quiz: quiz, questions: questions, results: results)
     }
     
     func returnAction() {
@@ -96,8 +96,7 @@ struct QuizView: View {
                 NavigationLink(
                     "",
                     destination: QuizOutput(result: quizViewModel.result) {
-                        guard let userResult = quizViewModel.getUserResult() else { return }
-                        userViewModel.addUserResult(userResult: userResult)
+                        quizViewModel.onDisappear()
                     },
                     isActive: $showResultView
                 )

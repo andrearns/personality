@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 class QuizListViewModel: ObservableObject {
-    @Published public var quizzes: Quizzes = Quizzes(quizzes: [], count: 0)
+    @Published public var quizzes: QuizzesDTO = QuizzesDTO(quizzes: [], count: 0)
     
     private var quizzesService: QuizzesServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(quizzes: Quizzes = Quizzes(quizzes: [], count: 0), quizzesService: QuizzesServiceProtocol = QuizzesService()) {
+    init(quizzes: QuizzesDTO = QuizzesDTO(quizzes: [], count: 0), quizzesService: QuizzesServiceProtocol = QuizzesService()) {
         self.quizzes = quizzes
         self.quizzesService = quizzesService
     }

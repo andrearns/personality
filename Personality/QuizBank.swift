@@ -146,7 +146,7 @@ struct QuizBank {
                     code: "d",
                     badge:
                         Badge(
-                            iconImageURL: "tenis4",
+                            image_url: "tenis4",
                             profileImagesURL: [
                                 .coracaozinho : "DISC_Dominante_Cora",
                                 .diabinho : "DISC_Dominante_Diab",
@@ -162,7 +162,7 @@ struct QuizBank {
                     code: "i",
                     badge:
                         Badge(
-                            iconImageURL: "tenis3",
+                            image_url: "tenis3",
                             profileImagesURL: [
                                 .coracaozinho : "DISC_Influencer_Cora",
                                 .diabinho : "DISC_Influencer_Diab",
@@ -178,7 +178,7 @@ struct QuizBank {
                     code: "c",
                     badge:
                         Badge(
-                            iconImageURL: "tenis1",
+                            image_url: "tenis1",
                             profileImagesURL: [
                                 .coracaozinho : "DISC_Equilibrado_Cora",
                                 .diabinho : "DISC_Equilibrado_Diab",
@@ -194,7 +194,7 @@ struct QuizBank {
                     code: "s",
                     badge:
                         Badge(
-                            iconImageURL: "tenis2",
+                            image_url: "tenis2",
                             profileImagesURL: [
                                 .coracaozinho : "DISC_Cauteloso_Cora",
                                 .diabinho : "DISC_Cauteloso_Diab",
@@ -223,7 +223,7 @@ struct QuizBank {
                     ]
                 ),
                 Question(
-                    label: "Malas prontas, agora você precisa de: ",
+                    label: "Malas prontas, agora você precisa de:",
                     answers: [
                         Answer(label: "Destino", score: "c"),
                         Answer(label: "Direção", score: "d"),
@@ -328,7 +328,7 @@ struct QuizBank {
                     code: "adf",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu6",
+                            image_url: "chapeu6",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Artista_Cora",
                                 .diabinho : "Criatividade_Artista_Diab",
@@ -344,7 +344,7 @@ struct QuizBank {
                     code: "ace",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu1",
+                            image_url: "chapeu1",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Pensador_Cora",
                                 .diabinho : "Criatividade_Pensador_Diab",
@@ -360,7 +360,7 @@ struct QuizBank {
                     code: "bdf",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu4",
+                            image_url: "chapeu4",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Aventureiro_Cora",
                                 .diabinho : "Criatividade_Aventureiro_Diab",
@@ -376,7 +376,7 @@ struct QuizBank {
                     code: "acf",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu5",
+                            image_url: "chapeu5",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Criador_Cora",
                                 .diabinho : "Criatividade_Criador_Diab",
@@ -392,7 +392,7 @@ struct QuizBank {
                     code: "bcf",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu2",
+                            image_url: "chapeu2",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Maonamassa_Cora",
                                 .diabinho : "Criatividade_Maonamassa_Diab",
@@ -408,7 +408,7 @@ struct QuizBank {
                     code: "ade",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu7",
+                            image_url: "chapeu7",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Sonhador_Cora",
                                 .diabinho : "Criatividade_Sonhador_Diab",
@@ -424,7 +424,7 @@ struct QuizBank {
                     code: "bce",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu8",
+                            image_url: "chapeu8",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Inovador_Cora",
                                 .diabinho : "Criatividade_Inovador_Diab",
@@ -440,7 +440,7 @@ struct QuizBank {
                     code: "bde",
                     badge:
                         Badge(
-                            iconImageURL: "chapeu3",
+                            image_url: "chapeu3",
                             profileImagesURL: [
                                 .coracaozinho : "Criatividade_Visionario_Cora",
                                 .diabinho : "Criatividade_Visionario_Diab",
