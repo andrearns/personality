@@ -26,7 +26,12 @@ extension View {
     
     func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage? {
         // Get the main window.
-        guard let window = UIApplication.shared.windows.first else {
+        guard let window = UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})		
+                .first?.windows
+                .filter({$0.isKeyWindow}).first else {
           print("View.takeScreenshot: No main window found")
           return nil
         }
