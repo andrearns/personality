@@ -5,16 +5,17 @@
 //  Created by Thiago Medeiros on 16/12/21.
 //
 
-import SwiftUI
+import Foundation
 
-struct GetUser: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct GetUser_Previews: PreviewProvider {
-    static var previews: some View {
-        GetUser()
+struct GetUser: Request {
+    typealias ReturnType = User
+    var endpoint: Endpoint
+    var method: HTTPMethod = .get
+    var headers: [String : String]?
+    
+    init(token: String) {
+        self.headers = ["Authorization": "Bearer \(token)"]
+        
+        self.endpoint = Endpoint(path: "/users")
     }
 }

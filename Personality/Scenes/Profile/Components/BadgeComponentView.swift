@@ -22,7 +22,7 @@ struct BadgeComponentView: View {
                 
                 if let image_url = result.badge?.image_url, let url = URL(string: image_url) {
                     
-                    AsyncImage(url: url) { image in
+                    CachedAsyncImage(url: url) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)

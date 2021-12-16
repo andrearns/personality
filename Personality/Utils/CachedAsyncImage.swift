@@ -78,7 +78,7 @@ public struct CachedAsyncImage<Content>: View where Content: View {
     
     public var body: some View {
         content(phase)
-            .animation(transaction.animation)
+            .animation(transaction.animation, value: phase.image)
             .task(id: url) {
                 await load(url: url)
             }

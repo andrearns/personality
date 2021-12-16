@@ -76,12 +76,33 @@ class UserViewModel: ObservableObject {
     }
     
     public func onAppear() {
+        self.fetchUser()
         self.getUserResults()
     }
     
-    private func getUser() {
+    private func getSavedUser() {
         guard let user = usersService.getUserData() else { return }
         self.user = user
+    }
+    
+    private func fetchUser() {
+        usersService.fetchUser()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                    if let jsonPayload = error.jsonPayload {
+                        print(jsonPayload)
+                    }
+                case .finished: break
+                }
+            } receiveValue: { [weak self] user in
+                self?.user = user
+                let userData = try? JSONEncoder().encode(user)
+                UserDefaults.standard.set(userData, forKey: "user")
+            }
+            .store(in: &cancellables)
     }
     
     private func getUserResults() {

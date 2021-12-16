@@ -18,65 +18,74 @@ struct InstagramShareView: View {
     
     @EnvironmentObject var userViewModel: UserViewModel
     
+    @State var viewRect: CGRect = .zero
+    
     var shareView: some View {
         ZStack {
-            VStack {
-                HStack {
-                    Image("backgroundTest")
-                        .resizable()
-                        .frame(height: 350)
-                        .aspectRatio(contentMode: .fit)
-                }
-                Spacer()
-            }
-            
-            VStack {
+            GeometryReader { proxy in
                 VStack {
-                    HStack(alignment: .center) {
-                        Text(userViewModel.user.name)
-                            .font(.system(size: 40, weight: .black, design: .default))
-                            .foregroundColor(.white)
-                        Spacer()
-                        Image("LogoEgo")
+                    HStack {
+                        Image("backgroundTest")
+                            .resizable()
+                            .frame(height: 350)
+                            .aspectRatio(contentMode: .fit)
                     }
-                    .padding()
-                    .padding(.top)
+                    Spacer()
                 }
-                ZStack {
-                    Image(userViewModel.user.baseAvatar.getProfileImageName())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    
-                    ForEach(userViewModel.userResults) { userResult in
-                        if !userResult.isPrivate {
-                            if let image_url = userResult.result.badge?.profileImagesURL[userViewModel.user.baseAvatar], let url = URL(string: image_url) {
-                                AsyncImage(url: url) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                } placeholder: {
-                                    ProgressView()
+                .onAppear {
+                    viewRect = proxy.frame(in: .global)
+                }
+                
+                VStack {
+                    VStack {
+                        HStack(alignment: .center) {
+                            Text(userViewModel.user.name)
+                                .font(.system(size: 40, weight: .black, design: .default))
+                                .foregroundColor(.white)
+                            Spacer()
+                            Image("LogoEgo")
+                        }
+                        .padding()
+                        .padding(.top)
+                    }
+                    ZStack {
+                        Image(userViewModel.user.baseAvatar.getProfileImageName())
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                        ForEach(userViewModel.userResults) { userResult in
+                            if !userResult.isPrivate {
+                                if let image_url = userResult.result.badge?.profileImagesURL[userViewModel.user.baseAvatar], let url = URL(string: image_url) {
+                                    CachedAsyncImage(url: url) { phase in
+                                        if let image = phase.image {
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                        } else {
+                                            ProgressView()
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                .padding(.horizontal, 20)
-                .frame(height: 400)
-                
-                if userViewModel.userResults.count != 0 {
-                    LeftTitle(text: "Traços da minha personalidade")
+                    .padding(.horizontal, 20)
+                    .frame(height: 400)
                     
-                    LazyVGrid(columns: columns) {
-                        ForEach(userViewModel.userResults) { userResult in
-                            OutputCell(result: userResult.result)
+                    if userViewModel.userResults.count != 0 {
+                        LeftTitle(text: "Traços da minha personalidade")
+                        
+                        LazyVGrid(columns: columns) {
+                            ForEach(userViewModel.userResults) { userResult in
+                                OutputCell(result: userResult.result)
+                            }
                         }
+                        .padding(.horizontal)
+                        .padding(.bottom, 20)
                     }
-                    .padding(.horizontal)
-                    .padding(.bottom, 20)
+                    
+                    Spacer()
                 }
-            
-                Spacer()
             }
         }
         .background(.black)
@@ -93,7 +102,7 @@ struct InstagramShareView: View {
             
             if InstagramSharingUtils.canOpenInstagramStories {
                 Button(action: {
-                    let image = shareView.snapshot()
+                    let image = shareView.takeScreenshot(origin: viewRect.origin, size: viewRect.size)!
                     InstagramSharingUtils.shareToInstagramStories(image)
                 }) {
                     HStack{
