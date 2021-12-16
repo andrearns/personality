@@ -9,12 +9,14 @@ struct OutputCell: View {
                 Color.cinzaClaro
                     .cornerRadius(16)
                 if let image_url = result.badge?.image_url, let url = URL(string: image_url) {
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } placeholder: {
-                        ProgressView()
+                    CachedAsyncImage(url: url) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } else {
+                            ProgressView()
+                        }
                     }
                     .padding(5)
                 }

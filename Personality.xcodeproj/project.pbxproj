@@ -68,6 +68,8 @@
 		AF1F3735276A7F0100883FD3 /* CheckLoginStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F3734276A7F0100883FD3 /* CheckLoginStateView.swift */; };
 		AF25E196275949A700576CEE /* QuizListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E195275949A700576CEE /* QuizListViewModel.swift */; };
 		AF25E19827594AAF00576CEE /* QuizzesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E19727594AAF00576CEE /* QuizzesDTO.swift */; };
+		AF614CCB276BBA89000C0FA7 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF614CCA276BBA89000C0FA7 /* GetUser.swift */; };
+		AF614CCD276BC967000C0FA7 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF614CCC276BC967000C0FA7 /* CachedAsyncImage.swift */; };
 		AF73404D2757FDB000215421 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404C2757FDB000215421 /* Endpoint.swift */; };
 		AF73404F2757FE7B00215421 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73404E2757FE7B00215421 /* Networker.swift */; };
 		AF746C402763DA6900FE8C5F /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF746C3F2763DA6900FE8C5F /* UsersService.swift */; };
@@ -165,6 +167,8 @@
 		AF1F3734276A7F0100883FD3 /* CheckLoginStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginStateView.swift; sourceTree = "<group>"; };
 		AF25E195275949A700576CEE /* QuizListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewModel.swift; sourceTree = "<group>"; };
 		AF25E19727594AAF00576CEE /* QuizzesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesDTO.swift; sourceTree = "<group>"; };
+		AF614CCA276BBA89000C0FA7 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
+		AF614CCC276BC967000C0FA7 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		AF67E08C27500AC10091C5ED /* QuizzesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesService.swift; sourceTree = "<group>"; };
 		AF73404C2757FDB000215421 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AF73404E2757FE7B00215421 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
@@ -409,6 +413,7 @@
 				5B36F68A2753E30700273F1E /* InstagramSharingUtils.swift */,
 				5B36F68E2754186600273F1E /* Snapshot.swift */,
 				AFECC42F27693A2000836F45 /* Encodable+Dictionary.swift */,
+				AF614CCC276BC967000C0FA7 /* CachedAsyncImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				AFED32CD27692F0D00FEBE46 /* UpdateUser.swift */,
+				AF614CCA276BBA89000C0FA7 /* GetUser.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -738,11 +744,13 @@
 				AF1F3735276A7F0100883FD3 /* CheckLoginStateView.swift in Sources */,
 				900D7B83274AC24700548E9C /* NicknameView.swift in Sources */,
 				AFED32B72769199E00FEBE46 /* NetworkRequestError.swift in Sources */,
+				AF614CCD276BC967000C0FA7 /* CachedAsyncImage.swift in Sources */,
 				AFD3F73E275E9CC50089C7FA /* AuthenticationViewModel.swift in Sources */,
 				905D05AF2760EBA800DE1C91 /* FriendHorizontalCard.swift in Sources */,
 				AF73404D2757FDB000215421 /* Endpoint.swift in Sources */,
 				90B9936A274D5C500086B00A /* SnapCarousel.swift in Sources */,
 				5BDC25D42745FA4C00D51D9C /* Badge.swift in Sources */,
+				AF614CCB276BBA89000C0FA7 /* GetUser.swift in Sources */,
 				AFECC43327693A8000836F45 /* CreateUserResultRequestDTO.swift in Sources */,
 				AFED32CE27692F0D00FEBE46 /* UpdateUser.swift in Sources */,
 				5B23A69127508D67002084B3 /* RightButtonStuff.swift in Sources */,

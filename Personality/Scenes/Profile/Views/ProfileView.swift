@@ -53,7 +53,7 @@ struct ProfileView: View {
                         ForEach(userViewModel.userResults) { userResult in
                             if !userResult.isPrivate {
                                 if let image_url = userResult.result.badge?.profileImagesURL[userViewModel.user.baseAvatar], let url = URL(string: image_url) {
-                                    AsyncImage(url: url) { image in
+                                    CachedAsyncImage(url: url) { image in
                                         image
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)

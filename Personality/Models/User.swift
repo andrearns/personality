@@ -5,7 +5,7 @@ struct User: Codable {
     var name: String
     var baseAvatar: Ego
     var apple_id: String
-    var userResults: [UserResult]
+    var userResults: [UserResult]?
     
     init(name: String, baseAvatar: Ego, userResults: [UserResult], apple_id: String) {
         self.name = name

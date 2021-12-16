@@ -7,7 +7,7 @@ struct HorizontalCard: View {
         ZStack {
             if let image_url = quiz.image_url, let url = URL(string: image_url) {
                 HStack {
-                    AsyncImage(url: url) { image in
+                    CachedAsyncImage(url: url) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)

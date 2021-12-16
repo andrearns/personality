@@ -9,12 +9,16 @@ import SwiftUI
 
 struct CheckLoginStateView: View {
     @AppStorage("token") var token: String = ""
+    @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {
         if token.isEmpty {
             LoginView()
         } else {
             MainView()
+                .onAppear {
+                    userViewModel.onAppear()
+                }
         }
     }
 }
