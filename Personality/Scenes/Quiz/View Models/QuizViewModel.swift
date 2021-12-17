@@ -86,7 +86,7 @@ class QuizViewModel: ObservableObject {
         return UserResult(result: result, isPrivate: false)
     }
     
-    func onDisappear() {
+    func onAppear() {
         createUserResult()
     }
     
@@ -98,6 +98,9 @@ class QuizViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    if let jsonData = error.jsonPayload {
+                        print(jsonData)
+                    }
                 case .finished: break
                 }
             } receiveValue: { result in

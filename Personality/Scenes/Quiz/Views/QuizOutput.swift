@@ -4,7 +4,7 @@ struct QuizOutput: View {
     
     @EnvironmentObject var navigationHelper: NavigationHelper
     var result: QuizResult
-    var onDisappear: () -> Void = {}
+    var onAppear: () -> Void = {}
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -55,8 +55,8 @@ struct QuizOutput: View {
             }
         )
         .navigationBarBackButtonHidden(true)
-        .onDisappear {
-            onDisappear()
+        .onAppear {
+            onAppear()
         }
     }
     

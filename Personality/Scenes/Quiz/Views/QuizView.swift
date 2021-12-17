@@ -96,7 +96,7 @@ struct QuizView: View {
                 NavigationLink(
                     "",
                     destination: QuizOutput(result: quizViewModel.result) {
-                        quizViewModel.onDisappear()
+                        quizViewModel.onAppear()
                     },
                     isActive: $showResultView
                 )
