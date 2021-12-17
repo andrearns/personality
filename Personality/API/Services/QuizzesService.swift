@@ -12,6 +12,7 @@ protocol QuizzesServiceProtocol: AnyObject {
     var apiClient: APIClient { get }
     
     func listQuizzes() -> AnyPublisher<ListQuizzes.ReturnType, NetworkRequestError>
+    func listPopularQuizzes() -> AnyPublisher<ListPopularQuizzes.ReturnType, NetworkRequestError>
 }
 
 class QuizzesService: QuizzesServiceProtocol {
@@ -23,5 +24,9 @@ class QuizzesService: QuizzesServiceProtocol {
     
     func listQuizzes() -> AnyPublisher<ListQuizzes.ReturnType, NetworkRequestError> {
         return apiClient.dispatch(ListQuizzes())
+    }
+    
+    func listPopularQuizzes() -> AnyPublisher<ListPopularQuizzes.ReturnType, NetworkRequestError> {
+        return apiClient.dispatch(ListPopularQuizzes())
     }
 }

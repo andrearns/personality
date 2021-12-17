@@ -46,8 +46,11 @@ struct QuizListView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(firstQuizList) { quiz in
-                                    if quiz.questions!.count != 0 {
+                                ForEach(viewModel.popularQuizzes.quizzes) { quiz in
+                                    NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
+                                        VerticalCard(quiz: quiz)
+                                    }
+                                    /*if quiz.questions!.count != 0 {
                                         NavigationLink(destination: QuizIntroView(quiz: quiz), tag: quiz.id.uuidString, selection: $navigationHelper.selectedView) {
                                             VerticalCard(quiz: quiz)
                                         }
@@ -59,7 +62,7 @@ struct QuizListView: View {
                                         }) {
                                             VerticalCard(quiz: quiz)
                                         }
-                                    }
+                                    }*/
                                 }
                             }
                             .padding(.horizontal)

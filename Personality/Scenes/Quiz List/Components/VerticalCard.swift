@@ -7,17 +7,21 @@ struct VerticalCard: View {
         ZStack {
             Image("backgroundTest")
                 .resizable()
-            if let image = quiz.image {
+            if let image_url = quiz.image_url, let url = URL(string: image_url) {
                 VStack {
                     Spacer()
                     HStack {
                         Spacer()
-                        Image(image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(8)
-                            .padding(.top, 60)
-                            .padding(.leading, 60)
+                        CachedAsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .padding(8)
+                        .padding(.top, 60)
+                        .padding(.leading, 60)
                     }
                 }
             }
